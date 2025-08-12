@@ -11,7 +11,11 @@
   <style>
     .fx{max-width: var(--container, 1180px); margin-inline:auto; padding-inline:clamp(16px,4vw,24px)}
     .fx-hero{min-height:44vh; display:grid; place-items:center; text-align:center; color:#fff; position:relative; isolation:isolate; padding:80px 16px 50px}
-    .fx-hero::before{content:""; position:absolute; inset:0; z-index:-2; background:linear-gradient(120deg,#0f3e5b,#195c64)}
+    .fx-hero::before{
+  content:""; position:absolute; inset:0; z-index:-2;
+  background: var(--hero) center/cover no-repeat;
+  background-color:#0b334d; /* 이미지 로드 전 배경색 */
+}
     .fx-hero::after{content:""; position:absolute; inset:0; z-index:-1; background:linear-gradient(180deg,rgba(0,0,0,.4),rgba(0,0,0,.35))}
     .fx-hero h1{margin:0 0 .4rem; font-size:clamp(1.8rem,1.2rem + 2.3vw,2.6rem); font-weight:800}
     .toc{display:flex; flex-wrap:wrap; gap:10px; margin:.8rem 0 1.2rem; padding:0}
@@ -41,7 +45,7 @@
   <!-- <div data-include="partials/header.html"></div> -->
 
   <!-- Hero -->
-  <header class="fx-hero">
+  <header class="fx-hero" style="--hero:url('/images/heroes/hero-effects.png?v=20250812')">
     <div class="fx">
       <h1>설치효과·특성</h1>
       <p class="lead">역률과 역률 개선, 한전 요금제도 변화, 그리고 KESA 전기절감기의 장점과 적용 분야를 한눈에.</p>
