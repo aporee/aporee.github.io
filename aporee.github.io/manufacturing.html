@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>제조 및 생산 · KESA 한국전기절감원(주)</title>
+  <meta name="description" content="KESA 전기절감기의 제조·생산, 차별화 기술, 시설 및 A/S 체제 안내" />
+  <script defer src="/assets/include.js"></script>
+  <style>
+    :root{
+      --brand:#0f3e5b; --ink:#0b0b0b; --muted:#6b7280; --bg:#fff;
+      --container:1120px; --radius:16px; --gap:clamp(16px,2vw,28px);
+      --line:#e5e7eb; --shadow: 0 10px 30px rgba(0,0,0,.08);
+    }
+    *{box-sizing:border-box}
+    body{margin:0; font:400 16px/1.7 system-ui,-apple-system,"Segoe UI",Roboto,"Noto Sans KR",sans-serif; color:var(--ink)}
+    a{color:var(--brand); text-decoration:none}
+    .container{max-width:var(--container); margin-inline:auto; padding-inline:clamp(16px,4vw,28px)}
+
+    /* Hero */
+    .hero{position:relative; min-height:42vh; display:grid; place-items:center; text-align:center; color:#fff; isolation:isolate}
+    .hero::before{content:""; position:absolute; inset:0; z-index:-2; background-image:var(--hero,linear-gradient(120deg,#0f3e5b,#134154)); background-size:cover; background-position:center}
+    .hero::after{content:""; position:absolute; inset:0; z-index:-1; background:linear-gradient(180deg,rgba(0,0,0,.45),rgba(0,0,0,.35))}
+    .hero h1{margin:0 0 .35rem; font-size:clamp(1.8rem,1.2rem + 2.2vw,2.6rem)}
+    .hero p{margin:0; color:rgba(255,255,255,.92)}
+
+    /* Breadcrumb */
+    .breadcrumb{padding-block:14px; color:var(--muted); font-size:.95rem}
+    .breadcrumb ol{list-style:none; display:flex; gap:.5rem; padding:0; margin:0}
+    .breadcrumb li+li::before{content:"›"; opacity:.6; padding-inline:.25rem}
+
+    /* Sections */
+    section{padding-block:clamp(28px,5vw,64px)}
+    h2{font-size:clamp(1.25rem,1.05rem + 1vw,1.9rem); margin:0 0 .6rem}
+    .lead{font-size:1.05rem}
+
+    /* Gallery */
+    .gallery{display:grid; gap:var(--gap)}
+    .gallery img{width:100%; height:auto; border-radius:12px; box-shadow:var(--shadow)}
+
+    /* Highlights */
+    .grid-2{display:grid; gap:var(--gap); grid-template-columns:1fr 1fr}
+    @media (max-width:980px){.grid-2{grid-template-columns:1fr}}
+
+    .card{background:#fff; border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow); padding:clamp(16px,2.5vw,22px)}
+    .checklist{list-style:none; padding:0; margin:0; display:grid; gap:10px}
+    .checklist li{padding-left:28px; position:relative}
+    .checklist li::before{content:"✔"; position:absolute; left:0; top:0; color:var(--brand)}
+
+    /* Address box */
+    .addr{background:#f8fafc; border:1px solid #eef2f7; border-radius:var(--radius); padding:16px}
+
+    /* CTA */
+    .cta{background:linear-gradient(135deg,rgba(15,62,91,.08),rgba(22,63,70,.04)); border-radius:22px; padding:22px}
+  </style>
+</head>
+<body>
+  <div data-include="/partials/header.html"></div>
+
+  <header class="hero" style="--hero:url('/images/manufacturing/hero-factory.jpg')">
+    <div class="container">
+      <h1>제조 및 생산</h1>
+      <p>KESA 전기절감기의 차별화 기술과 생산 체계</p>
+    </div>
+  </header>
+
+  <nav class="breadcrumb container" aria-label="breadcrumb">
+    <ol>
+      <li><a href="/index.html">홈</a></li>
+      <li><a href="/products/index.html">제품소개</a></li>
+      <li aria-current="page">제조 및 생산</li>
+    </ol>
+  </nav>
+
+  <main class="container">
+    <!-- 이미지 갤러리 (제공하신 두 장) -->
+    <section aria-labelledby="g">
+      <h2 id="g">제조 현장 스냅샷</h2>
+      <div class="gallery">
+        <img src="/images/manufacturing/assembly-line.png" alt="KESA 전기절감기 생산 라인" />
+        <img src="/images/manufacturing/buliding.png" alt="한국전기절감원(주) 본사 외관" />
+      </div>
+    </section>
+
+    <section aria-labelledby="tech" class="grid-2">
+      <div>
+        <h2 id="tech">KESA 전기절감기에 적용된 차별화 기술</h2>
+        <ol class="checklist">
+          <li>신뢰성이 높은 최적의 장수명 <strong>Self‑Healing 콘덴서 Bank</strong> 설계</li>
+          <li>특허 기술 기반의 특수 설계 <strong>초경량 고조파 및 Surge 방지 필터</strong> 채택</li>
+          <li>고기능·고시인성 <strong>Wi‑Fi Energy Monitoring Meter</strong> 채택</li>
+          <li>무부하시 <strong>진상 역률·과열·과승 방지 Sensor Switch</strong> 채택</li>
+          <li><strong>방수·방폭·방화·내절연성</strong>이 탁월한 분체 도장 외함 채택</li>
+        </ol>
+      </div>
+      <div class="card">
+        <h2 style="margin-top:0">생산·공급·설치·A/S 체제</h2>
+        <p class="lead">고품질의 <strong>적기 생산</strong> · <strong>적기 공급</strong> · <strong>적기 설치</strong> 및 <strong>신속·정확 A/S</strong> 체제를 완비했습니다.</p>
+        <div class="addr">
+          <p style="margin:.25rem 0 .5rem"><strong>본사 직영 생산 공장</strong></p>
+          <p style="margin:0">부산 사상구 사상로 453, 3층<br />전기절감 기술연구소</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta" aria-labelledby="next">
+      <h2 id="next">설치효과와 사례 더 보기</h2>
+      <p><a href="/effects.html">설치효과·특성</a>에서 절감 효과를 확인하고, <a href="/cases/index.html">시공사례</a>에서 실제 적용 사례를 살펴보세요.</p>
+    </section>
+  </main>
+
+  <div data-include="/partials/footer.html"></div>
+</body>
+</html>

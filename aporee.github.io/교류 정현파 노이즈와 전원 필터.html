@@ -1,0 +1,92 @@
+<!-- 제품 상세 섹션: 교류 정현파 노이즈 & 전원/EMI 필터 -->
+<section id="power-noise" class="tech-noise container" aria-labelledby="noise-title">
+  <style>
+    /* === Scoped styles for this section only === */
+    .tech-noise{padding-block: clamp(28px,6vw,72px)}
+    .tech-noise h2{font-size: clamp(1.35rem,1.1rem + .9vw,1.9rem); margin:0 0 .5rem}
+    .tech-noise .lead{color:#111; font-weight:600; margin:.25rem 0 1rem}
+    .tech-noise .note{background:#f7fafc; border:1px solid #eef2f7; border-radius:16px; padding:16px}
+    .tech-noise .grid{display:grid; gap: clamp(14px,2vw,20px); grid-template-columns: 1fr 1fr}
+    @media (max-width: 900px){ .tech-noise .grid{grid-template-columns:1fr} }
+    .tech-noise .card{border:1px solid #e8ecef; border-radius:16px; padding:16px; background:#fff}
+    .tech-noise .card h3{margin:.25rem 0 .4rem; font-size:1.05rem}
+    .tech-noise ul{margin:.25rem 0 0; padding-left:1.1rem}
+    .tech-noise .badge{display:inline-block; padding:.2rem .5rem; border-radius:999px; background:#eef6ff; color:#0b4a7a; font-size:.78rem; margin-left:.4rem}
+    .tech-noise .list{display:grid; gap:.5rem; padding-left:1.1rem}
+    .tech-noise .cta{margin-top: clamp(14px,2vw,22px)}
+    .tech-noise .cta a{font-weight:800; color: var(--brand, #0f3e5b); border-bottom:2px solid currentColor; text-decoration:none}
+    .tech-noise table{width:100%; border-collapse:collapse; font-size:.95rem}
+    .tech-noise th, .tech-noise td{border:1px solid #e8ecef; padding:10px; text-align:left}
+    .tech-noise th{background:#fbfdff}
+  </style>
+
+  <header>
+    <h2 id="noise-title">교류 정현파 노이즈와 전원 필터</h2>
+    <p class="lead">차동 모드·공통 모드 노이즈를 저감해 전력 품질과 설비 신뢰성을 끌어올립니다.</p>
+  </header>
+
+  <div class="note" role="note">
+    <p><strong>교류 정현파 노이즈</strong>는 비선형 부하, 스위칭, 외부 EMI 등으로 유입되는 원치 않는 전기적 성분입니다. 이는 고조파 손실과 효율 저하뿐 아니라, 정밀 장비의 오작동·데이터 오류·시스템 불안정으로 이어질 수 있습니다.</p>
+    <p><strong>KESA 시리즈</strong>는 고조파 전압 대비 상대적으로 큰 <em>차동 모드 노이즈(Differential Mode)</em>와 <em>공통 모드 노이즈(Common Mode)</em>를 저감하도록, 특허 기술 기반의 <strong>전원 필터(Power Filter)</strong>와 <strong>EMI 필터</strong>를 채택합니다.</p>
+  </div>
+
+  <div class="grid" style="margin-top:16px">
+    <article class="card" aria-labelledby="dm-title">
+      <h3 id="dm-title">차동 모드 노이즈 <span class="badge">DM</span></h3>
+      <ul class="list">
+        <li>두 선 사이(라인-라인)로 흐르는 노이즈 전류</li>
+        <li>스위칭 전원, 정류·인버터 동작에서 주로 발생</li>
+        <li><strong>대응</strong>: 직렬 인덕터 + X-캡 등으로 전압 스파이크/전류 리플 억제</li>
+      </ul>
+    </article>
+
+    <article class="card" aria-labelledby="cm-title">
+      <h3 id="cm-title">공통 모드 노이즈 <span class="badge">CM</span></h3>
+      <ul class="list">
+        <li>두 선이 동시에 접지 대비 같은 방향으로 가지는 노이즈 전압</li>
+        <li>케이블 방사·EMI 간섭·정밀기기 오동작의 주요 원인</li>
+        <li><strong>대응</strong>: 공통 모드 초크 + Y-캡 구성으로 접지 경로로 우회·소거</li>
+      </ul>
+    </article>
+  </div>
+
+  <section style="margin-top:20px">
+    <h3>왜 문제인가?</h3>
+    <ul class="list">
+      <li>고조파 손실 증가 → <strong>전력 효율 저하</strong></li>
+      <li>과열·오작동·데이터 오류 → <strong>설비 신뢰성 저하</strong></li>
+      <li>EMI/EMC 이슈 → <strong>규격 적합성·품질 리스크</strong></li>
+    </ul>
+  </section>
+
+  <section style="margin-top:16px">
+    <h3>KESA의 필터링 설계(개요)</h3>
+    <table aria-label="KESA 필터링 구성 개요">
+      <thead>
+        <tr>
+          <th scope="col">기능</th>
+          <th scope="col">구성(예)</th>
+          <th scope="col">효과</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">DM 억제</th>
+          <td>직렬 인덕터, X-클래스 필름 캡</td>
+          <td>라인-라인 리플·스파이크 저감, 파형 왜곡 완화</td>
+        </tr>
+        <tr>
+          <th scope="row">CM 억제</th>
+          <td>공통 모드 초크, Y-클래스 캡, 적절한 접지</td>
+          <td>방사·감응 노이즈 저감, 정밀기기 보호</td>
+        </tr>
+        <tr>
+          <th scope="row">서지 보호</th>
+          <td>서지 보호 소자(SPD)·흡수 네트워크</td>
+          <td>낙뢰/개폐 서지로부터 설비 보호</td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="cta">자세한 동작 데이터와 회로 구성은 <a href="/resources.html#downloads">기술자료실</a>에서 확인하세요.</p>
+  </section>
+</section>
