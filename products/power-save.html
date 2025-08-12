@@ -1,51 +1,103 @@
-<!-- 브레드크럼에 현재 페이지 표시 -->
-<nav aria-label="breadcrumb">
-  <ol>
-    <li><a href="../index.html">홈</a></li>
-    <li><a href="./index.html">제품소개</a></li>
-    <li aria-current="page">세이버스</li>
-  </ol>
-</nav>
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>전력절감기(개요) · KESA | 한국전기절감원(주)</title>
+  <meta name="description" content="KESA 전력절감기의 개념, 주요 특장점, 핵심 사양 안내." />
+  <link rel="preload" as="image" href="../images/heroes/hero-kesa-series.png">
+  <style>
+    :root{ --brand:#0f3e5b; --accent:#1a5d66; --ink:#0b0b0b; --muted:#6b7280; --container:1100px; --radius:16px; --shadow:0 10px 30px rgba(0,0,0,.06); }
+    *{box-sizing:border-box}
+    body{margin:0; color:var(--ink); font:400 16px/1.75 system-ui,-apple-system,"Noto Sans KR",Segoe UI,Roboto,sans-serif}
+    a{color:inherit; text-decoration:none}
+    .container{max-width:var(--container); margin-inline:auto; padding-inline:clamp(16px,4vw,24px)}
+    .hero{min-height:38vh; position:relative; color:#fff; display:grid; place-items:center; text-align:center}
+    .hero::before{content:""; position:absolute; inset:0; z-index:-2; background:
+      radial-gradient(70% 70% at 50% 20%, rgba(26,93,102,.9), rgba(15,62,91,.95) 45%, #0a2230 100%),
+      url("../images/heroes/hero-kesa-series.png"); background-size:cover; background-position:center}
+    .hero::after{content:""; position:absolute; inset:0; z-index:-1; background:linear-gradient(180deg,rgba(0,0,0,.35),rgba(0,0,0,.25))}
+    h1{margin:0 0 .4rem; font-weight:900; font-size:clamp(1.9rem,1.2rem + 2.4vw,2.6rem)}
+    .breadcrumb{font-size:.95rem; color:var(--muted); padding:12px 0}
+    .breadcrumb ol{display:flex; gap:.5rem; list-style:none; padding:0; margin:0}
+    .breadcrumb li+li::before{content:"›"; opacity:.6; padding-inline:.25rem}
+    main section{padding-block:clamp(24px,5vw,52px)}
+    h2{margin:.2rem 0 .8rem; font-size:clamp(1.25rem,1.05rem + .9vw,1.8rem)}
+    h3{margin:1rem 0 .5rem}
+    ul{padding-left:1.2rem}
+    table{width:100%; border-collapse:collapse}
+    th, td{border:1px solid #e2e8f0; padding:.5rem}
+    th{background:#f1f5f9; text-align:left}
+    .note{background:#f7fafc; border:1px solid #e9f0f5; border-radius:var(--radius); padding:16px}
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="container">
+      <h1>전력절감기(개요) <small style="font-weight:600; opacity:.9">KESA</small></h1>
+      <p>전기적 비효율을 개선해 에너지 사용을 줄이는 솔루션</p>
+    </div>
+  </header>
 
-<h1>세이버스 <small>POWER SAVE</small></h1>
+  <!-- 브레드크럼에 현재 페이지 표시 -->
+  <nav class="breadcrumb" aria-label="breadcrumb">
+    <div class="container">
+      <ol>
+        <li><a href="../index.html">홈</a></li>
+        <li><a href="./index.html">제품소개</a></li>
+        <li aria-current="page">전력절감기(개요)</li>
+      </ol>
+    </div>
+  </nav>
 
-<section aria-labelledby="what-title">
-  <h2 id="what-title">세이버스란?</h2>
-  <p>전기적 요인 해소를 통해 전기에너지를 효율적으로 사용하는 절감 장치…</p>
+  <main class="container">
+    <section aria-labelledby="what-title">
+      <h2 id="what-title">KESA 전력절감기란?</h2>
+      <p>전압 과다, 낮은 역률, 상 불평형, 고조파 등 <strong>전기적 비효율 요인</strong>을 완화해 설비 전류를 낮추고 전력 품질을 향상시키는 장치입니다. 현장 여건에 따라 콘덴서/리액터/제어부를 조합하여 역률을 보정하고 손실을 줄입니다.</p>
 
-  <h3>전력소비를 증가시키는 전기적 요인</h3>
-  <ul>
-    <li>과도한 공급전압</li>
-    <li>낮은 역률</li>
-    <li>전력망 전압의 높은 상 불평형</li>
-    <li>높은 고조파 함유</li>
-  </ul>
-</section>
+      <h3>전력소비를 증가시키는 전기적 요인</h3>
+      <ul>
+        <li>과도한 공급전압</li>
+        <li>낮은 역률(지상/진상)</li>
+        <li>전압의 상(相) 불평형</li>
+        <li>고조파 함유율 상승</li>
+      </ul>
+      <p class="note">역률과 요금제 관계는 <a href="../knowledge/kepco-power-factor.html">지식센터 · 역률 요금제</a>에서 자세히 설명합니다.</p>
+    </section>
 
-<section aria-labelledby="features">
-  <h2 id="features">주요 특장점</h2>
-  <ul>
-    <li>효율 개선 ○% / 절감율 범위 ○–○%</li>
-    <li>설치 쉬움 / 유지보수 간편</li>
-    <li>안전 인증/시험성적서 보유</li>
-  </ul>
-</section>
+    <section aria-labelledby="features">
+      <h2 id="features">주요 특장점</h2>
+      <ul>
+        <li>에너지 손실 저감 및 설비 전류 감소</li>
+        <li>역률 개선으로 벌금(할증) 회피 및 용량 요금 절감</li>
+        <li>설치가 간편하고 유지보수가 용이</li>
+        <li>IP 등급/방폭/방화 등 환경 요구에 맞춘 외함 구성 가능</li>
+      </ul>
+    </section>
 
-<section aria-labelledby="specs">
-  <h2 id="specs">주요 사양</h2>
-  <table>
-    <tbody>
-      <tr><th scope="row">정격전압</th><td>△△ V</td></tr>
-      <tr><th scope="row">정격용량</th><td>□□ kVA</td></tr>
-      <!-- … -->
-    </tbody>
-  </table>
-</section>
+    <section aria-labelledby="specs">
+      <h2 id="specs">주요 사양(요약)</h2>
+      <table aria-describedby="specs">
+        <tbody>
+          <tr><th scope="row">정격 전압</th><td>220/380/440/480V, 단상 또는 3상</td></tr>
+          <tr><th scope="row">설치 방식</th><td>3상 4선식 표준(3상 3선식 가능)</td></tr>
+          <tr><th scope="row">IP 등급</th><td>기본 IP42 (요청 시 변경)</td></tr>
+          <tr><th scope="row">작동 온도</th><td>-25℃ (요청 시 변경 가능)</td></tr>
+          <tr><th scope="row">손실</th><td>0.2 W/kVAR(표준)</td></tr>
+          <tr><th scope="row">케이스</th><td>연강 용접 외함, RAL7035 마감</td></tr>
+        </tbody>
+      </table>
+      <p>모델별 세부 치수/중량은 <a href="./specs.html">사양/모델</a>에서 확인하세요.</p>
+    </section>
 
-<nav aria-label="관련 링크">
-  <ul>
-    <li><a href="../resources.html#manuals">매뉴얼 다운로드</a></li>
-    <li><a href="../effects.html">설치효과·특성</a></li>
-    <li><a href="../contact.html">도입 문의</a></li>
-  </ul>
-</nav>
+    <nav aria-label="관련 링크" class="note">
+      <ul style="margin:0">
+        <li><a href="./kesa-series.html">KESA 시리즈</a></li>
+        <li><a href="./power-factor.html">역률이란?</a></li>
+        <li><a href="../effects.html">설치효과·특성</a></li>
+        <li><a href="../contact.html">도입 문의</a></li>
+      </ul>
+    </nav>
+  </main>
+</body>
+</html>
