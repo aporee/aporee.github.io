@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>제품소개 | 한국전기절감원(주)</title>
+  <meta name="description" content="KESA 전력절감 솔루션 제품 허브. 역률이란?, KESA 시리즈, 사양/모델 페이지로 이동." />
+  <!-- 본 저장소가 user.github.io 루트면 base 불필요. 프로젝트 페이지라면 아래 주석 해제 후 경로 조정 -->
+  <!-- <base href="/your-project/"> -->
+  <style>
+    :root{
+      --brand:#0f3e5b; --accent:#1a5d66; --ink:#0b0b0b; --muted:#6b7280;
+      --container:1100px; --radius:16px; --shadow:0 10px 30px rgba(0,0,0,.06);
+    }
+    *{box-sizing:border-box}
+    body{margin:0; color:var(--ink);
+      font:400 16px/1.75 system-ui,-apple-system,"Noto Sans KR",Segoe UI,Roboto,sans-serif;}
+    a{color:inherit; text-decoration:none}
+    .container{max-width:var(--container); margin-inline:auto; padding-inline:clamp(16px,4vw,24px)}
+
+    /* Hero */
+    .hero{min-height:42vh; position:relative; color:#fff; display:grid; place-items:center; text-align:center}
+    .hero::before{
+      content:""; position:absolute; inset:0; z-index:-2;
+      background:
+        radial-gradient(70% 70% at 50% 20%, rgba(26,93,102,.9), rgba(15,62,91,.95) 45%, #0a2230 100%);
+      background-size:cover; background-position:center;
+    }
+    .hero::after{content:""; position:absolute; inset:0; z-index:-1; background:linear-gradient(180deg,rgba(0,0,0,.35),rgba(0,0,0,.25))}
+    .hero h1{margin:0 0 .4rem; font-weight:900; font-size:clamp(1.9rem,1.2rem + 2.4vw,2.8rem); letter-spacing:.01em}
+    .hero p{margin:0; color:rgba(255,255,255,.92); font-size:clamp(1rem,.95rem + .5vw,1.2rem)}
+
+    /* breadcrumb */
+    nav.breadcrumb{font-size:.95rem; color:var(--muted); padding:12px 0}
+    nav.breadcrumb ol{display:flex; gap:.5rem; list-style:none; padding:0; margin:0}
+    nav.breadcrumb li+li::before{content:"›"; opacity:.6; padding-inline:.25rem}
+
+    /* grid cards */
+    .grid{display:grid; gap:18px; grid-template-columns:repeat(3,1fr)}
+    @media (max-width: 980px){ .grid{grid-template-columns:repeat(2,1fr)} }
+    @media (max-width: 640px){ .grid{grid-template-columns:1fr} }
+
+    .card{display:block; background:#fff; border:1px solid #e9eef2; border-radius:var(--radius); box-shadow:var(--shadow);
+      padding:18px; transition:transform .15s ease, box-shadow .15s ease, border-color .15s ease; height:100%}
+    .card:hover{transform:translateY(-2px); border-color:#dfe6ec; box-shadow:0 14px 34px rgba(0,0,0,.08)}
+    .card .icon{width:44px; height:44px; border-radius:12px; background:#0f3e5b10; display:grid; place-items:center; margin-bottom:10px}
+    .card h3{margin:.25rem 0 .35rem; font-size:1.1rem}
+    .card p{margin:0; color:#475569; font-size:.98rem}
+    .card .more{display:inline-flex; align-items:center; gap:6px; margin-top:10px; font-weight:700; color:var(--brand)}
+
+    /* helper */
+    .lead{font-weight:700; font-size:clamp(1.05rem,1rem + .35vw,1.2rem)}
+    .section{padding-block:clamp(28px,6vw,64px)}
+    .note{background:#f7fafc; border:1px solid #e9f0f5; border-radius:var(--radius); padding:18px}
+  </style>
+</head>
+<body>
+  <!-- Hero -->
+  <header class="hero" role="banner">
+    <div class="container">
+      <h1>제품소개</h1>
+      <p>역률 개선과 전력 품질 향상을 위한 KESA 솔루션 허브</p>
+    </div>
+  </header>
+
+  <!-- Breadcrumb -->
+  <nav class="breadcrumb container" aria-label="Breadcrumb">
+    <ol>
+      <li><a href="../index.html">홈</a></li>
+      <li aria-current="page">제품소개</li>
+    </ol>
+  </nav>
+
+  <main class="container section">
+    <p class="lead">필요한 정보를 빠르게 찾을 수 있도록 세 분류로 구성했습니다. 개념을 이해하고, 제품을 살펴보고, 사양과 모델을 비교하세요.</p>
+
+    <div class="grid" role="list">
+      <!-- 카드 1: 역률이란? -->
+      <a class="card" role="listitem" href="./power-factor.html">
+        <div class="icon" aria-hidden="true">
+          <!-- inline SVG: PF -->
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M4 12a8 8 0 1 1 16 0" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <path d="M4 12h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="12" cy="12" r="2.5" stroke="currentColor" stroke-width="2"/>
+          </svg>
+        </div>
+        <h3>역률이란? (Power Factor)</h3>
+        <p>유효전력·무효전력 개념과 왜 역률 개선이 필요한지, 기대 효과까지 정리했습니다.</p>
+        <span class="more">자세히 보기 →</span>
+      </a>
+
+      <!-- 카드 2: KESA 시리즈 -->
+      <a class="card" role="listitem" href="./kesa-series.html">
+        <div class="icon" aria-hidden="true">
+          <!-- inline SVG: 제품/캐비닛 -->
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="5" y="3" width="14" height="18" rx="2" stroke="currentColor" stroke-width="2"/>
+            <path d="M9 7h6M9 11h6M9 15h6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h3>KESA 시리즈</h3>
+        <p>BENEFITS/FEATURES, 안전 설계와 구성 요소, 설치 및 유지보수 포인트를 소개합니다.</p>
+        <span class="more">시리즈 살펴보기 →</span>
+      </a>
+
+      <!-- 카드 3: 사양/모델 -->
+      <a class="card" role="listitem" href="./specs.html">
+        <div class="icon" aria-hidden="true">
+          <!-- inline SVG: 표/스펙 -->
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="2"/>
+            <path d="M3 11h18M9 5v14" stroke="currentColor" stroke-width="2"/>
+          </svg>
+        </div>
+        <h3>사양/모델</h3>
+        <p>전원·IP·온도 등 표준 사양과 KESA-S03 ~ KESA-300까지 치수·중량 모델표.</p>
+        <span class="more">사양 보러가기 →</span>
+      </a>
+    </div>
+
+    <div class="section">
+      <div class="note">
+        <p><strong>요금제도 참고:</strong> 한전 역률 기준(할인/할증, 적용 시간대)은 수시로 변경될 수 있습니다. 최신 내용은 <a href="../knowledge/kepco-power-factor.html">지식센터 · 역률 요금제</a>에서 확인하세요.</p>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

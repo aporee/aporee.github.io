@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>역률이란? · 역률 개선(PFC) | 한국전기절감원(주)</title>
+  <meta name="description" content="역률(Power Factor)의 정의, 왜 중요한가, 역률 개선(PFC)과 기대 효과. 한전(KEPCO) 역률 요금제 요약 링크 제공." />
+  <link rel="preload" as="image" href="../images/heroes/hero-powerfactor.png">
+  <style>
+    :root{ --brand:#0f3e5b; --accent:#1a5d66; --ink:#0b0b0b; --muted:#6b7280; --container:1100px; --radius:16px; --shadow:0 10px 30px rgba(0,0,0,.06); }
+    *{box-sizing:border-box}
+    body{margin:0; color:var(--ink); font:400 16px/1.75 system-ui,-apple-system,"Noto Sans KR",Segoe UI,Roboto,sans-serif}
+    a{color:inherit; text-decoration:none}
+    .container{max-width:var(--container); margin-inline:auto; padding-inline:clamp(16px,4vw,24px)}
+
+    /* Hero */
+    .hero{min-height:42vh; position:relative; color:#fff; display:grid; place-items:center; text-align:center}
+    .hero::before{content:""; position:absolute; inset:0; z-index:-2; background:
+      radial-gradient(70% 70% at 50% 20%, rgba(26,93,102,.9), rgba(15,62,91,.95) 45%, #0a2230 100%),
+      url("../images/heroes/hero-powerfactor.png"); background-size:cover; background-position:center}
+    .hero::after{content:""; position:absolute; inset:0; z-index:-1; background:linear-gradient(180deg,rgba(0,0,0,.35),rgba(0,0,0,.25))}
+    .hero h1{margin:0 0 .4rem; font-weight:900; font-size:clamp(1.9rem,1.2rem + 2.4vw,2.8rem)}
+    .hero p{margin:0; color:rgba(255,255,255,.92); font-size:clamp(1rem,.95rem + .5vw,1.2rem)}
+
+    /* breadcrumb */
+    nav.breadcrumb{font-size:.95rem; color:var(--muted); padding:12px 0}
+    nav.breadcrumb ol{display:flex; gap:.5rem; list-style:none; padding:0; margin:0}
+    nav.breadcrumb li+li::before{content:"›"; opacity:.6; padding-inline:.25rem}
+
+    /* layout */
+    main section{padding-block:clamp(28px,6vw,64px)}
+    h2{margin:.2rem 0 .8rem; font-size:clamp(1.25rem,1.05rem + .9vw,1.8rem)}
+    .lead{font-weight:700; font-size:clamp(1.05rem,1rem + .4vw,1.2rem)}
+    .split{display:grid; gap:24px; grid-template-columns:1fr 320px}
+    @media (max-width: 900px){ .split{grid-template-columns:1fr} }
+
+    .panel{border:1px solid #e9eef2; border-radius:var(--radius); padding:18px; box-shadow:var(--shadow); background:#fff}
+    .note{background:#f7fafc; border:1px solid #e9f0f5; border-radius:var(--radius); padding:18px}
+
+    .toc{border:1px solid #e9eef2; border-radius:12px; padding:12px}
+    .toc a{display:block; padding:4px 0}
+    article h2{scroll-margin-top:90px}
+    .cta{display:flex; gap:10px; flex-wrap:wrap; margin-top:12px}
+    .btn{display:inline-block; padding:.65rem .9rem; border-radius:12px; border:1px solid #d6dde3; font-weight:800}
+    .btn.primary{background:var(--brand); color:#fff; border-color:var(--brand)}
+  </style>
+</head>
+<body>
+  <!-- Hero -->
+  <header class="hero" role="banner">
+    <div class="container">
+      <h1>역률이란?</h1>
+      <p>전력 효율을 좌우하는 핵심 지표, 왜 중요한가</p>
+    </div>
+  </header>
+
+  <!-- Breadcrumb -->
+  <nav class="breadcrumb container" aria-label="Breadcrumb">
+    <ol>
+      <li><a href="../index.html">홈</a></li>
+      <li><a href="./index.html">제품소개</a></li>
+      <li aria-current="page">역률이란?</li>
+    </ol>
+  </nav>
+
+  <main class="container split">
+    <article>
+      <h2 id="definition">역률(Power Factor)의 정의</h2>
+      <p class="lead">역률은 교류(AC) 회로에서 실제로 일을 하는 유효 전력(kW)이 전체 전력 요구량인 피상 전력(kVA)에서 차지하는 비율입니다.</p>
+      <p>무효 전력은 모터 등 유도성 장비가 자기장을 만들기 위해 필요하지만, 직접적인 일에는 기여하지 않습니다. 전압과 전류의 위상이 어긋날수록(위상차) 무효 전력이 커지고 역률은 낮아집니다. 역률은 0.01~1.00(또는 1%~100%) 사이이며, 통상 <strong>0.92 미만은 저역률</strong>, <strong>1.00은 이상적</strong>으로 봅니다. 또한 부하 특성에 따라 <strong>지상(Lagging)</strong>과 <strong>진상(Leading)</strong>으로 표현합니다.</p>
+
+      <h2 id="pfc">역률 개선(PFC)의 필요성</h2>
+      <p>역률 개선은 콘덴서(및 리액터 등)를 회로에 투입해 위상차를 보정하고 전류를 줄이는 기술입니다. 이는 다음과 같은 배경에서 중요성이 커지고 있습니다: 기후변화와 에너지 비용 상승, 수요 기반 요금제, 저탄소 전환 정책 등. 현장에서의 효과는 전력 손실 저감, 설비 여유도 확보, 전기요금의 벌금(할증) 회피 등으로 연결됩니다.</p>
+
+      <div class="note">
+        <strong>한전(KEPCO) 역률 요금제 안내</strong>
+        <p>지상 92% 미만(또는 진상 0.92 미만) 역률에 대해 할증, 92% 초과~97% 구간에 대해 할인 제도가 운영됩니다. 적용 시간대 및 기준은 개정될 수 있으므로, 최신 내용은 <a href="../knowledge/kepco-power-factor.html">지식센터 · 역률 요금제</a> 페이지에서 확인하세요.</p>
+      </div>
+
+      <h2 id="benefits">역률 개선의 효과(요약)</h2>
+      <ul>
+        <li><strong>무효 전력 패널티 제거</strong> — 역률을 0.92 이상으로 유지해 할증료를 없애거나 줄입니다.</li>
+        <li><strong>계약/가용 용량 요금 절감</strong> — kVA 감소로 적정 용량 책정이 가능해 과다 요금을 피합니다.</li>
+        <li><strong>초과 사용 벌금 저감</strong> — 계약 용량 초과분에 대한 징벌적 요금 리스크를 낮춥니다.</li>
+        <li><strong>설비 손실 감소</strong> — 선로·스위치기어·변압기의 손실(kWh/h) 저감.</li>
+        <li><strong>CO₂ 배출 저감</strong> — 비효율 소비 축소로 간접적 배출 감소.</li>
+        <li><strong>증설·업그레이드 비용 회피</strong> — 같은 인프라로 더 많은 부하 수용(설비 여유도 증가).</li>
+        <li><strong>전력 품질 향상</strong> — 안정적 전압/파형 유지에 기여, 민감 설비의 고장·수명 저하 리스크 감소.</li>
+      </ul>
+
+      <h2 id="sites">어떤 현장에서 유리한가</h2>
+      <p>모터가 많은 산업설비(컨베이어, 펌프, 믹서, 컴프레서, HVAC, 엘리베이터 등), 냉동·냉장·화학 플랜트, 정보통신·의료 설비, 호텔·레저, 농축수산, 유통·교육 시설 등 교류 부하가 큰 대부분의 사업장에서 효과적입니다. 재생에너지(풍력 등)에서도 무효 전력 저감은 공급량 증대와 비용 절감의 기회를 제공합니다.</p>
+
+      <div class="cta">
+        <a class="btn primary" href="./kesa-series.html">KESA 시리즈 보기</a>
+        <a class="btn" href="./specs.html">사양/모델 확인</a>
+      </div>
+    </article>
+
+    <aside class="panel" aria-labelledby="quicklinks">
+      <h3 id="quicklinks" style="margin:.1rem 0 .6rem; font-size:1.05rem">바로가기</h3>
+      <div class="toc" aria-label="페이지 목차">
+        <a href="#definition">역률의 정의</a>
+        <a href="#pfc">역률 개선(PFC)</a>
+        <a href="#benefits">효과 요약</a>
+        <a href="#sites">적용 분야</a>
+      </div>
+      <div class="note" style="margin-top:14px">
+        <p style="margin:0"><strong>참고:</strong> 자세한 장점/특징은 <a href="./kesa-series.html">KESA 시리즈</a> 페이지에서, 표준 사양과 모델표는 <a href="./specs.html">사양/모델</a> 페이지에서 보실 수 있습니다.</p>
+      </div>
+    </aside>
+  </main>
+</body>
+</html>

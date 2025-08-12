@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>KESA 시리즈 | 한국전기절감원(주)</title>
+  <meta name="description" content="KESA 전력절감기 시리즈의 주요 장점(BENEFITS)과 특징(FEATURES), 설계 철학 및 적용 분야 소개." />
+  <link rel="preload" as="image" href="../images/heroes/hero-kesa-series.png">
+  <style>
+    :root{ --brand:#0f3e5b; --accent:#1a5d66; --ink:#0b0b0b; --muted:#6b7280; --container:1100px; --radius:16px; --shadow:0 10px 30px rgba(0,0,0,.06); }
+    *{box-sizing:border-box}
+    body{margin:0; color:var(--ink); font:400 16px/1.75 system-ui,-apple-system,"Noto Sans KR",Segoe UI,Roboto,sans-serif}
+    a{color:inherit; text-decoration:none}
+    .container{max-width:var(--container); margin-inline:auto; padding-inline:clamp(16px,4vw,24px)}
+
+    /* Hero */
+    .hero{min-height:42vh; position:relative; color:#fff; display:grid; place-items:center; text-align:center}
+    .hero::before{content:""; position:absolute; inset:0; z-index:-2; background:
+      radial-gradient(70% 70% at 50% 20%, rgba(26,93,102,.9), rgba(15,62,91,.95) 45%, #0a2230 100%),
+      url("../images/heroes/hero-kesa-series.png"); background-size:cover; background-position:center}
+    .hero::after{content:""; position:absolute; inset:0; z-index:-1; background:linear-gradient(180deg,rgba(0,0,0,.35),rgba(0,0,0,.25))}
+    .hero h1{margin:0 0 .4rem; font-weight:900; font-size:clamp(1.9rem,1.2rem + 2.4vw,2.8rem)}
+    .hero p{margin:0; color:rgba(255,255,255,.92); font-size:clamp(1rem,.95rem + .5vw,1.2rem)}
+
+    /* breadcrumb */
+    nav.breadcrumb{font-size:.95rem; color:var(--muted); padding:12px 0}
+    nav.breadcrumb ol{display:flex; gap:.5rem; list-style:none; padding:0; margin:0}
+    nav.breadcrumb li+li::before{content:"›"; opacity:.6; padding-inline:.25rem}
+
+    /* layout */
+    main section{padding-block:clamp(28px,6vw,64px)}
+    h2{margin:.2rem 0 .8rem; font-size:clamp(1.25rem,1.05rem + .9vw,1.8rem)}
+    .split{display:grid; gap:24px; grid-template-columns:1fr 320px}
+    @media (max-width: 900px){ .split{grid-template-columns:1fr} }
+    .panel{border:1px solid #e9eef2; border-radius:var(--radius); padding:18px; box-shadow:var(--shadow); background:#fff}
+    .note{background:#f7fafc; border:1px solid #e9f0f5; border-radius:var(--radius); padding:18px}
+    ul{margin-top:0; padding-left:1.2rem}
+    .cta{display:flex; gap:10px; flex-wrap:wrap; margin-top:12px}
+    .btn{display:inline-block; padding:.65rem .9rem; border-radius:12px; border:1px solid #d6dde3; font-weight:800}
+    .btn.primary{background:var(--brand); color:#fff; border-color:var(--brand)}
+  </style>
+</head>
+<body>
+  <!-- Hero -->
+  <header class="hero" role="banner">
+    <div class="container">
+      <h1>KESA 시리즈</h1>
+      <p>검증된 절감 효과와 안전 설계의 전력 절감 솔루션</p>
+    </div>
+  </header>
+
+  <!-- Breadcrumb -->
+  <nav class="breadcrumb container" aria-label="Breadcrumb">
+    <ol>
+      <li><a href="../index.html">홈</a></li>
+      <li><a href="./index.html">제품소개</a></li>
+      <li aria-current="page">KESA 시리즈</li>
+    </ol>
+  </nav>
+
+  <main class="container split">
+    <article>
+      <h2 id="benefits">주요 장점 (BENEFITS)</h2>
+      <ul>
+        <li>에너지 소비량 kWh 및 고조파 손실 감소</li>
+        <li>무효 전력 과징금 제거</li>
+        <li>계약 용량 및 가용 용량 요금 절감</li>
+        <li>최대 수요 기반 요금 감소</li>
+        <li>이산화탄소 배출량 감소</li>
+        <li>회로 전류를 낮춰 추가 부하 연결 가능</li>
+        <li>유지보수 비용 절감</li>
+      </ul>
+
+      <h2 id="features">주요 특징 (FEATURES)</h2>
+      <ul>
+        <li>단상/3상 220V~480V 지원, 견고하고 수명이 긴 SH 콘덴서 채택</li>
+        <li>고조파 손실 저감용 리액터 적용</li>
+        <li>무정전 설치 가능, 시운전 불필요</li>
+        <li>다양한 전기 정보 표시 에너지 미터 내장</li>
+        <li>수요자 맞춤형 설계(3kW~300kW급)</li>
+        <li>방수·방화·방폭 고려 외함 설계</li>
+        <li>장기간 성능 보증, 유지보수 최소화</li>
+      </ul>
+
+      <h2 id="philosophy">설계 철학</h2>
+      <p>한국전기절감원㈜의 역률 개선 장비는 산업 현장 경험과 학술적 이론을 결합해 설계되었습니다. 전력 계통, 지능 제어, 에너지 관리 분야의 전문성을 바탕으로 안전성·효율성을 동시에 확보했습니다.</p>
+
+      <h2 id="sectors">적용 분야</h2>
+      <ul>
+        <li>식품·플라스틱 제조</li>
+        <li>석산·시멘트(파쇄·분쇄)</li>
+        <li>냉동·냉장 시설, 화학 플랜트</li>
+        <li>일반 산업·가정용품 제조</li>
+        <li>농업·수산 양식, 가공업</li>
+        <li>도/소매, 레저·호텔, 피트니스</li>
+        <li>정보통신·의료·과학 단지</li>
+        <li>상업·교육 시설</li>
+      </ul>
+
+      <div class="cta">
+        <a class="btn primary" href="./specs.html">사양/모델 확인</a>
+        <a class="btn" href="./power-factor.html">역률이란?</a>
+      </div>
+    </article>
+
+    <aside class="panel" aria-labelledby="quicklinks">
+      <h3 id="quicklinks" style="margin:.1rem 0 .6rem; font-size:1.05rem">바로가기</h3>
+      <div class="note">
+        <p style="margin:0"><a href="#benefits">BENEFITS</a> · <a href="#features">FEATURES</a> · <a href="#philosophy">설계 철학</a> · <a href="#sectors">적용 분야</a></p>
+      </div>
+      <div class="note" style="margin-top:14px">
+        <p style="margin:0"><strong>참고:</strong> 표준 사양과 모델별 치수·중량은 <a href="./specs.html">사양/모델</a> 페이지에서 확인하세요.</p>
+      </div>
+    </aside>
+  </main>
+</body>
+</html>
