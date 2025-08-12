@@ -1,26 +1,112 @@
-<main id="content">
-  <nav aria-label="breadcrumb">
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>회사소개 · 인사말 | 한국전기절감원(주)</title>
+  <meta name="description" content="한국전기절감원(주) 인사말. KESA 시리즈 전력 절감 솔루션과 지속가능한 비전.">
+  <!-- GitHub Pages(프로젝트 페이지)라면 경로 보정을 위해 주석 해제 -->
+  <!-- <base href="/website/"> -->
+
+  <style>
+    :root{
+      --brand:#0f3e5b; --accent:#1a5d66; --ink:#0b0b0b; --muted:#6b7280;
+      --container:1100px; --radius:16px; --shadow:0 10px 30px rgba(0,0,0,.06);
+    }
+    *{box-sizing:border-box}
+    body{margin:0; color:var(--ink);
+      font:400 16px/1.75 system-ui,-apple-system,"Noto Sans KR",Segoe UI,Roboto,sans-serif;}
+    a{color:inherit; text-decoration:none}
+    .container{max-width:var(--container); margin-inline:auto; padding-inline:clamp(16px,4vw,24px)}
+
+    /* Hero */
+    .hero{min-height:42vh; position:relative; color:#fff; display:grid; place-items:center; text-align:center}
+    .hero::before{
+      content:""; position:absolute; inset:0; z-index:-2;
+      background:
+        radial-gradient(70% 70% at 50% 20%, rgba(26,93,102,.9), rgba(15,62,91,.95) 45%, #0a2230 100%),
+        url("./images/heroes/hero-about.png");
+      background-size:cover; background-position:center;
+    }
+    .hero::after{content:""; position:absolute; inset:0; z-index:-1; background:linear-gradient(180deg,rgba(0,0,0,.35),rgba(0,0,0,.25))}
+    .hero h1{margin:0 0 .4rem; font-weight:900; font-size:clamp(1.9rem,1.2rem + 2.4vw,2.8rem); letter-spacing:.01em}
+    .hero p{margin:0; color:rgba(255,255,255,.92); font-size:clamp(1rem,.95rem + .5vw,1.2rem)}
+
+    /* breadcrumb */
+    nav.breadcrumb{font-size:.95rem; color:var(--muted); padding:12px 0}
+    nav.breadcrumb ol{display:flex; gap:.5rem; list-style:none; padding:0; margin:0}
+    nav.breadcrumb li+li::before{content:"›"; opacity:.6; padding-inline:.25rem}
+
+    /* layout */
+    main section{padding-block:clamp(28px,6vw,64px)}
+    h2{margin:.2rem 0 .8rem; font-size:clamp(1.25rem,1.05rem + .9vw,1.8rem)}
+    .lead{font-weight:700; font-size:clamp(1.05rem,1rem + .4vw,1.2rem)}
+    .split{display:grid; gap:24px; grid-template-columns:1fr 320px}
+    @media (max-width: 900px){ .split{grid-template-columns:1fr} }
+
+    .panel{border:1px solid #e9eef2; border-radius:var(--radius); padding:18px; box-shadow:var(--shadow); background:#fff}
+    .note{background:#f7fafc; border:1px solid #e9f0f5; border-radius:var(--radius); padding:18px}
+
+    .quick h3{margin:.1rem 0 .6rem; font-size:1.05rem}
+    .quick ul{margin:.25rem 0 0; padding-left:1.1rem}
+    .quick li{margin:.15rem 0}
+    .cta{display:flex; gap:10px; flex-wrap:wrap; margin-top:12px}
+    .btn{display:inline-block; padding:.65rem .9rem; border-radius:12px; border:1px solid #d6dde3; font-weight:800}
+    .btn.primary{background:var(--brand); color:#fff; border-color:var(--brand)}
+    .sign{text-align:right; margin-top:12px; font-weight:700}
+  </style>
+</head>
+<body>
+
+  <!-- Hero -->
+  <header class="hero">
+    <div class="container">
+      <h1>인사말</h1>
+      <p>전력 절감으로 지속가능한 미래를 만듭니다</p>
+    </div>
+  </header>
+
+  <!-- Breadcrumb -->
+  <nav class="breadcrumb container" aria-label="Breadcrumb">
     <ol>
-      <li><a href="/">홈</a></li>
-      <li><a href="/about.html">회사소개</a></li>
+      <li><a href="./index.html">홈</a></li>
+      <li><a href="./about.html">회사소개</a></li>
       <li aria-current="page">인사말</li>
     </ol>
   </nav>
 
-  <h1>인사말</h1>
-  <p class="subtitle">GREETING</p>
+  <main class="container">
+    <section class="split">
+      <!-- 본문 -->
+      <article>
+        <h2>한국전기절감원(주)의 약속</h2>
+        <p class="lead">한국전기절감원㈜은 50여 년간 축적된 전기에너지 절감 기술과 연구·교육 현장 경험을 바탕으로, 고효율·친환경 전력 절감 솔루션을 제공합니다.</p>
+        <div class="note">
+          <p>2050년 탄소중립 사회를 향해 나아가는 지금, 폭염·폭우 등 기후변화와 자원 고갈, 전기요금 인상은 모두가 함께 해결해야 할 과제입니다. 우리는 안정적이면서도 효율적인 전력 공급을 통해 지속가능한 산업 생태계 구축에 기여하고 있습니다.</p>
+        </div>
 
-  <section aria-label="대표 인사말">
-    <figure>
-      <!-- 나중에 이미지 추가 -->
-      <figcaption>고효율의 소비전력 절감과 안정된 전력공급</figcaption>
-    </figure>
-    <p>
-      (여기에 대표나 회사의 핵심 메시지: 창립 배경, 비전, 고객에 대한 약속, 차별화 포인트 등)
-    </p>
-    <p>
-      (연혁·성과나 인증, 향후 목표 등을 덧붙일 수 있음)
-    </p>
-    <p class="signature">대표이사 홍길동</p>
-  </section>
-</main>
+        <h2>KESA 시리즈, 검증된 절감 효과</h2>
+        <p>자사 특허 기술이 적용된 <strong>KESA 시리즈</strong>는 저역률·고조파 전력 손실을 해결하고 전력 품질을 향상시키는 <strong>콘덴서 뱅크 설계</strong>를 적용했습니다. 과열로 인한 화재·폭발 위험을 낮춘 구조로 안전성을 강화했고, 설치 후 <strong>10년 이상 10%+</strong> 절감을 목표로 안정적인 성능을 제공합니다. 앞으로도 AI·센서·제어 메카트로닉스를 결합한 차세대 절감 기술로 효율과 안전성을 지속적으로 높이겠습니다.</p>
+
+        <h2>함께 성장하는 에너지 파트너</h2>
+        <p>한국전기절감원㈜은 국내를 넘어 세계 시장으로 도약하고 있습니다. 대학·연구기관과 협력해 기술 혁신을 선도하고, 후손들에게 더 나은 환경을 물려줄 수 있도록 최선을 다하겠습니다. 언제나 고객과 <strong>동반 성장</strong>하는 든든한 파트너가 되겠습니다.</p>
+        <p class="sign">한국전기절감원㈜ 임직원 일동</p>
+      </article>
+
+      <!-- 사이드: 회사소개 바로가기 -->
+      <aside class="panel quick" aria-labelledby="quicklinks">
+        <h3 id="quicklinks">회사 소개 바로가기</h3>
+        <ul>
+          <li><a href="./about-history.html">회사 연혁</a></li>
+          <li><a href="./about-certifications.html">특허·인증</a></li>
+          <li><a href="./contact.html">오시는 길</a></li>
+        </ul>
+        <div class="cta">
+          <a class="btn primary" href="./products/index.html">제품소개</a>
+          <a class="btn" href="./effects.html">설치효과·특성</a>
+        </div>
+      </aside>
+    </section>
+  </main>
+</body>
+</html>
