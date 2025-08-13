@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>설치사례 | 한국전기절감원(주)</title>
+  <meta name="description" content="KESA 전력절감기 설치사례: 업종별 현장 사진과 성능지표(역률 전/후, 전류 감소율, 절감 추정치) 소개." />
+  <link rel="preload" as="image" href="../images/heroes/hero-cases.png">
+  <style>
+    :root{ --brand:#0f3e5b; --accent:#1a5d66; --ink:#0b0b0b; --muted:#6b7280; --container:1100px; --radius:16px; --shadow:0 10px 30px rgba(0,0,0,.06);} 
+    *{box-sizing:border-box}
+    body{margin:0; color:var(--ink); font:400 16px/1.75 system-ui,-apple-system,"Noto Sans KR",Segoe UI,Roboto,sans-serif}
+    a{color:inherit; text-decoration:none}
+    .container{max-width:var(--container); margin-inline:auto; padding-inline:clamp(16px,4vw,24px)}
+
+    /* Hero */
+    .hero{min-height:40vh; position:relative; color:#fff; display:grid; place-items:center; text-align:center}
+    .hero::before{content:""; position:absolute; inset:0; z-index:-2; background:
+      radial-gradient(70% 70% at 50% 20%, rgba(26,93,102,.9), rgba(15,62,91,.95) 45%, #0a2230 100%),
+      url("../images/heroes/hero-cases.png"); background-size:cover; background-position:center}
+    .hero::after{content:""; position:absolute; inset:0; z-index:-1; background:linear-gradient(180deg,rgba(0,0,0,.35),rgba(0,0,0,.25))}
+    .hero h1{margin:0 0 .4rem; font-weight:900; font-size:clamp(1.9rem,1.2rem + 2.4vw,2.8rem)}
+    .hero p{margin:0; color:rgba(255,255,255,.92); font-size:clamp(1rem,.95rem + .5vw,1.2rem)}
+
+    /* breadcrumb */
+    nav.breadcrumb{font-size:.95rem; color:var(--muted); padding:12px 0}
+    nav.breadcrumb ol{display:flex; gap:.5rem; list-style:none; padding:0; margin:0}
+    nav.breadcrumb li+li::before{content:"›"; opacity:.6; padding-inline:.25rem}
+
+    /* controls */
+    .controls{display:flex; flex-wrap:wrap; gap:10px; align-items:center; padding:12px 0}
+    .chip{display:inline-flex; align-items:center; padding:.45rem .7rem; border:1px solid #d6dde3; border-radius:999px; font-weight:700; cursor:pointer; user-select:none}
+    .chip.active{background:var(--brand); color:#fff; border-color:var(--brand)}
+    .search{flex:1 1 220px}
+    .search input{width:100%; padding:.6rem .8rem; border:1px solid #d6dde3; border-radius:12px; font:inherit}
+
+    /* grid */
+    .grid{display:grid; gap:18px; grid-template-columns:repeat(3,1fr)}
+    @media (max-width: 980px){ .grid{grid-template-columns:repeat(2,1fr)} }
+    @media (max-width: 640px){ .grid{grid-template-columns:1fr} }
+
+    .card{display:flex; flex-direction:column; background:#fff; border:1px solid #e9eef2; border-radius:var(--radius); box-shadow:var(--shadow); overflow:hidden}
+    .thumb{aspect-ratio:16/9; width:100%; background:#e5e7eb; object-fit:cover}
+    .card-body{padding:14px}
+    .tag{display:inline-block; font-size:.82rem; padding:.2rem .5rem; border-radius:999px; background:#0f3e5b10; border:1px solid #d6dde3; margin-right:6px}
+    .card h3{margin:.25rem 0 .35rem; font-size:1.05rem}
+    .meta{font-size:.92rem; color:#475569}
+    dl{display:grid; grid-template-columns:auto 1fr; gap:.25rem .6rem; margin:.4rem 0 0}
+    dt{color:#64748b}
+    dd{margin:0; font-weight:700}
+    .foot{display:flex; align-items:center; justify-content:space-between; padding:12px 14px; border-top:1px solid #eef2f6}
+    .btn{display:inline-block; padding:.55rem .8rem; border-radius:12px; border:1px solid #d6dde3; font-weight:800}
+    .btn.primary{background:var(--brand); color:#fff; border-color:var(--brand)}
+
+    .note{background:#f7fafc; border:1px solid #e9f0f5; border-radius:12px; padding:14px; margin-top:18px}
+  </style>
+</head>
+<body>
+  <!-- Hero -->
+  <header class="hero" role="banner">
+    <div class="container">
+      <h1>설치사례</h1>
+      <p>업종별 현장 사진과 성능지표를 확인하세요</p>
+    </div>
+  </header>
+
+  <!-- Breadcrumb -->
+  <nav class="breadcrumb container" aria-label="Breadcrumb">
+    <ol>
+      <li><a href="../index.html">홈</a></li>
+      <li aria-current="page">설치사례</li>
+    </ol>
+  </nav>
+
+  <main class="container">
+    <!-- Controls -->
+    <div class="controls" aria-label="필터">
+      <div class="chips" role="group" aria-label="업종 필터">
+        <span class="chip active" data-sector="all">전체</span>
+        <span class="chip" data-sector="제조">제조</span>
+        <span class="chip" data-sector="식음료">식음료</span>
+        <span class="chip" data-sector="냉동/냉장">냉동/냉장</span>
+        <span class="chip" data-sector="호텔/레저">호텔/레저</span>
+        <span class="chip" data-sector="데이터센터">데이터센터</span>
+        <span class="chip" data-sector="병원">병원</span>
+        <span class="chip" data-sector="교육">교육</span>
+        <span class="chip" data-sector="상업">상업</span>
+        <span class="chip" data-sector="농축수산">농축수산</span>
+      </div>
+      <div class="search" role="search">
+        <label class="sr-only" for="q">현장 검색</label>
+        <input id="q" placeholder="현장명, 지역 검색" />
+      </div>
+    </div>
+
+    <!-- Grid -->
+    <section class="grid" id="cases" aria-label="설치사례 목록">
+      <!-- 카드 예시 1 -->
+      <article class="card" data-sector="식음료" data-size="50" data-name="부산 ○○식품" data-city="부산">
+        <img class="thumb" src="../images/cases/case-01.jpg" alt="부산 ○○식품 설치 현장 사진" loading="lazy">
+        <div class="card-body">
+          <span class="tag">식음료</span>
+          <h3>부산 ○○식품</h3>
+          <div class="meta">설치용량 50 kVAR · 2025-07</div>
+          <dl>
+            <dt>역률(전/후)</dt><dd>0.84 → 0.97</dd>
+            <dt>전류 감소</dt><dd>≈ 12%</dd>
+            <dt>요금 절감</dt><dd>추정 8~12%</dd>
+          </dl>
+        </div>
+        <div class="foot">
+          <a class="btn" href="../products/power-factor.html">역률이란?</a>
+          <a class="btn primary" href="../contact.html">도입 상담</a>
+        </div>
+      </article>
+
+      <!-- 카드 예시 2 -->
+      <article class="card" data-sector="제조" data-size="100" data-name="경기 △△제조" data-city="수원">
+        <img class="thumb" src="../images/cases/case-02.jpg" alt="경기 △△제조 설치 현장 사진" loading="lazy">
+        <div class="card-body">
+          <span class="tag">제조</span>
+          <h3>경기 △△제조</h3>
+          <div class="meta">설치용량 100 kVAR · 2025-06</div>
+          <dl>
+            <dt>역률(전/후)</dt><dd>0.78 → 0.96</dd>
+            <dt>전류 감소</dt><dd>≈ 18%</dd>
+            <dt>요금 절감</dt><dd>추정 10~14%</dd>
+          </dl>
+        </div>
+        <div class="foot">
+          <a class="btn" href="../products/kesa-series.html">KESA 시리즈</a>
+          <a class="btn primary" href="../contact.html">도입 상담</a>
+        </div>
+      </article>
+
+      <!-- 카드 예시 3 -->
+      <article class="card" data-sector="냉동/냉장" data-size="30" data-name="인천 물류센터" data-city="인천">
+        <img class="thumb" src="../images/cases/case-03.jpg" alt="인천 물류센터 설치 현장 사진" loading="lazy">
+        <div class="card-body">
+          <span class="tag">냉동/냉장</span>
+          <h3>인천 물류센터</h3>
+          <div class="meta">설치용량 30 kVAR · 2025-05</div>
+          <dl>
+            <dt>역률(전/후)</dt><dd>0.81 → 0.98</dd>
+            <dt>전류 감소</dt><dd>≈ 15%</dd>
+            <dt>요금 절감</dt><dd>추정 9~13%</dd>
+          </dl>
+        </div>
+        <div class="foot">
+          <a class="btn" href="../products/specs.html">사양/모델</a>
+          <a class="btn primary" href="../contact.html">도입 상담</a>
+        </div>
+      </article>
+
+      <!-- 카드 예시 4 -->
+      <article class="card" data-sector="상업" data-size="20" data-name="서울 ○○쇼핑몰" data-city="서울">
+        <img class="thumb" src="../images/cases/case-04.jpg" alt="서울 ○○쇼핑몰 설치 현장 사진" loading="lazy">
+        <div class="card-body">
+          <span class="tag">상업</span>
+          <h3>서울 ○○쇼핑몰</h3>
+          <div class="meta">설치용량 20 kVAR · 2025-04</div>
+          <dl>
+            <dt>역률(전/후)</dt><dd>0.86 → 0.98</dd>
+            <dt>전류 감소</dt><dd>≈ 9%</dd>
+            <dt>요금 절감</dt><dd>추정 6~9%</dd>
+          </dl>
+        </div>
+        <div class="foot">
+          <a class="btn" href="../products/power-factor.html">역률이란?</a>
+          <a class="btn primary" href="../contact.html">도입 상담</a>
+        </div>
+      </article>
+
+      <!-- 카드 예시 5 -->
+      <article class="card" data-sector="호텔/레저" data-size="80" data-name="강원 리조트" data-city="강릉">
+        <img class="thumb" src="../images/cases/case-05.jpg" alt="강원 리조트 설치 현장 사진" loading="lazy">
+        <div class="card-body">
+          <span class="tag">호텔/레저</span>
+          <h3>강원 리조트</h3>
+          <div class="meta">설치용량 80 kVAR · 2025-03</div>
+          <dl>
+            <dt>역률(전/후)</dt><dd>0.80 → 0.97</dd>
+            <dt>전류 감소</dt><dd>≈ 16%</dd>
+            <dt>요금 절감</dt><dd>추정 9~13%</dd>
+          </dl>
+        </div>
+        <div class="foot">
+          <a class="btn" href="../products/kesa-series.html">KESA 시리즈</a>
+          <a class="btn primary" href="../contact.html">도입 상담</a>
+        </div>
+      </article>
+
+      <!-- 카드 예시 6 -->
+      <article class="card" data-sector="병원" data-size="60" data-name="대전 ○○병원" data-city="대전">
+        <img class="thumb" src="../images/cases/case-06.jpg" alt="대전 ○○병원 설치 현장 사진" loading="lazy">
+        <div class="card-body">
+          <span class="tag">병원</span>
+          <h3>대전 ○○병원</h3>
+          <div class="meta">설치용량 60 kVAR · 2025-02</div>
+          <dl>
+            <dt>역률(전/후)</dt><dd>0.79 → 0.95</dd>
+            <dt>전류 감소</dt><dd>≈ 14%</dd>
+            <dt>요금 절감</dt><dd>추정 8~12%</dd>
+          </dl>
+        </div>
+        <div class="foot">
+          <a class="btn" href="../products/specs.html">사양/모델</a>
+          <a class="btn primary" href="../contact.html">도입 상담</a>
+        </div>
+      </article>
+    </section>
+
+    <div class="note" role="note">
+      <p style="margin:0"><strong>안내:</strong> 상기 수치는 현장 조건(부하 패턴, 설비 구성, 운전 방식)에 따라 달라질 수 있는 <em>예시</em>입니다. 실제 기대 효과는 현장 진단 후 제안서에서 확정합니다.</p>
+    </div>
+
+    <div class="controls" style="justify-content:space-between">
+      <a class="btn" href="../products/kesa-series.html">KESA 시리즈</a>
+      <a class="btn primary" href="../contact.html">문의하기</a>
+    </div>
+  </main>
+
+  <script>
+    // 간단한 필터 & 검색
+    (function(){
+      const chips = document.querySelectorAll('.chip');
+      const grid = document.getElementById('cases');
+      const cards = Array.from(grid.querySelectorAll('.card'));
+      const q = document.getElementById('q');
+      let sector = 'all';
+
+      function apply(){
+        const term = (q.value || '').trim().toLowerCase();
+        cards.forEach(card => {
+          const okSector = sector === 'all' || card.dataset.sector === sector;
+          const text = (card.dataset.name + ' ' + card.dataset.city + ' ' + card.dataset.sector).toLowerCase();
+          const okSearch = !term || text.includes(term);
+          card.style.display = (okSector && okSearch) ? '' : 'none';
+        });
+      }
+
+      chips.forEach(c => c.addEventListener('click', () => {
+        chips.forEach(x => x.classList.remove('active'));
+        c.classList.add('active');
+        sector = c.dataset.sector;
+        apply();
+      }));
+
+      q.addEventListener('input', apply);
+    })();
+  </script>
+</body>
+</html>
