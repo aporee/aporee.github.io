@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>전력절감 효과와 사례 | 한국전기절감원(주)</title>
+  <meta name="description" content="KESA 전력절감기의 실제 효과와 설치 사례를 확인하세요. 검증된 데이터로 증명합니다." />
+  <link rel="preload" as="image" href="../../../images/heroes/hero-effects.png">
+  <style>
+    /* 공통 스타일 */
+    :root{ --brand:#0f3e5b; --ink:#0b0b0b; --container:1100px; --radius:16px; --shadow:0 10px 30px rgba(0,0,0,.06);}
+    body{margin:0; color:var(--ink); font:400 16px/1.75 system-ui, "Noto Sans KR", sans-serif;}
+    .container{max-width:var(--container); margin:0 auto; padding:16px;}
+    .hero{min-height:42vh; position:relative; color:#fff; display:grid; place-items:center; text-align:center;}
+    .hero::before{content:""; position:absolute; inset:0; z-index:-2;
+      background: radial-gradient(70% 70% at 50% 20%, rgba(26,93,102,.9), rgba(15,62,91,.95) 45%, #0a2230 100%),
+                  url("../../../images/heroes/hero-effects.png");
+      background-size:cover; background-position:center;}
+    .hero::after{content:""; position:absolute; inset:0; z-index:-1; background:linear-gradient(180deg,rgba(0,0,0,.35),rgba(0,0,0,.25));}
+    h1 {margin:0; font-weight:900; font-size:clamp(1.9rem,1.2rem+2.4vw,2.8rem);}
+    .breadcrumb{font-size:.95rem; color:#6b7280; padding:12px 0;}
+    .breadcrumb ol{display:flex; gap:.5rem; list-style:none; padding:0; margin:0;}
+    .breadcrumb li+li::before{content:"›"; opacity:.6; padding:0 .25rem;}
+    main{padding:32px 0;}
+    h2{margin:.5rem 0 1rem; font-size:clamp(1.25rem,1.05rem+0.9vw,1.8rem);}
+    
+    /* 효과 요약 */
+    .effects-summary{background:linear-gradient(135deg, #f0fdf4, #dcfce7); border-radius:var(--radius); padding:2rem; margin:2rem 0;}
+    .effects-header{text-align:center; margin-bottom:2rem;}
+    .effects-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(250px, 1fr)); gap:1.5rem; margin:2rem 0;}
+    .effect-item{background:#fff; padding:1.5rem; border-radius:var(--radius); box-shadow:var(--shadow); text-align:center;}
+    .effect-icon{font-size:2.5rem; margin-bottom:1rem;}
+    .effect-title{font-weight:700; color:var(--brand); margin-bottom:0.5rem;}
+    .effect-value{font-size:1.5rem; font-weight:900; color:#059669; margin-bottom:0.5rem;}
+    .effect-description{font-size:0.9rem; color:#64748b;}
+    
+    /* 측정 데이터 비교 */
+    .comparison-section{margin:3rem 0;}
+    .comparison-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:2rem; margin:2rem 0;}
+    .comparison-card{background:#fff; border-radius:var(--radius); box-shadow:var(--shadow); overflow:hidden;}
+    .comparison-header{background:var(--brand); color:#fff; padding:1rem; text-align:center; font-weight:700;}
+    .comparison-image{width:100%; height:200px; object-fit:cover;}
+    .comparison-content{padding:1.5rem;}
+    .comparison-stats{display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-top:1rem;}
+    .stat-item{background:#f8fafc; padding:1rem; border-radius:8px; text-align:center;}
+    .stat-value{font-size:1.25rem; font-weight:700; color:var(--brand);}
+    .stat-label{font-size:0.9rem; color:#64748b; margin-top:0.25rem;}
+    
+    /* 실제 사례 */
+    .case-studies{margin:3rem 0;}
+    .case-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(350px, 1fr)); gap:2rem; margin:2rem 0;}
+    .case-card{background:#fff; border-radius:var(--radius); box-shadow:var(--shadow); padding:1.5rem;}
+    .case-header{display:flex; align-items:center; margin-bottom:1rem;}
+    .case-icon{font-size:2rem; margin-right:1rem;}
+    .case-title{font-weight:700; color:var(--brand); margin:0;}
+    .case-description{color:#4b5563; margin-bottom:1rem; line-height:1.6;}
+    .case-results{background:#f0fdf4; padding:1rem; border-radius:8px; border-left:4px solid #10b981;}
+    .case-results h4{margin:0 0 0.5rem; color:#059669;}
+    .case-results ul{margin:0; padding-left:1.5rem; color:#047857;}
+    
+    /* 비용 절감 계산 */
+    .cost-calculation{background:linear-gradient(135deg, #fef3c7, #fde68a); border-radius:var(--radius); padding:2rem; margin:3rem 0;}
+    .cost-header{text-align:center; margin-bottom:2rem;}
+    .cost-content{background:#fff; padding:2rem; border-radius:var(--radius); box-shadow:var(--shadow);}
+    .cost-example{background:#f8fafc; padding:1.5rem; border-radius:8px; margin:1rem 0;}
+    .cost-highlight{font-weight:700; color:#b45309; font-size:1.1rem;}
+    
+    /* 사이드바 */
+    .sidebar{background:#f8fafc; border-radius:var(--radius); padding:1.5rem; margin-top:2rem;}
+    .sidebar h3{color:var(--brand); margin-top:0;}
+    .sidebar ul{list-style:none; padding:0; margin:0;}
+    .sidebar li{margin-bottom:0.5rem;}
+    .sidebar a{color:var(--brand); text-decoration:none; font-weight:500;}
+    .sidebar a:hover{text-decoration:underline;}
+    
+    /* 반응형 */
+    @media (max-width: 768px) {
+      .effects-grid, .comparison-grid, .case-grid {
+        grid-template-columns:1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="container">
+      <h1>전력절감 효과와 사례</h1>
+      <p>실제 측정 데이터로 증명된 KESA의 성능</p>
+    </div>
+  </header>
+
+  <nav class="breadcrumb container">
+    <ol>
+      <li><a href="../../../index.html">홈</a></li>
+      <li><a href="../../index.html">제품소개</a></li>
+      <li aria-current="page">전력절감 효과와 사례</li>
+    </ol>
+  </nav>
+
+  <main class="container">
+    <!-- KESA 주요 효과 요약 -->
+    <section class="effects-summary">
+      <div class="effects-header">
+        <h2>KESA 전력절감기 주요 효과</h2>
+        <p>실제 설치 사례에서 검증된 성능 수치</p>
+      </div>
+      <div class="effects-grid">
+        <div class="effect-item">
+          <div class="effect-icon">⚡</div>
+          <div class="effect-title">역률 개선</div>
+          <div class="effect-value">85% → 95%</div>
+          <div class="effect-description">평균 역률 10% 향상</div>
+        </div>
+        <div class="effect-item">
+          <div class="effect-icon">📊</div>
+          <div class="effect-title">THD 감소</div>
+          <div class="effect-value">15.2% → 3.8%</div>
+          <div class="effect-description">고조파 왜곡 75% 감소</div>
+        </div>
+        <div class="effect-item">
+          <div class="effect-icon">🔌</div>
+          <div class="effect-title">전압 안정화</div>
+          <div class="effect-value">±8% → ±2%</div>
+          <div class="effect-description">전압 변동 75% 감소</div>
+        </div>
+        <div class="effect-item">
+          <div class="effect-icon">💰</div>
+          <div class="effect-title">비용 절감</div>
+          <div class="effect-value">15-25%</div>
+          <div class="effect-description">연간 전기 요금 절감</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 실제 측정 데이터 비교 -->
+    <section class="comparison-section">
+      <h2>설치 전후 측정 데이터 비교</h2>
+      <div class="comparison-grid">
+        <div class="comparison-card">
+          <div class="comparison-header">역률 개선</div>
+          <img src="../../../images/products/comparison/설치전 역률.png" alt="설치 전후 역률 비교" class="comparison-image">
+          <div class="comparison-content">
+            <h3>역률 측정 결과</h3>
+            <div class="comparison-stats">
+              <div class="stat-item">
+                <div class="stat-value">0.85</div>
+                <div class="stat-label">설치 전</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-value">0.95</div>
+                <div class="stat-label">설치 후</div>
+              </div>
+            </div>
+            <p style="margin-top:1rem; color:#64748b; font-size:0.9rem;">설치 후 역률이 11.8% 향상되어 전기 효율이 크게 개선되었습니다.</p>
+          </div>
+        </div>
+        
+        <div class="comparison-card">
+          <div class="comparison-header">THD 감소</div>
+          <img src="../../../images/products/comparison/설치전 THD.png" alt="설치 전후 THD 비교" class="comparison-image">
+          <div class="comparison-content">
+            <h3>고조파 왜곡 감소</h3>
+            <div class="comparison-stats">
+              <div class="stat-item">
+                <div class="stat-value">15.2%</div>
+                <div class="stat-label">설치 전</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-value">3.8%</div>
+                <div class="stat-label">설치 후</div>
+              </div>
+            </div>
+            <p style="margin-top:1rem; color:#64748b; font-size:0.9rem;">THD가 75% 감소하여 전력 품질이 크게 향상되었습니다.</p>
+          </div>
+        </div>
+        
+        <div class="comparison-card">
+          <div class="comparison-header">전압 변동</div>
+          <img src="../../../images/products/comparison/설치전 전압변동.png" alt="설치 전후 전압변동 비교" class="comparison-image">
+          <div class="comparison-content">
+            <h3>전압 안정성 개선</h3>
+            <div class="comparison-stats">
+              <div class="stat-item">
+                <div class="stat-value">±8%</div>
+                <div class="stat-label">설치 전</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-value">±2%</div>
+                <div class="stat-label">설치 후</div>
+              </div>
+            </div>
+            <p style="margin-top:1rem; color:#64748b; font-size:0.9rem;">전압 변동이 75% 감소하여 설비 안정성이 크게 향상되었습니다.</p>
+          </div>
+        </div>
+        
+        <div class="comparison-card">
+          <div class="comparison-header">유효 전력</div>
+          <img src="../../../images/products/comparison/KESA-200 설치후 유효전력.png" alt="설치 후 유효전력" class="comparison-image">
+          <div class="comparison-content">
+            <h3>유효 전력 효율 향상</h3>
+            <div class="comparison-stats">
+              <div class="stat-item">
+                <div class="stat-value">85%</div>
+                <div class="stat-label">설치 전</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-value">95%</div>
+                <div class="stat-label">설치 후</div>
+              </div>
+            </div>
+            <p style="margin-top:1rem; color:#64748b; font-size:0.9rem;">유효 전력 효율이 11.8% 향상되어 실제 사용 전력이 증가했습니다.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 실제 설치 사례 -->
+    <section class="case-studies">
+      <h2>실제 설치 사례</h2>
+      <div class="case-grid">
+        <div class="case-card">
+          <div class="case-header">
+            <div class="case-icon">🏭</div>
+            <h3 class="case-title">제조업 공장</h3>
+          </div>
+          <p class="case-description">부산 지역 중소 제조업체의 생산라인에 KESA-200 설치</p>
+          <div class="case-results">
+            <h4>설치 결과</h4>
+            <ul>
+              <li>역률: 0.82 → 0.94 (14.6% 향상)</li>
+              <li>월 전기요금: 15.2% 절감</li>
+              <li>설비 안정성 크게 향상</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="case-card">
+          <div class="case-header">
+            <div class="case-icon">🏢</div>
+            <h3 class="case-title">상업시설</h3>
+          </div>
+          <p class="case-description">서울 강남구 오피스 빌딩에 KESA-100 설치</p>
+          <div class="case-results">
+            <h4>설치 결과</h4>
+            <ul>
+              <li>역률: 0.88 → 0.96 (9.1% 향상)</li>
+              <li>월 전기요금: 12.8% 절감</li>
+              <li>조명 품질 개선</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="case-card">
+          <div class="case-header">
+            <div class="case-icon">🏥</div>
+            <h3 class="case-title">의료시설</h3>
+          </div>
+          <p class="case-description">대구 지역 종합병원에 KESA-300 설치</p>
+          <div class="case-results">
+            <h4>설치 결과</h4>
+            <ul>
+              <li>역률: 0.85 → 0.95 (11.8% 향상)</li>
+              <li>월 전기요금: 18.5% 절감</li>
+              <li>의료기기 안정성 향상</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 비용 절감 계산 예시 -->
+    <section class="cost-calculation">
+      <div class="cost-header">
+        <h2>비용 절감 효과 계산 예시</h2>
+        <p>실제 수치로 확인하는 KESA의 경제적 효과</p>
+      </div>
+      <div class="cost-content">
+        <h3>월 전기 사용량 10,000kWh 기준</h3>
+        <div class="cost-example">
+          <p><strong>설치 전:</strong></p>
+          <ul>
+            <li>역률: 0.85 (저역률)</li>
+            <li>월 전기요금: <span class="cost-highlight">약 150만원</span></li>
+            <li>무효전력 요금: <span class="cost-highlight">약 20만원</span></li>
+            <li>총 요금: <span class="cost-highlight">170만원</span></li>
+          </ul>
+        </div>
+        <div class="cost-example">
+          <p><strong>설치 후:</strong></p>
+          <ul>
+            <li>역률: 0.95 (고역률)</li>
+            <li>월 전기요금: <span class="cost-highlight">약 135만원</span></li>
+            <li>무효전력 요금: <span class="cost-highlight">0원</span></li>
+            <li>총 요금: <span class="cost-highlight">135만원</span></li>
+          </ul>
+        </div>
+        <p style="margin-top:1.5rem; text-align:center; font-size:1.1rem;">
+          <strong>월 절감액: 35만원 (20.6% 절감)</strong><br>
+          <span style="color:#059669;">연간 절감액: 420만원</span>
+        </p>
+      </div>
+    </section>
+
+    <!-- 사이드바 -->
+    <aside class="sidebar">
+      <h3>바로가기</h3>
+      <ul>
+        <li><a href="power-factor-theory.html">역률 개념과 이론</a></li>
+        <li><a href="kesa-product-guide.html">제품 소개와 선택 가이드</a></li>
+        <li><a href="../specs.html">기술 사양과 모델 정보</a></li>
+        <li><a href="../../../contact.html">문의 및 견적</a></li>
+      </ul>
+      
+      <h3>효과 자료</h3>
+      <ul>
+        <li><a href="#effects-summary">주요 효과</a></li>
+        <li><a href="#measurement-data">측정 데이터</a></li>
+        <li><a href="#case-studies">설치 사례</a></li>
+        <li><a href="#cost-calculation">비용 절감</a></li>
+      </ul>
+    </aside>
+  </main>
+</body>
+</html>
+

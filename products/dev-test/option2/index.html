@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>제품소개 - 명확한 역할 분담 | 한국전기절감원(주)</title>
+  <meta name="description" content="각 페이지가 고유한 목적을 가지는 명확한 역할 분담 방식의 KESA 제품 소개입니다." />
+  <link rel="preload" as="image" href="../../../images/heroes/hero-about.png">
+  <style>
+    /* 공통 스타일 */
+    :root{ --brand:#0f3e5b; --ink:#0b0b0b; --container:1100px; --radius:16px; --shadow:0 10px 30px rgba(0,0,0,.06);}
+    body{margin:0; color:var(--ink); font:400 16px/1.75 system-ui, "Noto Sans KR", sans-serif;}
+    .container{max-width:var(--container); margin:0 auto; padding:16px;}
+    .hero{min-height:42vh; position:relative; color:#fff; display:grid; place-items:center; text-align:center;}
+    .hero::before{content:""; position:absolute; inset:0; z-index:-2;
+      background: radial-gradient(70% 70% at 50% 20%, rgba(26,93,102,.9), rgba(15,62,91,.95) 45%, #0a2230 100%),
+                  url("../../../images/heroes/hero-about.png");
+      background-size:cover; background-position:center;}
+    .hero::after{content:""; position:absolute; inset:0; z-index:-1; background:linear-gradient(180deg,rgba(0,0,0,.35),rgba(0,0,0,.25));}
+    h1 {margin:0; font-weight:900; font-size:clamp(1.9rem,1.2rem+2.4vw,2.8rem);}
+    .breadcrumb{font-size:.95rem; color:#6b7280; padding:12px 0;}
+    .breadcrumb ol{display:flex; gap:.5rem; list-style:none; padding:0; margin:0;}
+    .breadcrumb li+li::before{content:"›"; opacity:.6; padding:0 .25rem;}
+    main{padding:32px 0;}
+    h2{margin:.5rem 0 1rem; font-size:clamp(1.25rem,1.05rem+0.9vw,1.8rem);}
+    
+    /* 역할 분담 설명 */
+    .role-explanation{background:linear-gradient(135deg, #f0f9ff, #e0f2fe); border-radius:var(--radius); padding:2rem; margin:2rem 0;}
+    .role-header{text-align:center; margin-bottom:2rem;}
+    .role-content{background:#fff; padding:2rem; border-radius:var(--radius); box-shadow:var(--shadow);}
+    .role-highlight{background:#fef3c7; padding:1rem; border-radius:8px; margin:1rem 0; border-left:4px solid #f59e0b;}
+    .role-highlight strong{color:#b45309;}
+    
+    /* 페이지 역할 카드 */
+    .role-cards{display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:2rem; margin:3rem 0;}
+    .role-card{background:#fff; border-radius:var(--radius); box-shadow:var(--shadow); padding:2rem; text-align:center; transition:transform 0.3s ease;}
+    .role-card:hover{transform:translateY(-5px);}
+    .role-icon{font-size:3rem; margin-bottom:1rem;}
+    .role-title{font-size:1.5rem; font-weight:700; color:var(--brand); margin-bottom:1rem;}
+    .role-description{color:#4b5563; margin-bottom:1.5rem; line-height:1.6;}
+    .role-features{list-style:none; padding:0; margin:0 0 1.5rem; text-align:left;}
+    .role-features li{padding:0.25rem 0; color:#64748b; display:flex; align-items:center;}
+    .role-features li::before{content:"✓"; color:#059669; font-weight:700; margin-right:0.5rem;}
+    .role-link{display:inline-block; background:var(--brand); color:#fff; padding:0.75rem 1.5rem; text-decoration:none; border-radius:8px; font-weight:600; transition:background 0.3s ease;}
+    .role-link:hover{background:#0a2230;}
+    
+    /* 비교 테이블 */
+    .comparison-table{margin:3rem 0;}
+    .table-container{overflow-x:auto;}
+    table{width:100%; border-collapse:collapse; background:#fff; border-radius:var(--radius); box-shadow:var(--shadow);}
+    th, td{padding:1rem; text-align:left; border-bottom:1px solid #e5e7eb;}
+    th{background:var(--brand); color:#fff; font-weight:700;}
+    tr:nth-child(even){background:#f9fafb;}
+    tr:hover{background:#f3f4f6;}
+    
+    /* 강조 박스 */
+    .highlight-box{background:linear-gradient(135deg, #fef3c7, #fde68a); border-left:4px solid #f59e0b; padding:1.5rem; border-radius:0 var(--radius) var(--radius) 0; margin:2rem 0;}
+    .highlight-box h3{margin:0 0 1rem; color:#92400e;}
+    .highlight-box p{margin:0; color:#78350f;}
+    
+    /* 반응형 */
+    @media (max-width: 768px) {
+      .role-cards {
+        grid-template-columns:1fr;
+      }
+      .table-container {
+        font-size:0.9rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="container">
+      <h1>제품소개 - 명확한 역할 분담</h1>
+      <p>각 페이지가 고유한 목적을 가지는 체계적인 정보 구성</p>
+    </div>
+  </header>
+
+  <nav class="breadcrumb container">
+    <ol>
+      <li><a href="../../../index.html">홈</a></li>
+      <li><a href="../../index.html">제품소개</a></li>
+      <li aria-current="page">명확한 역할 분담</li>
+    </ol>
+  </nav>
+
+  <main class="container">
+    <!-- 역할 분담 설명 -->
+    <section class="role-explanation">
+      <div class="role-header">
+        <h2>🎯 명확한 역할 분담 방식</h2>
+        <p>각 페이지가 고유한 목적을 가지는 체계적인 정보 구성</p>
+      </div>
+      <div class="role-content">
+        <p>옵션 2는 <strong>명확한 역할 분담</strong> 방식으로, 각 페이지가 고유한 목적을 가지도록 설계되었습니다. 사용자는 자신의 필요에 따라 적절한 페이지를 선택할 수 있어, 정보 탐색이 더욱 직관적이고 효율적입니다.</p>
+        <div class="role-highlight">
+          <strong>💡 핵심 아이디어:</strong> 각 페이지가 하나의 명확한 목적을 가지므로, 사용자는 자신이 원하는 정보 유형에 따라 적절한 페이지를 선택할 수 있습니다.
+        </div>
+      </div>
+    </section>
+
+    <!-- 페이지 역할 카드 -->
+    <section>
+      <h2>각 페이지의 고유한 역할</h2>
+      <div class="role-cards">
+        <div class="role-card">
+          <div class="role-icon">📚</div>
+          <h3 class="role-title">역률 개념과 이론</h3>
+          <p class="role-description">역률의 기본 개념과 원리를 교육적으로 설명하는 페이지입니다.</p>
+          <ul class="role-features">
+            <li>역률의 정의와 의미</li>
+            <li>수식과 계산 방법</li>
+            <li>영향 요인 분석</li>
+            <li>이론적 배경</li>
+          </ul>
+          <a href="./power-factor-theory.html" class="role-link">자세히 보기</a>
+        </div>
+        
+        <div class="role-card">
+          <div class="role-icon">📊</div>
+          <h3 class="role-title">실제 효과와 사례</h3>
+          <p class="role-description">KESA의 실제 성능과 설치 사례를 보여주는 실용적인 페이지입니다.</p>
+          <ul class="role-features">
+            <li>측정 데이터 비교</li>
+            <li>실제 설치 사례</li>
+            <li>비용 절감 효과</li>
+            <li>검증된 성능</li>
+          </ul>
+          <a href="./power-save-effects.html" class="role-link">자세히 보기</a>
+        </div>
+        
+        <div class="role-card">
+          <div class="role-icon">🛍️</div>
+          <h3 class="role-title">제품 소개와 선택 가이드</h3>
+          <p class="role-description">KESA 제품을 소개하고 고객이 적합한 제품을 선택할 수 있도록 도와주는 페이지입니다.</p>
+          <ul class="role-features">
+            <li>제품 카탈로그</li>
+            <li>선택 가이드</li>
+            <li>용도별 추천</li>
+            <li>제품 비교</li>
+          </ul>
+          <a href="./kesa-product-guide.html" class="role-link">자세히 보기</a>
+        </div>
+        
+        <div class="role-card">
+          <div class="role-icon">⚙️</div>
+          <h3 class="role-title">기술 사양과 모델 정보</h3>
+          <p class="role-description">제품의 상세한 기술 사양과 모델별 정보를 제공하는 페이지입니다.</p>
+          <ul class="role-features">
+            <li>상세 기술 사양</li>
+            <li>모델별 정보</li>
+            <li>설치 가이드</li>
+            <li>요금제도 정보</li>
+          </ul>
+          <a href="../specs.html" class="role-link">자세히 보기</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 기존 vs 옵션 2 비교 -->
+    <section class="comparison-table">
+      <h2>기존 방식 vs 옵션 2 비교</h2>
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>구분</th>
+              <th>기존 방식</th>
+              <th>옵션 2: 명확한 역할 분담</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>정보 구성</strong></td>
+              <td>여러 주제가 한 페이지에 혼재</td>
+              <td>각 페이지가 하나의 명확한 주제에 집중</td>
+            </tr>
+            <tr>
+              <td><strong>사용자 경험</strong></td>
+              <td>정보 찾기가 어려움</td>
+              <td>목적에 맞는 페이지 선택 가능</td>
+            </tr>
+            <tr>
+              <td><strong>페이지 수</strong></td>
+              <td>5개 (산만함)</td>
+              <td>4개 (체계적)</td>
+            </tr>
+            <tr>
+              <td><strong>중복 내용</strong></td>
+              <td>많음</td>
+              <td>최소화</td>
+            </tr>
+            <tr>
+              <td><strong>유지보수</strong></td>
+              <td>어려움</td>
+              <td>용이함</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- 사용자 시나리오 -->
+    <section>
+      <h2>사용자 시나리오별 페이지 선택</h2>
+      <div class="role-cards">
+        <div class="role-card">
+          <div class="role-icon">🎓</div>
+          <h3 class="role-title">학습 목적</h3>
+          <p class="role-description">역률에 대해 배우고 싶은 사용자</p>
+          <ul class="role-features">
+            <li>역률 개념과 이론</li>
+            <li>기본 원리 이해</li>
+            <li>수식과 계산</li>
+          </ul>
+          <a href="./power-factor-theory.html" class="role-link">학습하기</a>
+        </div>
+        
+        <div class="role-card">
+          <div class="role-icon">💼</div>
+          <h3 class="role-title">구매 검토</h3>
+          <p class="role-description">KESA 제품 구매를 고려하는 사용자</p>
+          <ul class="role-features">
+            <li>실제 효과와 사례</li>
+            <li>제품 소개와 선택 가이드</li>
+            <li>기술 사양과 모델 정보</li>
+          </ul>
+          <a href="./power-save-effects.html" class="role-link">효과 확인</a>
+        </div>
+        
+        <div class="role-card">
+          <div class="role-icon">🔍</div>
+          <h3 class="role-title">제품 비교</h3>
+          <p class="role-description">여러 제품을 비교하여 선택하려는 사용자</p>
+          <ul class="role-features">
+            <li>제품 소개와 선택 가이드</li>
+            <li>기술 사양과 모델 정보</li>
+            <li>용도별 추천</li>
+          </ul>
+          <a href="./kesa-product-guide.html" class="role-link">제품 비교</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 강조 박스 -->
+    <div class="highlight-box">
+      <h3>💡 옵션 2의 장점</h3>
+      <p>각 페이지가 명확한 목적을 가지므로 사용자는 자신의 필요에 따라 적절한 페이지를 선택할 수 있습니다. 정보 탐색이 직관적이고, 각 페이지의 내용이 깊이 있게 구성되어 있습니다.</p>
+    </div>
+
+    <!-- 다른 옵션과의 비교 -->
+    <section>
+      <h2>다른 옵션과의 비교</h2>
+      <div class="role-cards">
+        <div class="role-card">
+          <div class="role-icon">🔗</div>
+          <h3 class="role-title">옵션 1: 통합 페이지</h3>
+          <p class="role-description">모든 정보를 한 페이지에 통합</p>
+          <ul class="role-features">
+            <li>페이지 수: 2개</li>
+            <li>정보 밀도: 높음</li>
+            <li>탐색: 한 곳에서 모든 정보</li>
+            <li>적합: 빠른 정보 확인</li>
+          </ul>
+          <a href="../index.html" class="role-link">옵션 1 보기</a>
+        </div>
+        
+        <div class="role-card">
+          <div class="role-icon">🎯</div>
+          <h3 class="role-title">옵션 2: 명확한 역할 분담</h3>
+          <p class="role-description">각 페이지가 고유한 목적</p>
+          <ul class="role-features">
+            <li>페이지 수: 4개</li>
+            <li>정보 밀도: 적당함</li>
+            <li>탐색: 목적별 선택</li>
+            <li>적합: 깊이 있는 학습</li>
+          </ul>
+          <span style="color:#059669; font-weight:700;">현재 옵션</span>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
+

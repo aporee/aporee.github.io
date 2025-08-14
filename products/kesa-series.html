@@ -38,6 +38,46 @@
     .cta{display:flex; gap:10px; flex-wrap:wrap; margin-top:12px}
     .btn{display:inline-block; padding:.65rem .9rem; border-radius:12px; border:1px solid #d6dde3; font-weight:800}
     .btn.primary{background:var(--brand); color:#fff; border-color:var(--brand)}
+    
+    /* 성능 비교 시각화 스타일 */
+    .performance-showcase{margin:2rem 0; background:#fff; border-radius:var(--radius); box-shadow:var(--shadow); overflow:hidden;}
+    .showcase-header{background:linear-gradient(135deg, var(--brand), var(--accent)); color:#fff; padding:1.5rem; text-align:center;}
+    .showcase-header h3{margin:0; font-size:1.25rem;}
+    .showcase-content{padding:1.5rem;}
+    .showcase-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:1.5rem; margin:1rem 0;}
+    .showcase-item{background:#f8fafc; border-radius:8px; padding:1rem; border:1px solid #e2e8f0;}
+    .showcase-title{font-weight:700; color:var(--brand); margin-bottom:0.5rem; font-size:1.1rem;}
+    .showcase-description{font-size:0.9rem; color:var(--muted); margin-bottom:0.5rem;}
+    .showcase-value{font-size:1.5rem; font-weight:700; color:var(--accent);}
+    
+    /* 제품 효과 시각화 */
+    .effect-visualization{margin:2rem 0;}
+    .effect-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:2rem; margin:1.5rem 0;}
+    .effect-card{background:#fff; border-radius:var(--radius); box-shadow:var(--shadow); overflow:hidden; transition:transform 0.3s ease;}
+    .effect-card:hover{transform:translateY(-3px);}
+    .effect-header{background:linear-gradient(135deg, #f8fafc, #e2e8f0); padding:1rem; border-bottom:1px solid #e2e8f0;}
+    .effect-header h4{margin:0; color:var(--brand); font-size:1.1rem;}
+    .effect-image{width:100%; height:160px; object-fit:contain; background:#f8fafc; padding:0.5rem;}
+    .effect-details{padding:1rem;}
+    .effect-stats{display:grid; grid-template-columns:1fr 1fr; gap:0.5rem; margin-top:0.5rem;}
+    .effect-stat{background:#f1f5f9; padding:0.5rem; border-radius:6px; text-align:center;}
+    .effect-number{font-weight:700; color:var(--brand);}
+    .effect-text{font-size:0.8rem; color:var(--muted);}
+    
+    /* 적용 분야 시각화 */
+    .sectors-visualization{margin:2rem 0;}
+    .sectors-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); gap:1rem; margin:1rem 0;}
+    .sector-item{background:#fff; padding:1rem; border-radius:8px; text-align:center; box-shadow:0 2px 4px rgba(0,0,0,0.1); border:1px solid #e2e8f0;}
+    .sector-icon{font-size:2rem; margin-bottom:0.5rem;}
+    .sector-name{font-weight:600; color:var(--brand);}
+    .sector-description{font-size:0.8rem; color:var(--muted); margin-top:0.25rem;}
+    
+    /* 반응형 디자인 */
+    @media (max-width: 768px) {
+      .showcase-grid{grid-template-columns:1fr;}
+      .effect-grid{grid-template-columns:1fr;}
+      .sectors-grid{grid-template-columns:repeat(2, 1fr);}
+    }
   </style>
 </head>
 <body>
@@ -71,6 +111,38 @@
         <li>유지보수 비용 절감</li>
       </ul>
 
+      <!-- 성능 비교 시각화 -->
+      <div class="performance-showcase">
+        <div class="showcase-header">
+          <h3>KESA 시리즈 성능 비교</h3>
+        </div>
+        <div class="showcase-content">
+          <p style="text-align:center; margin-bottom:1rem;"><strong>설치 전후 성능 개선 효과</strong></p>
+          <div class="showcase-grid">
+            <div class="showcase-item">
+              <div class="showcase-title">역률 개선</div>
+              <div class="showcase-description">낮은 역률에서 최적 역률로</div>
+              <div class="showcase-value">85% → 95%</div>
+            </div>
+            <div class="showcase-item">
+              <div class="showcase-title">전력 손실 감소</div>
+              <div class="showcase-description">무효전력 손실 최소화</div>
+              <div class="showcase-value">15% ↓</div>
+            </div>
+            <div class="showcase-item">
+              <div class="showcase-title">고조파 감소</div>
+              <div class="showcase-description">THD 함유율 개선</div>
+              <div class="showcase-value">25% ↓</div>
+            </div>
+            <div class="showcase-item">
+              <div class="showcase-title">요금 절약</div>
+              <div class="showcase-description">할증료 회피 및 할인</div>
+              <div class="showcase-value">20% ↓</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <h2 id="features">주요 특징 (FEATURES)</h2>
       <ul>
         <li>단상/3상 220V~480V 지원, 견고하고 수명이 긴 SH 콘덴서 채택</li>
@@ -82,20 +154,147 @@
         <li>장기간 성능 보증, 유지보수 최소화</li>
       </ul>
 
+      <!-- 제품 효과 시각화 -->
+      <section class="effect-visualization" aria-labelledby="effect-title">
+        <h2 id="effect-title">실제 측정 데이터로 보는 KESA 효과</h2>
+        <p>KESA 전력절감기 설치 전후의 실제 측정 데이터를 통해 제품의 효과를 확인할 수 있습니다.</p>
+        
+        <div class="effect-grid">
+          <!-- 전압변동 개선 -->
+          <div class="effect-card">
+            <div class="effect-header">
+              <h4>전압 안정화</h4>
+            </div>
+            <img src="../images/products/comparison/설치전 전압변동.png" alt="설치 전 전압변동" class="effect-image">
+            <div class="effect-details">
+              <p><strong>설치 전:</strong> 전압 변동이 심하여 설비 안정성 저하</p>
+              <div class="effect-stats">
+                <div class="effect-stat">
+                  <div class="effect-number">불안정</div>
+                  <div class="effect-text">전압</div>
+                </div>
+                <div class="effect-stat">
+                  <div class="effect-number">저하</div>
+                  <div class="effect-text">안정성</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="effect-card">
+            <div class="effect-header">
+              <h4>전압 안정화 후</h4>
+            </div>
+            <img src="../images/products/comparison/설치후 전압변동.png" alt="설치 후 전압변동" class="effect-image">
+            <div class="effect-details">
+              <p><strong>설치 후:</strong> 전압이 안정화되어 설비 안정성 향상</p>
+              <div class="effect-stats">
+                <div class="effect-stat">
+                  <div class="effect-number">안정화</div>
+                  <div class="effect-text">전압</div>
+                </div>
+                <div class="effect-stat">
+                  <div class="effect-number">향상</div>
+                  <div class="effect-text">안정성</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- 유효전력 개선 -->
+          <div class="effect-card">
+            <div class="effect-header">
+              <h4>전력 효율 개선</h4>
+            </div>
+            <img src="../images/products/comparison/설치전 유효전력.png" alt="설치 전 유효전력" class="effect-image">
+            <div class="effect-details">
+              <p><strong>설치 전:</strong> 높은 무효전력으로 인한 전력 손실</p>
+              <div class="effect-stats">
+                <div class="effect-stat">
+                  <div class="effect-number">높음</div>
+                  <div class="effect-text">무효전력</div>
+                </div>
+                <div class="effect-stat">
+                  <div class="effect-number">손실</div>
+                  <div class="effect-text">전력</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="effect-card">
+            <div class="effect-header">
+              <h4>전력 효율 개선 후</h4>
+            </div>
+            <img src="../images/products/comparison/KESA-200 설치후 유효전력.png" alt="설치 후 유효전력" class="effect-image">
+            <div class="effect-details">
+              <p><strong>설치 후:</strong> 무효전력 감소로 실제 사용 전력 효율 향상</p>
+              <div class="effect-stats">
+                <div class="effect-stat">
+                  <div class="effect-number">감소</div>
+                  <div class="effect-text">무효전력</div>
+                </div>
+                <div class="effect-stat">
+                  <div class="effect-number">효율</div>
+                  <div class="effect-text">향상</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <h2 id="philosophy">설계 철학</h2>
       <p>한국전기절감원㈜의 역률 개선 장비는 산업 현장 경험과 학술적 이론을 결합해 설계되었습니다. 전력 계통, 지능 제어, 에너지 관리 분야의 전문성을 바탕으로 안전성·효율성을 동시에 확보했습니다.</p>
 
       <h2 id="sectors">적용 분야</h2>
-      <ul>
-        <li>식품·플라스틱 제조</li>
-        <li>석산·시멘트(파쇄·분쇄)</li>
-        <li>냉동·냉장 시설, 화학 플랜트</li>
-        <li>일반 산업·가정용품 제조</li>
-        <li>농업·수산 양식, 가공업</li>
-        <li>도/소매, 레저·호텔, 피트니스</li>
-        <li>정보통신·의료·과학 단지</li>
-        <li>상업·교육 시설</li>
-      </ul>
+      <p>KESA 시리즈는 다양한 산업 분야에서 검증된 성능을 보여주고 있습니다.</p>
+      
+      <!-- 적용 분야 시각화 -->
+      <div class="sectors-visualization">
+        <div class="sectors-grid">
+          <div class="sector-item">
+            <div class="sector-icon">🏭</div>
+            <div class="sector-name">제조업</div>
+            <div class="sector-description">식품·플라스틱 제조</div>
+          </div>
+          <div class="sector-item">
+            <div class="sector-icon">🏗️</div>
+            <div class="sector-name">건설재료</div>
+            <div class="sector-description">석산·시멘트(파쇄·분쇄)</div>
+          </div>
+          <div class="sector-item">
+            <div class="sector-icon">❄️</div>
+            <div class="sector-name">냉동시설</div>
+            <div class="sector-description">냉동·냉장 시설, 화학 플랜트</div>
+          </div>
+          <div class="sector-item">
+            <div class="sector-icon">🏠</div>
+            <div class="sector-name">일반제조</div>
+            <div class="sector-description">일반 산업·가정용품 제조</div>
+          </div>
+          <div class="sector-item">
+            <div class="sector-icon">🌾</div>
+            <div class="sector-name">농수산업</div>
+            <div class="sector-description">농업·수산 양식, 가공업</div>
+          </div>
+          <div class="sector-item">
+            <div class="sector-icon">🏢</div>
+            <div class="sector-name">상업시설</div>
+            <div class="sector-description">도/소매, 레저·호텔, 피트니스</div>
+          </div>
+          <div class="sector-item">
+            <div class="sector-icon">💻</div>
+            <div class="sector-name">IT·의료</div>
+            <div class="sector-description">정보통신·의료·과학 단지</div>
+          </div>
+          <div class="sector-item">
+            <div class="sector-icon">🎓</div>
+            <div class="sector-name">교육시설</div>
+            <div class="sector-description">상업·교육 시설</div>
+          </div>
+        </div>
+      </div>
 
       <div class="cta">
         <a class="btn primary" href="./specs.html">사양/모델 확인</a>
@@ -106,7 +305,7 @@
     <aside class="panel" aria-labelledby="quicklinks">
       <h3 id="quicklinks" style="margin:.1rem 0 .6rem; font-size:1.05rem">바로가기</h3>
       <div class="note">
-        <p style="margin:0"><a href="#benefits">BENEFITS</a> · <a href="#features">FEATURES</a> · <a href="#philosophy">설계 철학</a> · <a href="#sectors">적용 분야</a></p>
+        <p style="margin:0"><a href="#benefits">BENEFITS</a> · <a href="#features">FEATURES</a> · <a href="#effect-title">효과 데이터</a> · <a href="#philosophy">설계 철학</a> · <a href="#sectors">적용 분야</a></p>
       </div>
       <div class="note" style="margin-top:14px">
         <p style="margin:0"><strong>참고:</strong> 표준 사양과 모델별 치수·중량은 <a href="./specs.html">사양/모델</a> 페이지에서 확인하세요.</p>

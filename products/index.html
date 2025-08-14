@@ -52,6 +52,37 @@
     .lead{font-weight:700; font-size:clamp(1.05rem,1rem + .35vw,1.2rem)}
     .section{padding-block:clamp(28px,6vw,64px)}
     .note{background:#f7fafc; border:1px solid #e9f0f5; border-radius:var(--radius); padding:18px}
+    
+    /* 효과 개요 시각화 스타일 */
+    .overview-section{margin:2rem 0; background:#fff; border-radius:var(--radius); box-shadow:var(--shadow); overflow:hidden;}
+    .overview-header{background:linear-gradient(135deg, var(--brand), var(--accent)); color:#fff; padding:1.5rem; text-align:center;}
+    .overview-header h2{margin:0; font-size:1.5rem;}
+    .overview-content{padding:1.5rem;}
+    .overview-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(250px, 1fr)); gap:1.5rem; margin:1rem 0;}
+    .overview-item{text-align:center; padding:1rem; background:#f8fafc; border-radius:8px; border:1px solid #e2e8f0;}
+    .overview-icon{font-size:2rem; margin-bottom:0.5rem;}
+    .overview-title{font-weight:700; color:var(--brand); margin-bottom:0.5rem; font-size:1.1rem;}
+    .overview-description{font-size:0.9rem; color:var(--muted);}
+    
+    /* 설치 전후 비교 미리보기 */
+    .comparison-preview{margin:2rem 0;}
+    .comparison-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:1.5rem; margin:1rem 0;}
+    .comparison-item{background:#fff; border-radius:var(--radius); box-shadow:var(--shadow); overflow:hidden; transition:transform 0.3s ease;}
+    .comparison-item:hover{transform:translateY(-3px);}
+    .comparison-header{background:linear-gradient(135deg, #f8fafc, #e2e8f0); padding:1rem; border-bottom:1px solid #e2e8f0;}
+    .comparison-header h4{margin:0; color:var(--brand); font-size:1.1rem;}
+    .comparison-image{width:100%; height:150px; object-fit:contain; background:#f8fafc; padding:0.5rem;}
+    .comparison-details{padding:1rem;}
+    .comparison-stats{display:grid; grid-template-columns:1fr 1fr; gap:0.5rem; margin-top:0.5rem;}
+    .comparison-stat{background:#f1f5f9; padding:0.5rem; border-radius:6px; text-align:center;}
+    .comparison-number{font-weight:700; color:var(--brand);}
+    .comparison-text{font-size:0.8rem; color:var(--muted);}
+    
+    /* 반응형 디자인 */
+    @media (max-width: 768px) {
+      .overview-grid{grid-template-columns:1fr;}
+      .comparison-grid{grid-template-columns:1fr;}
+    }
   </style>
 </head>
 <body>
@@ -118,6 +149,134 @@
         <span class="more">사양 보러가기 →</span>
       </a>
     </div>
+
+    <!-- KESA 효과 개요 -->
+    <div class="overview-section">
+      <div class="overview-header">
+        <h2>🎯 KESA 전력절감기 주요 효과</h2>
+      </div>
+      <div class="overview-content">
+        <p style="text-align:center; margin-bottom:1rem;"><strong>설치 전후 비교를 통한 검증된 성능</strong></p>
+        <div class="overview-grid">
+          <div class="overview-item">
+            <div class="overview-icon">⚡</div>
+            <div class="overview-title">역률 개선</div>
+            <div class="overview-description">85% → 95% 이상으로 개선</div>
+          </div>
+          <div class="overview-item">
+            <div class="overview-icon">📊</div>
+            <div class="overview-title">고조파 감소</div>
+            <div class="overview-description">THD 함유율 25% 감소</div>
+          </div>
+          <div class="overview-item">
+            <div class="overview-icon">🔌</div>
+            <div class="overview-title">전압 안정화</div>
+            <div class="overview-description">전압 변동 최소화</div>
+          </div>
+          <div class="overview-item">
+            <div class="overview-icon">💰</div>
+            <div class="overview-title">요금 절약</div>
+            <div class="overview-description">할증료 회피 및 할인</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 설치 전후 비교 미리보기 -->
+    <section class="comparison-preview" aria-labelledby="comparison-title">
+      <h2 id="comparison-title">실제 측정 데이터 미리보기</h2>
+      <p>KESA 전력절감기 설치 전후의 실제 측정 데이터를 통해 제품의 효과를 확인할 수 있습니다.</p>
+      
+      <div class="comparison-grid">
+        <!-- 역률 비교 -->
+        <div class="comparison-item">
+          <div class="comparison-header">
+            <h4>역률 개선 효과</h4>
+          </div>
+          <img src="./images/products/comparison/설치전 역률.png" alt="설치 전 역률 측정" class="comparison-image">
+          <div class="comparison-details">
+            <p><strong>설치 전:</strong> 낮은 역률로 인한 전력 손실</p>
+            <div class="comparison-stats">
+              <div class="comparison-stat">
+                <div class="comparison-number">낮음</div>
+                <div class="comparison-text">역률</div>
+              </div>
+              <div class="comparison-stat">
+                <div class="comparison-number">높음</div>
+                <div class="comparison-text">손실</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="comparison-item">
+          <div class="comparison-header">
+            <h4>역률 개선 후</h4>
+          </div>
+          <img src="./images/products/comparison/설치후 역률.png" alt="설치 후 역률 측정" class="comparison-image">
+          <div class="comparison-details">
+            <p><strong>설치 후:</strong> 역률 개선으로 전력 손실 감소</p>
+            <div class="comparison-stats">
+              <div class="comparison-stat">
+                <div class="comparison-number">개선</div>
+                <div class="comparison-text">역률</div>
+              </div>
+              <div class="comparison-stat">
+                <div class="comparison-number">감소</div>
+                <div class="comparison-text">손실</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- THD 비교 -->
+        <div class="comparison-item">
+          <div class="comparison-header">
+            <h4>고조파(THD) 개선</h4>
+          </div>
+          <img src="./images/products/comparison/설치전 THD.png" alt="설치 전 THD 측정" class="comparison-image">
+          <div class="comparison-details">
+            <p><strong>설치 전:</strong> 높은 고조파 함유율</p>
+            <div class="comparison-stats">
+              <div class="comparison-stat">
+                <div class="comparison-number">높음</div>
+                <div class="comparison-text">THD</div>
+              </div>
+              <div class="comparison-stat">
+                <div class="comparison-number">저하</div>
+                <div class="comparison-text">품질</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="comparison-item">
+          <div class="comparison-header">
+            <h4>고조파 개선 후</h4>
+          </div>
+          <img src="./images/products/comparison/설치후 THD.png" alt="설치 후 THD 측정" class="comparison-image">
+          <div class="comparison-details">
+            <p><strong>설치 후:</strong> 고조파 함유율 감소</p>
+            <div class="comparison-stats">
+              <div class="comparison-stat">
+                <div class="comparison-number">감소</div>
+                <div class="comparison-text">THD</div>
+              </div>
+              <div class="comparison-stat">
+                <div class="comparison-number">향상</div>
+                <div class="comparison-text">품질</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <p style="text-align:center; margin-top:1.5rem;">
+        <a href="./power-save.html" class="btn" style="display:inline-block; padding:.65rem 1.2rem; background:var(--brand); color:#fff; border-radius:8px; font-weight:600;">
+          더 자세한 효과 보기 →
+        </a>
+      </p>
+    </section>
 
     <div class="section">
       <div class="note">

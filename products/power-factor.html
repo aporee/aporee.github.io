@@ -43,6 +43,44 @@
     .cta{display:flex; gap:10px; flex-wrap:wrap; margin-top:12px}
     .btn{display:inline-block; padding:.65rem .9rem; border-radius:12px; border:1px solid #d6dde3; font-weight:800}
     .btn.primary{background:var(--brand); color:#fff; border-color:var(--brand)}
+    
+    /* 역률 비교 시각화 스타일 */
+    .power-factor-demo{margin:2rem 0; background:#fff; border-radius:var(--radius); box-shadow:var(--shadow); overflow:hidden;}
+    .demo-header{background:linear-gradient(135deg, var(--brand), var(--accent)); color:#fff; padding:1.5rem; text-align:center;}
+    .demo-header h3{margin:0; font-size:1.25rem;}
+    .demo-content{padding:1.5rem;}
+    .demo-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:1.5rem; margin:1rem 0;}
+    .demo-item{text-align:center; padding:1rem; background:#f8fafc; border-radius:8px; border:1px solid #e2e8f0;}
+    .demo-value{font-size:2rem; font-weight:700; color:var(--brand); margin-bottom:0.5rem;}
+    .demo-label{font-size:0.9rem; color:var(--muted);}
+    
+    /* 측정 데이터 시각화 */
+    .measurement-section{margin:2rem 0;}
+    .measurement-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:2rem; margin:1.5rem 0;}
+    .measurement-card{background:#fff; border-radius:var(--radius); box-shadow:var(--shadow); overflow:hidden; transition:transform 0.3s ease;}
+    .measurement-card:hover{transform:translateY(-3px);}
+    .measurement-header{background:linear-gradient(135deg, #f8fafc, #e2e8f0); padding:1rem; border-bottom:1px solid #e2e8f0;}
+    .measurement-header h4{margin:0; color:var(--brand); font-size:1.1rem;}
+    .measurement-image{width:100%; height:180px; object-fit:contain; background:#f8fafc; padding:0.5rem;}
+    .measurement-details{padding:1rem;}
+    .measurement-stats{display:grid; grid-template-columns:1fr 1fr; gap:0.5rem; margin-top:0.5rem;}
+    .stat-box{background:#f1f5f9; padding:0.5rem; border-radius:6px; text-align:center;}
+    .stat-number{font-weight:700; color:var(--brand);}
+    .stat-text{font-size:0.8rem; color:var(--muted);}
+    
+    /* 효과 요약 박스 */
+    .benefits-summary{background:linear-gradient(135deg, #f0fdf4, #dcfce7); border:1px solid #22c55e; border-radius:var(--radius); padding:1.5rem; margin:2rem 0;}
+    .benefits-summary h3{color:#15803d; margin-top:0;}
+    .benefits-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); gap:1rem; margin-top:1rem;}
+    .benefit-item{background:#fff; padding:1rem; border-radius:8px; text-align:center; box-shadow:0 2px 4px rgba(0,0,0,0.1);}
+    .benefit-icon{font-size:1.5rem; margin-bottom:0.5rem;}
+    
+    /* 반응형 디자인 */
+    @media (max-width: 768px) {
+      .demo-grid{grid-template-columns:1fr;}
+      .measurement-grid{grid-template-columns:1fr;}
+      .benefits-grid{grid-template-columns:1fr;}
+    }
   </style>
 </head>
 <body>
@@ -69,6 +107,34 @@
       <p class="lead">역률은 교류(AC) 회로에서 실제로 일을 하는 유효 전력(kW)이 전체 전력 요구량인 피상 전력(kVA)에서 차지하는 비율입니다.</p>
       <p>무효 전력은 모터 등 유도성 장비가 자기장을 만들기 위해 필요하지만, 직접적인 일에는 기여하지 않습니다. 전압과 전류의 위상이 어긋날수록(위상차) 무효 전력이 커지고 역률은 낮아집니다. 역률은 0.01~1.00(또는 1%~100%) 사이이며, 통상 <strong>0.92 미만은 저역률</strong>, <strong>1.00은 이상적</strong>으로 봅니다. 또한 부하 특성에 따라 <strong>지상(Lagging)</strong>과 <strong>진상(Leading)</strong>으로 표현합니다.</p>
 
+      <!-- 역률 개념 시각화 -->
+      <div class="power-factor-demo">
+        <div class="demo-header">
+          <h3>역률 개념 이해하기</h3>
+        </div>
+        <div class="demo-content">
+          <p style="text-align:center; margin-bottom:1rem;"><strong>역률 = 유효전력(kW) ÷ 피상전력(kVA)</strong></p>
+          <div class="demo-grid">
+            <div class="demo-item">
+              <div class="demo-value">0.85</div>
+              <div class="demo-label">일반 공장 (개선 필요)</div>
+            </div>
+            <div class="demo-item">
+              <div class="demo-value">0.92</div>
+              <div class="demo-label">한전 기준 (할증 없음)</div>
+            </div>
+            <div class="demo-item">
+              <div class="demo-value">0.95</div>
+              <div class="demo-label">우수한 역률 (할인 혜택)</div>
+            </div>
+            <div class="demo-item">
+              <div class="demo-value">1.00</div>
+              <div class="demo-label">이상적인 역률</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <h2 id="pfc">역률 개선(PFC)의 필요성</h2>
       <p>역률 개선은 콘덴서(및 리액터 등)를 회로에 투입해 위상차를 보정하고 전류를 줄이는 기술입니다. 이는 다음과 같은 배경에서 중요성이 커지고 있습니다: 기후변화와 에너지 비용 상승, 수요 기반 요금제, 저탄소 전환 정책 등. 현장에서의 효과는 전력 손실 저감, 설비 여유도 확보, 전기요금의 벌금(할증) 회피 등으로 연결됩니다.</p>
 
@@ -76,6 +142,96 @@
         <strong>한전(KEPCO) 역률 요금제 안내</strong>
         <p>지상 92% 미만(또는 진상 0.92 미만) 역률에 대해 할증, 92% 초과~97% 구간에 대해 할인 제도가 운영됩니다. 적용 시간대 및 기준은 개정될 수 있으므로, 최신 내용은 <a href="../knowledge/kepco-power-factor.html">지식센터 · 역률 요금제</a> 페이지에서 확인하세요.</p>
       </div>
+
+      <!-- 실제 측정 데이터 시각화 -->
+      <section class="measurement-section" aria-labelledby="measurement-title">
+        <h2 id="measurement-title">실제 측정 데이터로 보는 역률 개선 효과</h2>
+        <p>KESA 전력절감기 설치 전후의 실제 측정 데이터를 통해 역률 개선의 효과를 확인할 수 있습니다.</p>
+        
+        <div class="measurement-grid">
+          <!-- 역률 측정 -->
+          <div class="measurement-card">
+            <div class="measurement-header">
+              <h4>역률 개선 효과</h4>
+            </div>
+            <img src="../images/products/comparison/설치전 역률.png" alt="설치 전 역률 측정" class="measurement-image">
+            <div class="measurement-details">
+              <p><strong>설치 전:</strong> 낮은 역률로 인한 전력 손실</p>
+              <div class="measurement-stats">
+                <div class="stat-box">
+                  <div class="stat-number">낮음</div>
+                  <div class="stat-text">역률</div>
+                </div>
+                <div class="stat-box">
+                  <div class="stat-number">높음</div>
+                  <div class="stat-text">손실</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="measurement-card">
+            <div class="measurement-header">
+              <h4>역률 개선 후</h4>
+            </div>
+            <img src="../images/products/comparison/설치후 역률.png" alt="설치 후 역률 측정" class="measurement-image">
+            <div class="measurement-details">
+              <p><strong>설치 후:</strong> 역률 개선으로 전력 손실 감소</p>
+              <div class="measurement-stats">
+                <div class="stat-box">
+                  <div class="stat-number">개선</div>
+                  <div class="stat-text">역률</div>
+                </div>
+                <div class="stat-box">
+                  <div class="stat-number">감소</div>
+                  <div class="stat-text">손실</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- THD 측정 -->
+          <div class="measurement-card">
+            <div class="measurement-header">
+              <h4>고조파(THD) 개선</h4>
+            </div>
+            <img src="../images/products/comparison/설치전 THD.png" alt="설치 전 THD 측정" class="measurement-image">
+            <div class="measurement-details">
+              <p><strong>설치 전:</strong> 높은 고조파 함유율</p>
+              <div class="measurement-stats">
+                <div class="stat-box">
+                  <div class="stat-number">높음</div>
+                  <div class="stat-text">THD</div>
+                </div>
+                <div class="stat-box">
+                  <div class="stat-number">저하</div>
+                  <div class="stat-text">품질</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="measurement-card">
+            <div class="measurement-header">
+              <h4>고조파 개선 후</h4>
+            </div>
+            <img src="../images/products/comparison/설치후 THD.png" alt="설치 후 THD 측정" class="measurement-image">
+            <div class="measurement-details">
+              <p><strong>설치 후:</strong> 고조파 함유율 감소</p>
+              <div class="measurement-stats">
+                <div class="stat-box">
+                  <div class="stat-number">감소</div>
+                  <div class="stat-text">THD</div>
+                </div>
+                <div class="stat-box">
+                  <div class="stat-number">향상</div>
+                  <div class="stat-text">품질</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <h2 id="benefits">역률 개선의 효과(요약)</h2>
       <ul>
@@ -87,6 +243,33 @@
         <li><strong>증설·업그레이드 비용 회피</strong> — 같은 인프라로 더 많은 부하 수용(설비 여유도 증가).</li>
         <li><strong>전력 품질 향상</strong> — 안정적 전압/파형 유지에 기여, 민감 설비의 고장·수명 저하 리스크 감소.</li>
       </ul>
+
+      <!-- 효과 요약 시각화 -->
+      <div class="benefits-summary">
+        <h3>🎯 역률 개선으로 얻는 주요 효과</h3>
+        <div class="benefits-grid">
+          <div class="benefit-item">
+            <div class="benefit-icon">💰</div>
+            <strong>요금 절약</strong><br>
+            <small>할증료 회피 및 할인 혜택</small>
+          </div>
+          <div class="benefit-item">
+            <div class="benefit-icon">⚡</div>
+            <strong>전력 손실 감소</strong><br>
+            <small>효율적인 전력 사용</small>
+          </div>
+          <div class="benefit-item">
+            <div class="benefit-icon">🔌</div>
+            <strong>설비 안정성</strong><br>
+            <small>전압 안정화 및 품질 향상</small>
+          </div>
+          <div class="benefit-item">
+            <div class="benefit-icon">🌱</div>
+            <strong>환경 친화</strong><br>
+            <small>CO₂ 배출 감소</small>
+          </div>
+        </div>
+      </div>
 
       <h2 id="sites">어떤 현장에서 유리한가</h2>
       <p>모터가 많은 산업설비(컨베이어, 펌프, 믹서, 컴프레서, HVAC, 엘리베이터 등), 냉동·냉장·화학 플랜트, 정보통신·의료 설비, 호텔·레저, 농축수산, 유통·교육 시설 등 교류 부하가 큰 대부분의 사업장에서 효과적입니다. 재생에너지(풍력 등)에서도 무효 전력 저감은 공급량 증대와 비용 절감의 기회를 제공합니다.</p>
@@ -102,6 +285,7 @@
       <div class="toc" aria-label="페이지 목차">
         <a href="#definition">역률의 정의</a>
         <a href="#pfc">역률 개선(PFC)</a>
+        <a href="#measurement-title">측정 데이터</a>
         <a href="#benefits">효과 요약</a>
         <a href="#sites">적용 분야</a>
       </div>

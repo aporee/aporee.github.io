@@ -29,6 +29,34 @@
     th, td{border:1px solid #e2e8f0; padding:.5rem}
     th{background:#f1f5f9; text-align:left}
     .note{background:#f7fafc; border:1px solid #e9f0f5; border-radius:var(--radius); padding:16px}
+    
+    /* 설치 전후 비교 스타일 */
+    .comparison-section{margin:2rem 0;}
+    .comparison-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:2rem; margin:1.5rem 0;}
+    .comparison-card{background:#fff; border-radius:var(--radius); box-shadow:var(--shadow); overflow:hidden; transition:transform 0.3s ease;}
+    .comparison-card:hover{transform:translateY(-5px);}
+    .comparison-header{background:linear-gradient(135deg, var(--brand), var(--accent)); color:#fff; padding:1rem; text-align:center;}
+    .comparison-header.before{background:linear-gradient(135deg, #dc2626, #b91c1c);}
+    .comparison-header.after{background:linear-gradient(135deg, #059669, #047857);}
+    .comparison-image{width:100%; height:200px; object-fit:contain; background:#f8fafc; padding:1rem;}
+    .comparison-content{padding:1.5rem;}
+    .comparison-stats{display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-top:1rem;}
+    .stat-item{text-align:center; padding:0.5rem; background:#f8fafc; border-radius:8px;}
+    .stat-value{font-size:1.25rem; font-weight:700; color:var(--brand);}
+    .stat-label{font-size:0.9rem; color:var(--muted);}
+    
+    /* 효과 요약 박스 */
+    .effect-summary{background:linear-gradient(135deg, #f0f9ff, #e0f2fe); border:1px solid #0ea5e9; border-radius:var(--radius); padding:1.5rem; margin:2rem 0;}
+    .effect-summary h3{color:#0369a1; margin-top:0;}
+    .effect-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); gap:1rem; margin-top:1rem;}
+    .effect-item{background:#fff; padding:1rem; border-radius:8px; text-align:center; box-shadow:0 2px 4px rgba(0,0,0,0.1);}
+    .effect-icon{font-size:2rem; margin-bottom:0.5rem;}
+    
+    /* 반응형 디자인 */
+    @media (max-width: 768px) {
+      .comparison-grid{grid-template-columns:1fr;}
+      .effect-grid{grid-template-columns:1fr;}
+    }
   </style>
 </head>
 <body>
@@ -64,6 +92,205 @@
       </ul>
       <p class="note">역률과 요금제 관계는 <a href="../knowledge/kepco-power-factor.html">지식센터 · 역률 요금제</a>에서 자세히 설명합니다.</p>
     </section>
+
+    <!-- 설치 전후 비교 섹션 -->
+    <section class="comparison-section" aria-labelledby="comparison-title">
+      <h2 id="comparison-title">설치 전후 효과 비교</h2>
+      <p>KESA 전력절감기 설치 전후의 실제 측정 데이터를 통해 개선 효과를 확인할 수 있습니다.</p>
+      
+      <div class="comparison-grid">
+        <!-- 역률 비교 -->
+        <div class="comparison-card">
+          <div class="comparison-header before">
+            <h3>설치 전 역률</h3>
+          </div>
+          <img src="../images/products/comparison/설치전 역률.png" alt="설치 전 역률 측정 그래프" class="comparison-image">
+          <div class="comparison-content">
+            <p>설치 전 낮은 역률로 인한 전력 손실과 할증 요금 발생</p>
+            <div class="comparison-stats">
+              <div class="stat-item">
+                <div class="stat-value">낮음</div>
+                <div class="stat-label">역률</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-value">높음</div>
+                <div class="stat-label">손실</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="comparison-card">
+          <div class="comparison-header after">
+            <h3>설치 후 역률</h3>
+          </div>
+          <img src="../images/products/comparison/설치후 역률.png" alt="설치 후 역률 측정 그래프" class="comparison-image">
+          <div class="comparison-content">
+            <p>설치 후 역률이 크게 개선되어 전력 손실 감소 및 요금 절약</p>
+            <div class="comparison-stats">
+              <div class="stat-item">
+                <div class="stat-value">개선</div>
+                <div class="stat-label">역률</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-value">감소</div>
+                <div class="stat-label">손실</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- THD 비교 -->
+        <div class="comparison-card">
+          <div class="comparison-header before">
+            <h3>설치 전 THD</h3>
+          </div>
+          <img src="../images/products/comparison/설치전 THD.png" alt="설치 전 THD 측정 그래프" class="comparison-image">
+          <div class="comparison-content">
+            <p>설치 전 높은 고조파 함유율로 인한 전력 품질 저하</p>
+            <div class="comparison-stats">
+              <div class="stat-item">
+                <div class="stat-value">높음</div>
+                <div class="stat-label">THD</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-value">저하</div>
+                <div class="stat-label">품질</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="comparison-card">
+          <div class="comparison-header after">
+            <h3>설치 후 THD</h3>
+          </div>
+          <img src="../images/products/comparison/설치후 THD.png" alt="설치 후 THD 측정 그래프" class="comparison-image">
+          <div class="comparison-content">
+            <p>설치 후 고조파 함유율이 크게 감소하여 전력 품질 향상</p>
+            <div class="comparison-stats">
+              <div class="stat-item">
+                <div class="stat-value">감소</div>
+                <div class="stat-label">THD</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-value">향상</div>
+                <div class="stat-label">품질</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- 전압변동 비교 -->
+        <div class="comparison-card">
+          <div class="comparison-header before">
+            <h3>설치 전 전압변동</h3>
+          </div>
+          <img src="../images/products/comparison/설치전 전압변동.png" alt="설치 전 전압변동 측정 그래프" class="comparison-image">
+          <div class="comparison-content">
+            <p>설치 전 전압 변동이 심하여 설비 안정성 저하</p>
+            <div class="comparison-stats">
+              <div class="stat-item">
+                <div class="stat-value">불안정</div>
+                <div class="stat-label">전압</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-value">저하</div>
+                <div class="stat-label">안정성</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="comparison-card">
+          <div class="comparison-header after">
+            <h3>설치 후 전압변동</h3>
+          </div>
+          <img src="../images/products/comparison/설치후 전압변동.png" alt="설치 후 전압변동 측정 그래프" class="comparison-image">
+          <div class="comparison-content">
+            <p>설치 후 전압이 안정화되어 설비 안정성 및 수명 향상</p>
+            <div class="comparison-stats">
+              <div class="stat-item">
+                <div class="stat-value">안정화</div>
+                <div class="stat-label">전압</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-value">향상</div>
+                <div class="stat-label">안정성</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- 유효전력 비교 -->
+        <div class="comparison-card">
+          <div class="comparison-header before">
+            <h3>설치 전 유효전력</h3>
+          </div>
+          <img src="../images/products/comparison/설치전 유효전력.png" alt="설치 전 유효전력 측정 그래프" class="comparison-image">
+          <div class="comparison-content">
+            <p>설치 전 높은 무효전력으로 인한 전력 손실 발생</p>
+            <div class="comparison-stats">
+              <div class="stat-item">
+                <div class="stat-value">높음</div>
+                <div class="stat-label">무효전력</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-value">손실</div>
+                <div class="stat-label">전력</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="comparison-card">
+          <div class="comparison-header after">
+            <h3>설치 후 유효전력</h3>
+          </div>
+          <img src="../images/products/comparison/KESA-200 설치후 유효전력.png" alt="설치 후 유효전력 측정 그래프" class="comparison-image">
+          <div class="comparison-content">
+            <p>설치 후 무효전력이 감소하여 실제 사용 전력 효율 향상</p>
+            <div class="comparison-stats">
+              <div class="stat-item">
+                <div class="stat-value">감소</div>
+                <div class="stat-label">무효전력</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-value">효율</div>
+                <div class="stat-label">향상</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 효과 요약 -->
+    <div class="effect-summary">
+      <h3>🎯 KESA 전력절감기 설치 효과 요약</h3>
+      <div class="effect-grid">
+        <div class="effect-item">
+          <div class="effect-icon">⚡</div>
+          <strong>역률 개선</strong><br>
+          <small>낮은 역률을 개선하여 전력 손실 감소</small>
+        </div>
+        <div class="effect-item">
+          <div class="effect-icon">📊</div>
+          <strong>THD 감소</strong><br>
+          <small>고조파 함유율 감소로 전력 품질 향상</small>
+        </div>
+        <div class="effect-item">
+          <div class="effect-icon">🔌</div>
+          <strong>전압 안정화</strong><br>
+          <small>전압 변동 감소로 설비 안정성 향상</small>
+        </div>
+        <div class="effect-item">
+          <div class="effect-icon">💰</div>
+          <strong>요금 절약</strong><br>
+          <small>전력 손실 감소 및 할증 요금 회피</small>
+        </div>
+      </div>
+    </div>
 
     <section aria-labelledby="features">
       <h2 id="features">주요 특장점</h2>

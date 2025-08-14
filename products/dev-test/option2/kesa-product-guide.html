@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>KESA 제품 소개와 선택 가이드 | 한국전기절감원(주)</title>
+  <meta name="description" content="KESA 시리즈의 모든 제품을 소개하고, 용도에 맞는 최적의 제품을 선택할 수 있도록 도와드립니다." />
+  <link rel="preload" as="image" href="../../../images/heroes/hero-about.png">
+  <style>
+    /* 공통 스타일 */
+    :root{ --brand:#0f3e5b; --ink:#0b0b0b; --container:1100px; --radius:16px; --shadow:0 10px 30px rgba(0,0,0,.06);}
+    body{margin:0; color:var(--ink); font:400 16px/1.75 system-ui, "Noto Sans KR", sans-serif;}
+    .container{max-width:var(--container); margin:0 auto; padding:16px;}
+    .hero{min-height:42vh; position:relative; color:#fff; display:grid; place-items:center; text-align:center;}
+    .hero::before{content:""; position:absolute; inset:0; z-index:-2;
+      background: radial-gradient(70% 70% at 50% 20%, rgba(26,93,102,.9), rgba(15,62,91,.95) 45%, #0a2230 100%),
+                  url("../../../images/heroes/hero-about.png");
+      background-size:cover; background-position:center;}
+    .hero::after{content:""; position:absolute; inset:0; z-index:-1; background:linear-gradient(180deg,rgba(0,0,0,.35),rgba(0,0,0,.25));}
+    h1 {margin:0; font-weight:900; font-size:clamp(1.9rem,1.2rem+2.4vw,2.8rem);}
+    .breadcrumb{font-size:.95rem; color:#6b7280; padding:12px 0;}
+    .breadcrumb ol{display:flex; gap:.5rem; list-style:none; padding:0; margin:0;}
+    .breadcrumb li+li::before{content:"›"; opacity:.6; padding:0 .25rem;}
+    main{padding:32px 0;}
+    h2{margin:.5rem 0 1rem; font-size:clamp(1.25rem,1.05rem+0.9vw,1.8rem);}
+    
+    /* 제품 시리즈 소개 */
+    .series-intro{background:linear-gradient(135deg, #f0f9ff, #e0f2fe); border-radius:var(--radius); padding:2rem; margin:2rem 0;}
+    .series-header{text-align:center; margin-bottom:2rem;}
+    .series-content{background:#fff; padding:2rem; border-radius:var(--radius); box-shadow:var(--shadow);}
+    .series-highlight{background:#fef3c7; padding:1rem; border-radius:8px; margin:1rem 0; border-left:4px solid #f59e0b;}
+    .series-highlight strong{color:#b45309;}
+    
+    /* 제품 카드 그리드 */
+    .product-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(350px, 1fr)); gap:2rem; margin:3rem 0;}
+    .product-card{background:#fff; border-radius:var(--radius); box-shadow:var(--shadow); overflow:hidden; transition:transform 0.3s ease;}
+    .product-card:hover{transform:translateY(-5px);}
+    .product-image{width:100%; height:200px; object-fit:cover; background:#f8fafc;}
+    .product-content{padding:1.5rem;}
+    .product-title{font-size:1.5rem; font-weight:700; margin:0 0 0.5rem; color:var(--brand);}
+    .product-subtitle{color:#6b7280; font-size:0.9rem; margin-bottom:1rem;}
+    .product-specs{display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin:1rem 0;}
+    .spec-item{background:#f8fafc; padding:0.75rem; border-radius:6px; text-align:center;}
+    .spec-label{font-size:0.8rem; color:#64748b; margin-bottom:0.25rem;}
+    .spec-value{font-weight:700; color:var(--brand);}
+    .product-features{list-style:none; padding:0; margin:1rem 0;}
+    .product-features li{padding:0.25rem 0; color:#4b5563; display:flex; align-items:center;}
+    .product-features li::before{content:"✓"; color:#059669; font-weight:700; margin-right:0.5rem;}
+    .product-cta{display:inline-block; background:var(--brand); color:#fff; padding:0.75rem 1.5rem; text-decoration:none; border-radius:8px; font-weight:600; transition:background 0.3s ease; margin-top:1rem;}
+    .product-cta:hover{background:#0a2230;}
+    
+    /* 제품 선택 가이드 */
+    .selection-guide{background:linear-gradient(135deg, #f0fdf4, #dcfce7); border-radius:var(--radius); padding:2rem; margin:3rem 0;}
+    .guide-header{text-align:center; margin-bottom:2rem;}
+    .guide-content{background:#fff; padding:2rem; border-radius:var(--radius); box-shadow:var(--shadow);}
+    .guide-step{display:flex; align-items:flex-start; margin:1.5rem 0; padding:1rem; background:#f8fafc; border-radius:8px;}
+    .step-number{background:var(--brand); color:#fff; width:2rem; height:2rem; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:700; margin-right:1rem; flex-shrink:0;}
+    .step-content h4{margin:0 0 0.5rem; color:var(--brand);}
+    .step-content p{margin:0; color:#4b5563; line-height:1.6;}
+    
+    /* 용도별 추천 */
+    .usage-recommendations{margin:3rem 0;}
+    .usage-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:2rem; margin:2rem 0;}
+    .usage-card{background:#fff; padding:1.5rem; border-radius:var(--radius); box-shadow:var(--shadow);}
+    .usage-header{display:flex; align-items:center; margin-bottom:1rem;}
+    .usage-icon{font-size:2rem; margin-right:1rem;}
+    .usage-title{font-weight:700; color:var(--brand); margin:0;}
+    .usage-description{color:#4b5563; margin-bottom:1rem; line-height:1.6;}
+    .recommended-products{background:#f0fdf4; padding:1rem; border-radius:8px; border-left:4px solid #10b981;}
+    .recommended-products h4{margin:0 0 0.5rem; color:#059669;}
+    .recommended-products ul{margin:0; padding-left:1.5rem; color:#047857;}
+    
+    /* 사이드바 */
+    .sidebar{background:#f8fafc; border-radius:var(--radius); padding:1.5rem; margin-top:2rem;}
+    .sidebar h3{color:var(--brand); margin-top:0;}
+    .sidebar ul{list-style:none; padding:0; margin:0;}
+    .sidebar li{margin-bottom:0.5rem;}
+    .sidebar a{color:var(--brand); text-decoration:none; font-weight:500;}
+    .sidebar a:hover{text-decoration:underline;}
+    
+    /* 반응형 */
+    @media (max-width: 768px) {
+      .product-grid, .usage-grid {
+        grid-template-columns:1fr;
+      }
+      .guide-step {
+        flex-direction:column;
+        text-align:center;
+      }
+      .step-number {
+        margin:0 0 1rem 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="container">
+      <h1>KESA 제품 소개와 선택 가이드</h1>
+      <p>용도에 맞는 최적의 KESA 제품을 선택하세요</p>
+    </div>
+  </header>
+
+  <nav class="breadcrumb container">
+    <ol>
+      <li><a href="../../../index.html">홈</a></li>
+      <li><a href="../../index.html">제품소개</a></li>
+      <li aria-current="page">KESA 제품 소개와 선택 가이드</li>
+    </ol>
+  </nav>
+
+  <main class="container">
+    <!-- KESA 시리즈 소개 -->
+    <section class="series-intro">
+      <div class="series-header">
+        <h2>KESA 전력절감 시리즈</h2>
+        <p>전력 효율을 극대화하는 한국전기절감원의 핵심 제품</p>
+      </div>
+      <div class="series-content">
+        <p>KESA 시리즈는 다양한 용도와 규모에 맞춰 설계된 전력절감기입니다. 각 모델의 숫자는 KW급 용량을 나타내며, 설치 환경과 부하 특성에 따라 최적의 제품을 선택할 수 있습니다.</p>
+        <div class="series-highlight">
+          <strong>💡 제품 선택 팁:</strong> 모델명의 숫자가 클수록 더 큰 용량의 전력절감이 가능합니다. 예를 들어, KESA-200은 200kW급 부하에 적합합니다.
+        </div>
+      </div>
+    </section>
+
+    <!-- 제품 카드 그리드 -->
+    <section>
+      <h2>KESA 시리즈 제품</h2>
+      <div class="product-grid">
+        <div class="product-card">
+          <div class="product-image"></div>
+          <div class="product-content">
+            <h3 class="product-title">KESA-S03</h3>
+            <p class="product-subtitle">가정용 전력절감기</p>
+            <div class="product-specs">
+              <div class="spec-item">
+                <div class="spec-label">크기</div>
+                <div class="spec-value">10×10×8 cm</div>
+              </div>
+              <div class="spec-item">
+                <div class="spec-label">중량</div>
+                <div class="spec-value">1kg</div>
+              </div>
+            </div>
+            <ul class="product-features">
+              <li>소형 가정용 설비</li>
+              <li>간편한 설치</li>
+              <li>저전력 소비</li>
+              <li>안전한 작동</li>
+            </ul>
+            <a href="../specs.html#kesa-s03" class="product-cta">상세 사양 보기</a>
+          </div>
+        </div>
+        
+        <div class="product-card">
+          <div class="product-image"></div>
+          <div class="product-content">
+            <h3 class="product-title">KESA-S10</h3>
+            <p class="product-subtitle">소상공인용 전력절감기</p>
+            <div class="product-specs">
+              <div class="spec-item">
+                <div class="spec-label">크기</div>
+                <div class="spec-value">250×200×130 mm</div>
+              </div>
+              <div class="spec-item">
+                <div class="spec-label">중량</div>
+                <div class="spec-value">8kg</div>
+              </div>
+            </div>
+            <ul class="product-features">
+              <li>소상공인 시설</li>
+              <li>중간 규모 부하</li>
+              <li>효율적인 전력절감</li>
+              <li>경제적인 가격</li>
+            </ul>
+            <a href="../specs.html#kesa-s10" class="product-cta">상세 사양 보기</a>
+          </div>
+        </div>
+        
+        <div class="product-card">
+          <div class="product-image"></div>
+          <div class="product-content">
+            <h3 class="product-title">KESA-200</h3>
+            <p class="product-subtitle">산업용 전력절감기</p>
+            <div class="product-specs">
+              <div class="spec-item">
+                <div class="spec-label">크기</div>
+                <div class="spec-value">510×430×310 mm</div>
+              </div>
+              <div class="spec-item">
+                <div class="spec-label">중량</div>
+                <div class="spec-value">32kg</div>
+              </div>
+            </div>
+            <ul class="product-features">
+              <li>대형 산업시설</li>
+              <li>고부하 환경</li>
+              <li>고성능 전력절감</li>
+              <li>산업용 표준</li>
+            </ul>
+            <a href="../specs.html#kesa-200" class="product-cta">상세 사양 보기</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 제품 선택 가이드 -->
+    <section class="selection-guide">
+      <div class="guide-header">
+        <h2>제품 선택 가이드</h2>
+        <p>4단계로 쉽게 선택하는 KESA 제품</p>
+      </div>
+      <div class="guide-content">
+        <div class="guide-step">
+          <div class="step-number">1</div>
+          <div class="step-content">
+            <h4>부하 용량 파악</h4>
+            <p>설치할 시설의 전기 사용량을 확인하세요. 일반적으로 월 전기 사용량을 기준으로 합니다.</p>
+          </div>
+        </div>
+        
+        <div class="guide-step">
+          <div class="step-number">2</div>
+          <div class="step-content">
+            <h4>설치 환경 확인</h4>
+            <p>실내/실외, 방폭 여부, 온도 조건 등을 고려하여 적합한 외함 타입을 선택하세요.</p>
+          </div>
+        </div>
+        
+        <div class="guide-step">
+          <div class="step-number">3</div>
+          <div class="step-content">
+            <h4>제품 모델 선택</h4>
+            <p>부하 용량과 설치 환경에 맞는 KESA 모델을 선택하세요. 여유 용량을 고려하는 것이 좋습니다.</p>
+          </div>
+        </div>
+        
+        <div class="guide-step">
+          <div class="step-number">4</div>
+          <div class="step-content">
+            <h4>설치 및 검증</h4>
+            <p>전문가의 설치 후, 실제 효과를 측정하여 예상 성능을 확인하세요.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 용도별 추천 제품 -->
+    <section class="usage-recommendations">
+      <h2>용도별 추천 제품</h2>
+      <div class="usage-grid">
+        <div class="usage-card">
+          <div class="usage-header">
+            <div class="usage-icon">🏠</div>
+            <h3 class="usage-title">가정용</h3>
+          </div>
+          <p class="usage-description">일반 가정, 소형 사무실, 소규모 상점 등에 적합합니다.</p>
+          <div class="recommended-products">
+            <h4>추천 제품</h4>
+            <ul>
+              <li><strong>KESA-S03:</strong> 소형 가정용 (3kW급)</li>
+              <li><strong>KESA-S05:</strong> 중형 가정용 (5kW급)</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="usage-card">
+          <div class="usage-header">
+            <div class="usage-icon">🏢</div>
+            <h3 class="usage-title">소상공인</h3>
+          </div>
+          <p class="usage-description">중소규모 사무실, 상점, 레스토랑, 소형 공장 등에 적합합니다.</p>
+          <div class="recommended-products">
+            <h4>추천 제품</h4>
+            <ul>
+              <li><strong>KESA-S10:</strong> 소상공인용 (10kW급)</li>
+              <li><strong>KESA-S20:</strong> 중소규모 시설 (20kW급)</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="usage-card">
+          <div class="usage-header">
+            <div class="usage-icon">🏭</div>
+            <h3 class="usage-title">산업용</h3>
+          </div>
+          <p class="usage-description">대형 공장, 플랜트, 상업시설, 의료시설 등에 적합합니다.</p>
+          <div class="recommended-products">
+            <h4>추천 제품</h4>
+            <ul>
+              <li><strong>KESA-100:</strong> 중대형 산업용 (100kW급)</li>
+              <li><strong>KESA-200:</strong> 대형 산업용 (200kW급)</li>
+              <li><strong>KESA-300:</strong> 초대형 산업용 (300kW급)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 사이드바 -->
+    <aside class="sidebar">
+      <h3>바로가기</h3>
+      <ul>
+        <li><a href="power-factor-theory.html">역률 개념과 이론</a></li>
+        <li><a href="power-save-effects.html">실제 효과와 사례</a></li>
+        <li><a href="../specs.html">기술 사양과 모델 정보</a></li>
+        <li><a href="../../../contact.html">문의 및 견적</a></li>
+      </ul>
+      
+      <h3>제품 정보</h3>
+      <ul>
+        <li><a href="#series-intro">시리즈 소개</a></li>
+        <li><a href="#product-grid">제품 카탈로그</a></li>
+        <li><a href="#selection-guide">선택 가이드</a></li>
+        <li><a href="#usage-recommendations">용도별 추천</a></li>
+      </ul>
+    </aside>
+  </main>
+</body>
+</html>
+

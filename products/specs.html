@@ -30,6 +30,35 @@
     .cta{margin-top:20px;}
     .btn{padding:.65rem .9rem; border:1px solid #d6dde3; border-radius:12px; font-weight:800; text-decoration:none;}
     .btn.primary{background:var(--brand); color:#fff; border-color:var(--brand);}
+    
+    /* 제품 이미지 갤러리 스타일 */
+    .product-gallery{margin:2rem 0; display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:2rem;}
+    .product-card{background:#fff; border-radius:var(--radius); box-shadow:var(--shadow); overflow:hidden; transition:transform 0.3s ease;}
+    .product-card:hover{transform:translateY(-5px);}
+    .product-image{width:100%; height:250px; object-fit:cover; background:#f8fafc;}
+    .product-info{padding:1.5rem;}
+    .product-title{font-size:1.25rem; font-weight:700; margin:0 0 0.5rem; color:var(--brand);}
+    .product-specs{list-style:none; padding:0; margin:0;}
+    .product-specs li{padding:0.25rem 0; border-bottom:1px solid #f1f5f9; display:flex; justify-content:space-between;}
+    .product-specs li:last-child{border-bottom:none;}
+    
+    /* 이미지 섹션 스타일 */
+    .image-section{margin:2rem 0; text-align:center;}
+    .image-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(250px, 1fr)); gap:1.5rem; margin:1.5rem 0;}
+    .image-item{background:#fff; border-radius:var(--radius); box-shadow:var(--shadow); overflow:hidden;}
+    .image-item img{width:100%; height:200px; object-fit:cover; transition:transform 0.3s ease;}
+    .image-item:hover img{transform:scale(1.05);}
+    .image-caption{padding:1rem; font-size:0.9rem; color:#64748b;}
+    
+    /* 강조 박스 */
+    .highlight-box{background:linear-gradient(135deg, #f8fafc, #e2e8f0); border-left:4px solid var(--brand); padding:1.5rem; border-radius:0 var(--radius) var(--radius) 0; margin:2rem 0;}
+    .highlight-box h3{margin:0 0 1rem; color:var(--brand);}
+    
+    /* 반응형 디자인 */
+    @media (max-width: 768px) {
+      .product-gallery{grid-template-columns:1fr;}
+      .image-grid{grid-template-columns:1fr;}
+    }
   </style>
 </head>
 <body>
@@ -49,6 +78,29 @@
   </nav>
 
   <main class="container">
+    <!-- 제품 이미지 갤러리 -->
+    <section class="image-section">
+      <h2>KESA 제품 이미지</h2>
+      <div class="image-grid">
+        <div class="image-item">
+          <img src="../images/products/KESA-S03 KESA-S10.png" alt="KESA-S03 및 KESA-S10 모델" loading="lazy">
+          <div class="image-caption">KESA-S03 및 KESA-S10 모델</div>
+        </div>
+        <div class="image-item">
+          <img src="../images/products/KESA-50 KESA-200 KESA-300.png" alt="KESA-50, KESA-200, KESA-300 모델" loading="lazy">
+          <div class="image-caption">KESA-50, KESA-200, KESA-300 모델</div>
+        </div>
+        <div class="image-item">
+          <img src="../images/products/KESA-200.png" alt="KESA-200 모델 상세" loading="lazy">
+          <div class="image-caption">KESA-200 모델 상세</div>
+        </div>
+        <div class="image-item">
+          <img src="../images/products/KESA-S10.png" alt="KESA-S10 모델" loading="lazy">
+          <div class="image-caption">KESA-S10 모델</div>
+        </div>
+      </div>
+    </section>
+
     <section>
       <h2>표준 사양</h2>
       <div class="table-wrap">
@@ -56,34 +108,107 @@
           <tr><th>항목</th><th>내용</th></tr>
           <tr><td>전원</td><td>220V / 380V / 440V / 480V (단상 또는 3상, 요청 가능)</td></tr>
           <tr><td>설치 방식</td><td>3상 4선식 표준, 3상 3선식 가능</td></tr>
-          <tr><td>표준/규격</td><td>BS EN 60831, 60439, 60204</td></tr>
+          <tr><td>표준/규격</td><td>BS EN 60831 (IEC831 & IEC70/70), BS EN 60439, BS EN 60204</td></tr>
           <tr><td>IP 등급</td><td>기본 IP42 (요청 시 변경 가능)</td></tr>
-          <tr><td>작동 온도</td><td>-25℃ (환경에 따라 조정 가능)</td></tr>
-          <tr><td>손실</td><td>표준 0.2 W / kVAR</td></tr>
-          <tr><td>구조</td><td>연강 용접 외함, RAL7035 연회색 마감</td></tr>
+          <tr><td>작동 온도</td><td>-25℃ ~ 40℃ (요청 시 다른 온도 가능)</td></tr>
+          <tr><td>손실</td><td>표준 0.2 W / kW</td></tr>
+          <tr><td>구조</td><td>완전 용접된 방수, 방열, 방화, 내방식성 분체도장 외함, 잠금 도어</td></tr>
+          <tr><td>마감</td><td>아이보리 해머톤 (요청 시 스텐레스나 다른 재질, 다른 색상 가능)</td></tr>
           <tr><td>방전</td><td>전원 차단 1분 후 < 50V</td></tr>
-          <tr><td>케이블 종단</td><td>M10, 버스바 또는 MCCB/아이솔레이터 입출입 가능</td></tr>
+          <tr><td>케이블 종단</td><td>부스바 또는 MCCB에 직접 연결</td></tr>
+          <tr><td>선택적 추가 장치</td><td>셀렉터 스위치, Surge Suppression 장치, 경보, EMI Filter, WiFi 기능의 Energy Meter 장착 등</td></tr>
         </table>
       </div>
     </section>
 
+    <!-- 한국전력공사 역률 요금제도 변경사항 -->
     <section>
-      <h2>모델별 치수 및 중량</h2>
+      <h2>한국전력공사 역률 요금제도 변경사항 (2025년 2월 1일부터)</h2>
+      <div class="highlight-box">
+        <h3>⚠️ 주요 변경사항</h3>
+        <p><strong>기준 역률 상향:</strong> 평균 지상역률 90% → 92%로 상향 조정</p>
+        <p><strong>역률 적용 시간대 변경:</strong> 지상역률 09시-23시 → 08시-22시, 진상역률 23시-09시 → 22시-08시</p>
+        <p><strong>할증/할인 구간:</strong> 기준역률 미달시 1%당 기본요금의 0.2% 과징금, 기준역률 초과시 1%당 기본요금의 0.2% 감액</p>
+      </div>
+      
       <div class="table-wrap">
         <table>
-          <tr><th>모델명</th><th>크기 (HxWxD, mm)</th><th>중량 (kg)</th><th>박스형태</th></tr>
-          <tr><td>KESA-S03</td><td>1000 x 600 x 320</td><td>35</td><td>옥내형</td></tr>
-          <tr><td>KESA-05</td><td>1000 x 600 x 320</td><td>52</td><td>옥내형</td></tr>
-          <tr><td>KESA-10</td><td>1000 x 600 x 320</td><td>54</td><td>옥내형</td></tr>
-          <tr><td>KESA-20</td><td>1000 x 600 x 320</td><td>56</td><td>옥내형</td></tr>
-          <tr><td>KESA-30</td><td>1000 x 600 x 320</td><td>60</td><td>옥내형 / 옥외형 / 방폭형</td></tr>
-          <tr><td>KESA-50</td><td>1000 x 600 x 320</td><td>61</td><td>옥내형 / 옥외형 / 방폭형</td></tr>
-          <tr><td>KESA-100</td><td>1000 x 600 x 320</td><td>65</td><td>옥내형 / 옥외형 / 방폭형</td></tr>
-          <tr><td>KESA-200</td><td>1600 x 600 x 520</td><td>69</td><td>옥내형 / 옥외형 / 방폭형</td></tr>
-          <tr><td>KESA-300</td><td>1600 x 600 x 320</td><td>72</td><td>옥내형 / 옥외형 / 방폭형</td></tr>
+          <tr><th>구분</th><th>개정 전</th><th>개정 후</th></tr>
+          <tr><td>기준 역률</td><td>평균 지상역률 90%</td><td>평균 지상역률 92%</td></tr>
+          <tr><td>지상역률 요금</td><td>90% 초과 – 95% 까지</td><td>92% 초과 – 97% 까지</td></tr>
+          <tr><td>지상역률</td><td>09시 - 23시</td><td>08시 - 22시</td></tr>
+          <tr><td>진상역률</td><td>23시 - 09시</td><td>22시 - 08시</td></tr>
         </table>
       </div>
     </section>
+
+    <!-- 제품별 상세 정보 카드 -->
+    <section>
+      <h2>모델별 상세 정보</h2>
+      <div class="product-gallery">
+        <div class="product-card">
+          <img src="../images/products/KESA-S03 KESA-S10.png" alt="KESA-S03" class="product-image">
+          <div class="product-info">
+            <h3 class="product-title">KESA-S03</h3>
+            <ul class="product-specs">
+              <li><span>크기:</span> <span>10 x 10 x 8 cm</span></li>
+              <li><span>중량:</span> <span>1 kg</span></li>
+              <li><span>타입:</span> <span>가정용</span></li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="product-card">
+          <img src="../images/products/KESA-S10.png" alt="KESA-S10" class="product-image">
+          <div class="product-info">
+            <h3 class="product-title">KESA-S10</h3>
+            <ul class="product-specs">
+              <li><span>크기:</span> <span>250 x 200 x 130 mm</span></li>
+              <li><span>중량:</span> <span>8 kg</span></li>
+              <li><span>타입:</span> <span>소상공인용</span></li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="product-card">
+          <img src="../images/products/KESA-200.png" alt="KESA-200" class="product-image">
+          <div class="product-info">
+            <h3 class="product-title">KESA-200</h3>
+            <ul class="product-specs">
+              <li><span>크기:</span> <span>510 x 430 x 310 mm</span></li>
+              <li><span>중량:</span> <span>32 kg</span></li>
+              <li><span>타입:</span> <span>산업용</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>모델별 치수 및 중량 (모델의 숫자는 KW급 용량을 나타냄)</h2>
+      <div class="table-wrap">
+        <table>
+          <tr><th>모델명</th><th>크기 (HxWxD, mm)</th><th>중량 (kg)</th><th>용도</th><th>외함 선택</th></tr>
+          <tr><td>KESA-S03</td><td>10 x 10 x 8</td><td>1</td><td>가정용</td><td>옥내형</td></tr>
+          <tr><td>KESA-05</td><td>10 x 13 x 8</td><td>2</td><td>소상공인용</td><td>옥내형</td></tr>
+          <tr><td>KESA-10</td><td>250 x 200 x 130</td><td>8</td><td>소상공인용</td><td>옥내형</td></tr>
+          <tr><td>KESA-20</td><td>250 x 200 x 130</td><td>8</td><td>소상공인용</td><td>옥내형</td></tr>
+          <tr><td>KESA-30</td><td>250 x 200 x 130</td><td>12</td><td>산업용</td><td>옥내형/옥외형/방폭형 선택가능</td></tr>
+          <tr><td>KESA-50</td><td>510 x 430 x 310</td><td>30</td><td>산업용</td><td>옥내형/옥외형/방폭형 선택가능</td></tr>
+          <tr><td>KESA-100</td><td>510 x 430 x 310</td><td>31</td><td>산업용</td><td>옥내형/옥외형/방폭형 선택가능</td></tr>
+          <tr><td>KESA-200</td><td>510 x 430 x 310</td><td>32</td><td>산업용</td><td>옥내형/옥외형/방폭형 선택가능</td></tr>
+          <tr><td>KESA-300</td><td>600 x 430 x 310</td><td>35</td><td>산업용</td><td>옥내형/옥외형/방폭형 선택가능</td></tr>
+        </table>
+      </div>
+    </section>
+
+    <!-- 강조 박스 -->
+    <div class="highlight-box">
+      <h3>💡 제품 선택 가이드</h3>
+      <p><strong>옥내형:</strong> 일반 사무실, 공장 내부 설치용으로 적합합니다.</p>
+      <p><strong>옥외형:</strong> 야외 환경에 설치할 수 있도록 방수, 방진 처리가 되어 있습니다.</p>
+      <p><strong>방폭형:</strong> 폭발 위험이 있는 환경에서 안전하게 사용할 수 있습니다.</p>
+    </div>
 
     <div class="cta">
       <a href="./kesa-series.html" class="btn primary">KESA 시리즈 보기</a>
