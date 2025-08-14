@@ -82,9 +82,9 @@
         <h2>연락처 & 방문</h2>
         <div class="panel">
           <ul class="list" aria-label="연락처">
-            <li><strong>전화</strong><br><a href="tel:TODO" aria-label="전화 걸기">(업데이트 예정)</a></li>
-            <li><strong>이메일</strong><br><a href="mailto:TODO" aria-label="이메일 보내기">(업데이트 예정)</a></li>
-            <li><strong>주소</strong><br><address style="font-style:normal">(업데이트 예정)</address></li>
+            <li><strong>전화</strong><br><a href="tel:051-363-0458" aria-label="전화 걸기">051-363-0458</a>, <a href="tel:070-7771-6086" aria-label="전화 걸기">070-7771-6086</a></li>
+            <li><strong>팩스</strong><br>051-363-0457</li>
+            <li><strong>주소</strong><br><address style="font-style:normal">부산광역시 사상구 사상로 453, 3층(모라동)</address></li>
             <li><strong>영업시간</strong><br>평일 09:00–18:00 (점심 12:00–13:00) <small>주말·공휴일 휴무</small></li>
           </ul>
         </div>
@@ -177,5 +177,23 @@
       });
     })();
   </script>
+
+  <!-- Footer -->
+  <footer style="background:#0d1114; color:#cfd6dc; padding:26px 0; margin-top:28px">
+    <div class="container">
+      <address style="display:block; text-align:center; opacity:.85; font-style:normal; margin-bottom:8px">
+        한국전기절감원 주식회사㈜ · 부산광역시 사상구 사상로 453, 3층(모라동)
+      </address>
+      <div style="text-align:center; margin-bottom:8px">
+        <span style="opacity:.85">Tel. 051-363-0458, 070-7771-6086</span> · 
+        <span style="opacity:.85">Fax. 051-363-0457</span>
+      </div>
+      <small style="display:block; text-align:center; opacity:.85">
+        © <span id="year"></span> KESA. All rights reserved.
+      </small>
+    </div>
+  </footer>
+
+  <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
 </body>
 </html>

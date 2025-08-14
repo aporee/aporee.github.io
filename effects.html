@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>설치효과·특성 | 회사명</title>
+  <title>설치효과·특성 | 한국전기절감원(주)</title>
   <meta name="description" content="역률이란 무엇인지, 역률 개선의 필요성과 한국전력공사 요금제도, KESA 전기절감기의 장점과 특징, 적용 분야와 사양을 소개합니다.">
   <!-- 공용 스타일 (이미 있다면 경로만 맞추세요) -->
   <link rel="stylesheet" href="./assets/styles.css">
@@ -68,7 +68,7 @@
   <main class="fx" id="content">
     <!-- 역률이란 -->
     <section id="pf" aria-labelledby="pf-title">
-      <h2 id="pf-title">‘역률’이란 무엇인가?</h2>
+      <h2 id="pf-title">'역률'이란 무엇인가?</h2>
       <div class="note">
         <p>역률(Power Factor)은 <strong>유효 전력(kW)</strong>과 <strong>피상 전력(kVA)</strong>의 비율로, 교류(AC) 회로의 전기 효율을 나타냅니다. 전류와 전압의 위상이 일치하지 않을 때 <em>무효 전력</em>이 발생하며, 이는 실제 일을 하지 않지만 시스템에 부담을 줍니다.</p>
         <p>산업·상업 현장의 모터 등 유도성 장비는 자기장 형성을 위해 일정한 무효 전력을 필요로 하며, 과도하면 에너지 비용과 설비 손실을 키울 수 있습니다.</p>
@@ -85,7 +85,7 @@
 
     <!-- 한전 요금제도 -->
     <section id="kepco" aria-labelledby="kepco-title">
-      <h2 id="kepco-title">‘역률’과 관련된 한국전력공사의 요금제도</h2>
+      <h2 id="kepco-title">'역률'과 관련된 한국전력공사의 요금제도</h2>
       <p>2025년 2월 1일부터 한전은 <strong>기준 역률을 92%로 상향</strong>, 할인/할증 구간 및 <strong>적용 시간대</strong>를 아래와 같이 조정했습니다.</p>
       <div class="card">
         <table class="table" aria-label="역률 요금제도 개정표">
@@ -98,57 +98,52 @@
           </thead>
           <tbody>
             <tr>
-              <th scope="row">기준 역률</th>
-              <td>평균 지상역률 <strong>90%</strong></td>
-              <td>평균 지상역률 <strong>92%</strong></td>
+              <td><strong>기준 역률</strong></td>
+              <td>90%</td>
+              <td><strong>92%</strong> <span class="badge">상향</span></td>
             </tr>
             <tr>
-              <th scope="row">지상역률 할인 구간</th>
-              <td>90% 초과 ~ 95%</td>
-              <td>92% 초과 ~ 97%</td>
+              <td><strong>할인 구간</strong></td>
+              <td>95% 이상</td>
+              <td><strong>95% 이상</strong></td>
             </tr>
             <tr>
-              <th scope="row">지상역률 할증 구간</th>
-              <td>90% 미만 ~ 60%</td>
-              <td>92% 미만 ~ 60%</td>
+              <td><strong>할증 구간</strong></td>
+              <td>85% 미만</td>
+              <td><strong>85% 미만</strong></td>
             </tr>
             <tr>
-              <th scope="row">역률 적용 시간대(지상)</th>
-              <td>09:00 ~ 23:00</td>
-              <td>08:00 ~ 22:00</td>
-            </tr>
-            <tr>
-              <th scope="row">역률 적용 시간대(진상)</th>
-              <td>23:00 ~ 09:00</td>
-              <td>22:00 ~ 08:00</td>
-            </tr>
-            <tr>
-              <th scope="row">패널티/인센티브</th>
-              <td>기준 미달 시 1% 당 기본요금의 0.2% 과징</td>
-              <td>기준 초과 시 1% 당 기본요금의 0.2% 감액</td>
+              <td><strong>적용 시간</strong></td>
+              <td>24시간</td>
+              <td><strong>피크 시간대</strong> <span class="badge">신규</span></td>
             </tr>
           </tbody>
         </table>
-        <p class="cap small">※ 무효전력 요금(역률 할증)은 주로 산업용에 적용. 실제 청구 산식은 계약종별·기간에 따라 다를 수 있습니다.</p>
+        <p class="cap">※ 피크 시간대: 여름철(7~8월) 14:00~17:00, 겨울철(12~2월) 10:00~12:00, 18:00~21:00</p>
       </div>
     </section>
 
     <!-- 절감 효과 -->
     <section id="benefits" aria-labelledby="benefits-title">
-      <h2 id="benefits-title">역률 개선으로 인한 절감 효과 및 장점</h2>
+      <h2 id="benefits-title">역률 개선을 통한 절감 효과</h2>
       <div class="cols">
-        <ul class="check">
-          <li>무효 전력 패널티 제거: 역률을 0.92 이상 유지하면 과징금 해소</li>
-          <li>계약 전력(KVA)·가용 용량 요금 절감</li>
-          <li>초과 계약 전력 사용 시 징벌적 요금 저감</li>
-          <li>배선/스위치기어/변압기의 손실(kWh) 감소</li>
-          <li>CO₂ 배출량 저감(ESG 성과 향상)</li>
-          <li>회로 전류 감소로 <strong>추가 부하 연결</strong> 여유 확보</li>
-          <li>인프라 증설/업그레이드 비용 지연 또는 절감</li>
-          <li>전력 품질 개선으로 운영 신뢰성 향상</li>
-        </ul>
-        <div class="note">
-          <p class="small">참고: 저전력품질(저역률·고조파·전압변동 등)은 설비 과열/오작동·라인 정지·품질불량을 유발하여 막대한 손실을 초래할 수 있습니다. 역률 개선은 이러한 위험을 줄이는 1차 조치입니다.</p>
+        <div class="card">
+          <h3>직접 효과 <span class="badge">DIRECT</span></h3>
+          <ul class="check">
+            <li>무효 전력 과징금 제거 (역률 92% 이상)</li>
+            <li>계약 전력 요금 절감 (여유 용량 확보)</li>
+            <li>전력 손실 감소 (I²R 손실 저감)</li>
+            <li>전압 강하 개선 (전압 품질 향상)</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>간접 효과 <span class="badge">INDIRECT</span></h3>
+          <ul class="check">
+            <li>설비 수명 연장 (과열 방지)</li>
+            <li>생산성 향상 (안정적 전력 공급)</li>
+            <li>유지보수 비용 절감</li>
+            <li>환경 친화적 (CO₂ 배출 감소)</li>
+          </ul>
         </div>
       </div>
     </section>
@@ -245,7 +240,22 @@
     </section>
   </main>
 
-  <!-- 필요 시 공통 푸터 인클루드 -->
-  <!-- <div data-include="partials/footer.html"></div> -->
+  <!-- Footer -->
+  <footer style="background:#0d1114; color:#cfd6dc; padding:26px 0; margin-top:28px">
+    <div class="fx">
+      <address style="display:block; text-align:center; opacity:.85; font-style:normal; margin-bottom:8px">
+        한국전기절감원 주식회사㈜ · 부산광역시 사상구 사상로 453, 3층(모라동)
+      </address>
+      <div style="text-align:center; margin-bottom:8px">
+        <span style="opacity:.85">Tel. 051-363-0458, 070-7771-6086</span> · 
+        <span style="opacity:.85">Fax. 051-363-0457</span>
+      </div>
+      <small style="display:block; text-align:center; opacity:.85">
+        © <span id="year"></span> KESA. All rights reserved.
+      </small>
+    </div>
+  </footer>
+
+  <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
 </body>
 </html>

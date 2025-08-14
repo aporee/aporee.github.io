@@ -1,0 +1,40 @@
+# 한국전기절감원(주) 회사 정보
+name: "한국전기절감원 주식회사"
+name_short: "KESA"
+name_english: "Korea Elitech SAver Institute"
+
+# 연락처 정보
+contact:
+  phone:
+    - "051-363-0458"
+    - "070-7771-6086"
+  fax: "051-363-0457"
+  email: "contact@kesa.co.kr"
+  website: "https://aporee.github.io"
+
+# 주소 정보
+address:
+  full: "부산광역시 사상구 사상로 453, 3층(모라동)"
+  city: "부산광역시"
+  district: "사상구"
+  street: "사상로 453"
+  floor: "3층"
+  detail: "모라동"
+
+# 영업 정보
+business:
+  hours: "평일 09:00–18:00 (점심 12:00–13:00)"
+  days_off: "주말·공휴일 휴무"
+
+# 회사 설명
+description: "지속가능한 친환경·저탄소 산업생태계 구축을 위한 전력절감 솔루션"
+slogan: "전력 절감으로 지속가능한 미래를 만듭니다"
+
+# 제품 정보
+products:
+  main: "KESA 시리즈 전력 절감기"
+  effect: "10%+ 절감"
+  features:
+    - "AI 기반 원격 전력 모니터링"
+    - "고효율·친환경"
+    - "장기간 성능 보증"
