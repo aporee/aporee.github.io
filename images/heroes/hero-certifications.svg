@@ -1,0 +1,148 @@
+<svg width="800" height="400" viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- 배경 그라데이션 -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e3a8a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#3b82f6;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- 인증서 그림자 효과 -->
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="3" dy="3" stdDeviation="3" flood-color="#000000" flood-opacity="0.3"/>
+    </filter>
+    
+    <!-- 특허 문서 그림자 효과 -->
+    <filter id="documentShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="2" dy="2" stdDeviation="2" flood-color="#000000" flood-opacity="0.2"/>
+    </filter>
+  </defs>
+  
+  <!-- 배경 -->
+  <rect width="800" height="400" fill="url(#bgGradient)"/>
+  
+  <!-- 배경 패턴 (품질과 신뢰를 상징하는 기하학적 패턴) -->
+  <g opacity="0.1">
+    <circle cx="50" cy="50" r="3" fill="white"/>
+    <circle cx="150" cy="80" r="2" fill="white"/>
+    <circle cx="250" cy="120" r="4" fill="white"/>
+    <circle cx="350" cy="60" r="3" fill="white"/>
+    <circle cx="450" cy="100" r="2" fill="white"/>
+    <circle cx="550" cy="40" r="3" fill="white"/>
+    <circle cx="650" cy="90" r="2" fill="white"/>
+    <circle cx="750" cy="70" r="4" fill="white"/>
+    
+    <circle cx="100" cy="300" r="3" fill="white"/>
+    <circle cx="200" cy="320" r="2" fill="white"/>
+    <circle cx="300" cy="280" r="4" fill="white"/>
+    <circle cx="400" cy="340" r="3" fill="white"/>
+    <circle cx="500" cy="300" r="2" fill="white"/>
+    <circle cx="600" cy="320" r="3" fill="white"/>
+    <circle cx="700" cy="280" r="2" fill="white"/>
+  </g>
+  
+  <!-- 메인 인증서 (중앙) -->
+  <g filter="url(#shadow)">
+    <!-- 인증서 배경 -->
+    <rect x="300" y="120" width="200" height="140" rx="10" fill="#ffffff"/>
+    <rect x="300" y="120" width="200" height="140" rx="10" fill="none" stroke="#e5e7eb" stroke-width="2"/>
+    
+    <!-- 인증서 내부 디자인 -->
+    <rect x="320" y="140" width="160" height="2" fill="#3b82f6"/>
+    <rect x="320" y="150" width="120" height="1" fill="#9ca3af"/>
+    <rect x="320" y="160" width="140" height="1" fill="#9ca3af"/>
+    <rect x="320" y="170" width="100" height="1" fill="#9ca3af"/>
+    
+    <!-- 인증서 제목 -->
+    <text x="400" y="200" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#1f2937">품질경영시스템</text>
+    <text x="400" y="220" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#6b7280">인증서</text>
+    
+    <!-- 인증서 아이콘 -->
+    <circle cx="400" cy="250" r="15" fill="#10b981"/>
+    <path d="M395 245 L400 250 L405 245" stroke="white" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  
+  <!-- 특허 문서 (왼쪽) -->
+  <g filter="url(#documentShadow)">
+    <!-- 문서 배경 -->
+    <rect x="80" y="180" width="120" height="160" rx="5" fill="#fef3c7"/>
+    <rect x="80" y="180" width="120" height="160" rx="5" fill="none" stroke="#f59e0b" stroke-width="2"/>
+    
+    <!-- 문서 내부 라인 -->
+    <rect x="95" y="200" width="90" height="1" fill="#f59e0b"/>
+    <rect x="95" y="210" width="70" height="1" fill="#f59e0b"/>
+    <rect x="95" y="220" width="80" height="1" fill="#f59e0b"/>
+    <rect x="95" y="230" width="60" height="1" fill="#f59e0b"/>
+    <rect x="95" y="240" width="75" height="1" fill="#f59e0b"/>
+    
+    <!-- 특허 아이콘 -->
+    <circle cx="140" cy="270" r="12" fill="#8b5cf6"/>
+    <path d="M135 265 L140 270 L145 265" stroke="white" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    
+    <!-- 특허 번호 -->
+    <text x="140" y="300" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#7c3aed">특허번호</text>
+    <text x="140" y="315" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#a855f7">10-2024-</text>
+  </g>
+  
+  <!-- 품질 인증서 (오른쪽) -->
+  <g filter="url(#documentShadow)">
+    <!-- 인증서 배경 -->
+    <rect x="600" y="160" width="140" height="120" rx="8" fill="#ecfdf5"/>
+    <rect x="600" y="160" width="140" height="120" rx="8" fill="none" stroke="#10b981" stroke-width="2"/>
+    
+    <!-- 인증서 내부 -->
+    <rect x="615" y="175" width="110" height="2" fill="#10b981"/>
+    <rect x="615" y="185" width="80" height="1" fill="#6b7280"/>
+    <rect x="615" y="195" width="90" height="1" fill="#6b7280"/>
+    <rect x="615" y="205" width="70" height="1" fill="#6b7280"/>
+    
+    <!-- 품질 아이콘 -->
+    <circle cx="670" cy="235" r="12" fill="#f59e0b"/>
+    <path d="M665 230 L670 235 L675 230" stroke="white" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    
+    <!-- 품질 인증 텍스트 -->
+    <text x="670" y="255" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#059669">품질인증</text>
+    <text x="670" y="270" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#10b981">ISO 9001</text>
+  </g>
+  
+  <!-- 환경 인증서 (오른쪽 하단) -->
+  <g filter="url(#documentShadow)">
+    <!-- 인증서 배경 -->
+    <rect x="620" y="300" width="100" height="80" rx="6" fill="#f0f9ff"/>
+    <rect x="620" y="300" width="100" height="80" rx="6" fill="none" stroke="#0ea5e9" stroke-width="2"/>
+    
+    <!-- 환경 아이콘 -->
+    <circle cx="670" cy="330" r="10" fill="#0ea5e9"/>
+    <path d="M665 325 L670 330 L675 325" stroke="white" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    
+    <!-- 환경 인증 텍스트 -->
+    <text x="670" y="350" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#0369a1">환경인증</text>
+    <text x="670" y="365" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#0ea5e9">ISO 14001</text>
+  </g>
+  
+  <!-- 중소기업 인증서 (왼쪽 하단) -->
+  <g filter="url(#documentShadow)">
+    <!-- 인증서 배경 -->
+    <rect x="120" y="320" width="100" height="70" rx="6" fill="#fef2f2"/>
+    <rect x="120" y="320" width="100" height="70" rx="6" fill="none" stroke="#ef4444" stroke-width="2"/>
+    
+    <!-- 중소기업 아이콘 -->
+    <circle cx="170" cy="345" r="10" fill="#ef4444"/>
+    <path d="M165 340 L170 345 L175 340" stroke="white" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    
+    <!-- 중소기업 인증 텍스트 -->
+    <text x="170" y="365" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#dc2626">중소기업</text>
+    <text x="170" y="380" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#ef4444">확인서</text>
+  </g>
+  
+  <!-- 연결선 (인증서들 간의 관계를 표현) -->
+  <g opacity="0.3">
+    <line x1="280" y1="190" x2="320" y2="190" stroke="white" stroke-width="2" stroke-dasharray="5,5"/>
+    <line x1="500" y1="190" x2="600" y2="190" stroke="white" stroke-width="2" stroke-dasharray="5,5"/>
+    <line x1="500" y1="250" x2="620" y2="300" stroke="white" stroke-width="2" stroke-dasharray="5,5"/>
+    <line x1="200" y1="340" x2="280" y2="260" stroke="white" stroke-width="2" stroke-dasharray="5,5"/>
+  </g>
+  
+  <!-- 메인 제목 -->
+  <text x="400" y="50" text-anchor="middle" font-family="Arial, sans-serif" font-size="32" font-weight="bold" fill="white">특허 및 인증</text>
+  <text x="400" y="80" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#e0e7ff">품질과 신뢰를 보증하는 다양한 인증서</text>
+</svg>

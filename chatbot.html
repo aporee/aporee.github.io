@@ -1,0 +1,516 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>KESA 챗봇 상담 | 한국전기절감원(주)</title>
+  <meta name="description" content="KESA 전력절감기 제품 상담, 설치 효과, 견적 문의를 위한 AI 챗봇 상담 서비스" />
+  
+  <style>
+    :root{
+      --brand: #0f3e5b;
+      --brand-2: #1a5d66;
+      --ink: #0b0b0b;
+      --muted: #6b7280;
+      --bg: #ffffff;
+      --container: 1400px;
+      --radius: 16px;
+      --shadow: 0 10px 30px rgba(0,0,0,.08);
+      --chat-bg: #f8fafc;
+      --user-msg: #0f3e5b;
+      --bot-msg: #ffffff;
+    }
+    
+    *{
+      box-sizing: border-box;
+    }
+    
+    body{
+      margin: 0;
+      color: var(--ink);
+      background: var(--bg);
+      font: 400 16px/1.65 system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans KR", sans-serif;
+    }
+    
+    a{
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container{
+      max-width: var(--container);
+      margin-inline: auto;
+      padding-inline: clamp(16px,4vw,24px);
+    }
+
+    /* 헤더 */
+    header{
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(255,255,255,.92);
+      backdrop-filter: saturate(1.2) blur(6px);
+      border-bottom: 1px solid #e8ecef;
+    }
+    
+    .nav{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 10px 0;
+    }
+    
+    .logo{
+      font-weight: 900;
+      letter-spacing: .02em;
+      color: var(--brand);
+    }
+    
+    .back-link{
+      padding: .55rem .8rem;
+      border-radius: 10px;
+      background: rgba(15,62,91,.08);
+      color: var(--brand);
+      font-weight: 600;
+    }
+    
+    .back-link:hover{
+      background: rgba(15,62,91,.15);
+    }
+
+    /* 챗봇 컨테이너 */
+    .chatbot-container{
+      max-width: 800px;
+      margin: 40px auto;
+      background: var(--chat-bg);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    
+    .chat-header{
+      background: linear-gradient(135deg, var(--brand), var(--brand-2));
+      color: white;
+      padding: 24px;
+      text-align: center;
+    }
+    
+    .chat-header h1{
+      margin: 0 0 8px 0;
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+    
+    .chat-header p{
+      margin: 0;
+      opacity: 0.9;
+      font-size: 0.95rem;
+    }
+    
+    /* 채팅 영역 */
+    .chat-messages{
+      height: 500px;
+      overflow-y: auto;
+      padding: 20px;
+      background: white;
+    }
+    
+    .message{
+      margin-bottom: 16px;
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+    
+    .message.user{
+      flex-direction: row-reverse;
+    }
+    
+    .message-avatar{
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 14px;
+      flex-shrink: 0;
+    }
+    
+    .message.user .message-avatar{
+      background: var(--user-msg);
+      color: white;
+    }
+    
+    .message.bot .message-avatar{
+      background: var(--brand-2);
+      color: white;
+    }
+    
+    .message-content{
+      max-width: 70%;
+      padding: 12px 16px;
+      border-radius: 18px;
+      line-height: 1.5;
+    }
+    
+    .message.user .message-content{
+      background: var(--user-msg);
+      color: white;
+      border-bottom-right-radius: 6px;
+    }
+    
+    .message.bot .message-content{
+      background: var(--bot-msg);
+      color: var(--ink);
+      border: 1px solid #e8ecef;
+      border-bottom-left-radius: 6px;
+    }
+    
+    /* 입력 영역 */
+    .chat-input{
+      padding: 20px;
+      background: white;
+      border-top: 1px solid #e8ecef;
+    }
+    
+    .input-group{
+      display: flex;
+      gap: 12px;
+    }
+    
+    .chat-input input{
+      flex: 1;
+      padding: 12px 16px;
+      border: 2px solid #e8ecef;
+      border-radius: 25px;
+      font-size: 16px;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    
+    .chat-input input:focus{
+      border-color: var(--brand);
+    }
+    
+    .send-btn{
+      padding: 12px 20px;
+      background: var(--brand);
+      color: white;
+      border: none;
+      border-radius: 25px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    
+    .send-btn:hover{
+      background: var(--brand-2);
+    }
+    
+    .send-btn:disabled{
+      background: #ccc;
+      cursor: not-allowed;
+    }
+    
+    /* 퀵 버튼 */
+    .quick-buttons{
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 12px;
+    }
+    
+    .quick-btn{
+      padding: 8px 16px;
+      background: rgba(15,62,91,.08);
+      color: var(--brand);
+      border: 1px solid rgba(15,62,91,.2);
+      border-radius: 20px;
+      font-size: 14px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    
+    .quick-btn:hover{
+      background: rgba(15,62,91,.15);
+      border-color: rgba(15,62,91,.3);
+    }
+    
+    /* 로딩 애니메이션 */
+    .typing-indicator{
+      display: flex;
+      gap: 4px;
+      padding: 12px 16px;
+      background: var(--bot-msg);
+      border: 1px solid #e8ecef;
+      border-radius: 18px;
+      border-bottom-left-radius: 6px;
+      width: fit-content;
+    }
+    
+    .typing-dot{
+      width: 8px;
+      height: 8px;
+      background: #ccc;
+      border-radius: 50%;
+      animation: typing 1.4s infinite ease-in-out;
+    }
+    
+    .typing-dot:nth-child(1) { animation-delay: -0.32s; }
+    .typing-dot:nth-child(2) { animation-delay: -0.16s; }
+    
+    @keyframes typing {
+      0%, 80%, 100% { transform: scale(0.8); opacity: 0.5; }
+      40% { transform: scale(1); opacity: 1; }
+    }
+    
+    /* 반응형 */
+    @media (max-width: 768px) {
+      .chatbot-container{
+        margin: 20px 16px;
+      }
+      
+      .chat-messages{
+        height: 400px;
+      }
+      
+      .message-content{
+        max-width: 85%;
+      }
+      
+      .input-group{
+        flex-direction: column;
+      }
+      
+      .send-btn{
+        align-self: flex-end;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container nav">
+      <a class="logo" href="./">KESA 한국전기절감원(주)</a>
+      <a href="./" class="back-link">← 메인으로 돌아가기</a>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="chatbot-container">
+      <div class="chat-header">
+        <h1>🤖 KESA AI 상담사</h1>
+        <p>전력절감기 제품 상담, 설치 효과, 견적 문의를 도와드립니다</p>
+      </div>
+      
+      <div class="chat-messages" id="chatMessages">
+        <!-- 메시지들이 여기에 표시됩니다 -->
+      </div>
+      
+      <div class="chat-input">
+        <div class="input-group">
+          <input type="text" id="messageInput" placeholder="질문을 입력하세요..." maxlength="500">
+          <button class="send-btn" id="sendBtn">전송</button>
+        </div>
+        
+        <div class="quick-buttons">
+          <button class="quick-btn" onclick="sendQuickMessage('KESA 제품이 무엇인가요?')">KESA 제품이란?</button>
+          <button class="quick-btn" onclick="sendQuickMessage('설치 효과는 어느 정도인가요?')">설치 효과</button>
+          <button class="quick-btn" onclick="sendQuickMessage('견적은 어떻게 받나요?')">견적 문의</button>
+          <button class="quick-btn" onclick="sendQuickMessage('설치 과정은 어떻게 되나요?')">설치 과정</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // 챗봇 데이터베이스
+    const chatbotData = {
+      greetings: ['안녕하세요', '안녕', '반갑습니다', '문의사항이 있으시면 말씀해주세요'],
+      products: {
+        'kesa': 'KESA는 한국전기절감원(주)의 핵심 제품으로, 산업용/상업용 전력절감기입니다. KESA-50, KESA-200, KESA-300 등 다양한 용량의 제품이 있으며, 전기료를 10% 이상 절감할 수 있습니다.',
+        '제품': 'KESA 시리즈는 전력 품질을 개선하고 전기료를 절감하는 첨단 전력절감 시스템입니다. AI 기반 원격 모니터링 기능도 포함되어 있습니다.',
+        '시리즈': 'KESA 제품은 용량별로 구분됩니다:\n• KESA-50: 소용량 시설용\n• KESA-200: 중용량 시설용\n• KESA-300: 대용량 시설용'
+      },
+      effects: {
+        '효과': 'KESA 설치 효과:\n• 전기료 10% 이상 절감\n• 전력 품질 개선\n• 전압 변동 감소\n• THD(고조파) 감소\n• 생산성 향상',
+        '절감': '평균적으로 10-15%의 전기료 절감 효과를 보입니다. 시설 규모와 사용 패턴에 따라 더 높은 절감률도 가능합니다.',
+        '설치': '설치 후 즉시 효과를 확인할 수 있으며, 1-2개월 내에 전기료 절감 효과가 명확하게 나타납니다.'
+      },
+      pricing: {
+        '견적': '견적은 시설 규모, 전력 사용량, 설치 환경 등을 종합적으로 고려하여 산출됩니다. 정확한 견적을 위해 현장 조사가 필요합니다.',
+        '가격': '제품 가격은 용량과 옵션에 따라 다릅니다. 자세한 견적은 051-363-0458 또는 070-7771-6086으로 문의해주세요.',
+        '비용': '설치 비용은 제품 가격과 설치 공사비를 포함합니다. 전기료 절감 효과를 고려하면 1-2년 내에 투자 비용을 회수할 수 있습니다.'
+      },
+      installation: {
+        '설치': '설치 과정:\n1. 현장 조사 및 설계\n2. 제품 제작 및 납기\n3. 전기 공사 및 설치\n4. 시운전 및 테스트\n5. 사용자 교육 및 인수인계',
+        '기간': '일반적으로 2-4주 정도 소요됩니다. 시설 규모와 복잡도에 따라 달라질 수 있습니다.',
+        '공사': '전기 공사 자격을 보유한 전문 업체가 시공하며, 안전 기준을 철저히 준수합니다.'
+      },
+      contact: {
+        '연락처': '한국전기절감원(주)\n📞 Tel: 051-363-0458, 070-7771-6086\n📧 Fax: 051-363-0457\n📍 주소: 부산광역시 사상구 사상로 453, 3층(모라동)',
+        '문의': '제품 문의, 견적 상담, 기술 상담 등 모든 문의사항을 친절하게 안내해드립니다.',
+        '방문': '현장 조사나 상담을 위해 방문이 필요하시면 사전에 연락해주세요.'
+      }
+    };
+
+    // 대화 기록 저장
+    let conversationHistory = [];
+    
+    // AI 챗봇 API 호출 함수
+    async function askAI(message) {
+      try {
+        // 로딩 상태 표시
+        showTyping();
+        
+        const response = await fetch('/api/chat', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            message: message,
+            conversationHistory: conversationHistory
+          })
+        });
+
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
+        const data = await response.json();
+        
+        // 대화 기록에 추가
+        conversationHistory.push(
+          { role: 'user', content: message },
+          { role: 'assistant', content: data.response }
+        );
+        
+        // 대화 기록이 너무 길어지면 앞부분 제거 (최대 10턴 유지)
+        if (conversationHistory.length > 20) {
+          conversationHistory = conversationHistory.slice(-20);
+        }
+        
+        return data.response;
+        
+      } catch (error) {
+        console.error('AI API 호출 오류:', error);
+        
+        // 오류 발생 시 대체 응답
+        if (error.message.includes('fetch')) {
+          return '죄송합니다. 현재 AI 서비스에 연결할 수 없습니다. 잠시 후 다시 시도해주세요.';
+        } else {
+          return '죄송합니다. 응답을 생성하는 중 오류가 발생했습니다. 다시 시도해주세요.';
+        }
+      } finally {
+        hideTyping();
+      }
+    }
+
+    // 메시지 추가 함수
+    function addMessage(content, isUser = false) {
+      const chatMessages = document.getElementById('chatMessages');
+      const messageDiv = document.createElement('div');
+      messageDiv.className = `message ${isUser ? 'user' : 'bot'}`;
+      
+      const avatar = document.createElement('div');
+      avatar.className = 'message-avatar';
+      avatar.textContent = isUser ? 'U' : 'K';
+      
+      const messageContent = document.createElement('div');
+      messageContent.className = 'message-content';
+      messageContent.textContent = content;
+      
+      messageDiv.appendChild(avatar);
+      messageDiv.appendChild(messageContent);
+      chatMessages.appendChild(messageDiv);
+      
+      // 스크롤을 맨 아래로
+      chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+
+    // 타이핑 표시기
+    function showTyping() {
+      const chatMessages = document.getElementById('chatMessages');
+      const typingDiv = document.createElement('div');
+      typingDiv.className = 'message bot';
+      typingDiv.id = 'typingIndicator';
+      
+      const avatar = document.createElement('div');
+      avatar.className = 'message-avatar';
+      avatar.textContent = 'K';
+      
+      const typingContent = document.createElement('div');
+      typingContent.className = 'typing-indicator';
+      typingContent.innerHTML = '<div class="typing-dot"></div><div class="typing-dot"></div><div class="typing-dot"></div>';
+      
+      typingDiv.appendChild(avatar);
+      typingDiv.appendChild(typingContent);
+      chatMessages.appendChild(typingDiv);
+      
+      chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+
+    // 타이핑 표시기 제거
+    function hideTyping() {
+      const typingIndicator = document.getElementById('typingIndicator');
+      if (typingIndicator) {
+        typingIndicator.remove();
+      }
+    }
+
+    // 메시지 전송 함수
+    async function sendMessage() {
+      const input = document.getElementById('messageInput');
+      const message = input.value.trim();
+      
+      if (message === '') return;
+      
+      // 사용자 메시지 추가
+      addMessage(message, true);
+      input.value = '';
+      
+      // AI 응답 생성
+      try {
+        const response = await askAI(message);
+        addMessage(response);
+      } catch (error) {
+        console.error('메시지 전송 오류:', error);
+        addMessage('죄송합니다. 응답을 생성하는 중 오류가 발생했습니다. 다시 시도해주세요.');
+      }
+    }
+
+    // 퀵 메시지 전송
+    function sendQuickMessage(message) {
+      document.getElementById('messageInput').value = message;
+      sendMessage();
+    }
+
+    // 이벤트 리스너
+    document.addEventListener('DOMContentLoaded', function() {
+      const messageInput = document.getElementById('messageInput');
+      const sendBtn = document.getElementById('sendBtn');
+      
+      // 전송 버튼 클릭
+      sendBtn.addEventListener('click', sendMessage);
+      
+      // Enter 키 입력
+      messageInput.addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+          sendMessage();
+        }
+      });
+      
+      // 초기 인사말
+      setTimeout(() => {
+        addMessage('안녕하세요! KESA AI 상담사입니다. 전력절감기 제품에 대한 궁금한 점이 있으시면 언제든 말씀해주세요. 제품 소개, 설치 효과, 견적 문의 등 무엇이든 도와드리겠습니다.');
+      }, 500);
+    });
+  </script>
+
+</body>
+</html>
