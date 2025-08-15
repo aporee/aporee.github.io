@@ -170,10 +170,11 @@
       </ul>
 
       <!-- 단일 진실 소스 안내 -->
-      <div class="note" style="background:#f0f9ff; border:1px solid #0ea5e9; margin:1.5rem 0; text-align:center;">
+      <div class="note" style="background:#f0f9ff; border:1px solid #0ea5e9; margin:1.5rem 0; text-align:center; cursor:pointer; transition:all 0.3s ease;" onclick="scrollToEffects()" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
         <p style="margin:0; font-weight:600; color:#0369a1;">
           📊 <strong>KESA 전력절감기의 모든 성능 데이터를 한 곳에서 확인하세요!</strong><br>
-          역률, THD, 전압변동, 유효전력 등 설치 전후 비교 데이터를 상세하게 보실 수 있습니다.
+          역률, THD, 전압변동, 유효전력 등 설치 전후 비교 데이터를 상세하게 보실 수 있습니다.<br>
+          <span style="font-size:0.9rem; opacity:0.8;">💡 클릭하면 효과 데이터 섹션으로 이동합니다</span>
         </p>
       </div>
 
@@ -482,6 +483,29 @@
 
     function closeImageModal() {
       document.getElementById('imageModal').style.display = 'none';
+    }
+
+    // 효과 데이터 섹션으로 스크롤하고 하이라이트
+    function scrollToEffects() {
+      const effectsSection = document.getElementById('effect-title');
+      if (effectsSection) {
+        // 부드러운 스크롤
+        effectsSection.scrollIntoView({ 
+          behavior: 'smooth', 
+          block: 'start' 
+        });
+        
+        // 하이라이트 효과
+        effectsSection.style.transition = 'all 0.5s ease';
+        effectsSection.style.color = '#0ea5e9';
+        effectsSection.style.textShadow = '0 0 10px rgba(14, 165, 233, 0.3)';
+        
+        // 2초 후 원래 상태로 복원
+        setTimeout(() => {
+          effectsSection.style.color = '';
+          effectsSection.style.textShadow = '';
+        }, 2000);
+      }
     }
 
     // 모달 외부 클릭 시 닫기
