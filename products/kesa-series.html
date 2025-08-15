@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>KESA 시리즈 | 한국전기절감원(주)</title>
-  <meta name="description" content="KESA 전력절감기 시리즈의 주요 장점(BENEFITS)과 특징(FEATURES), 설계 철학 및 적용 분야 소개." />
+  <title>KESA 시리즈 - 전력절감 솔루션 | 한국전기절감원(주)</title>
+  <meta name="description" content="KESA 전력절감기 시리즈의 상세한 성능 데이터, 설치 전후 비교, 주요 장점과 특징을 확인하세요. 모든 측정 데이터의 단일 진실 소스." />
   <link rel="preload" as="image" href="../images/heroes/hero-kesa-series.png">
   <style>
     :root{ --brand:#0f3e5b; --accent:#1a5d66; --ink:#0b0b0b; --muted:#6b7280; --container:1100px; --radius:16px; --shadow:0 10px 30px rgba(0,0,0,.06); }
@@ -86,17 +86,26 @@
     
     /* 제품 효과 시각화 */
     .effect-visualization{margin:2rem 0;}
-    .effect-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:2rem; margin:1.5rem 0;}
+    .effect-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(320px, 1fr)); gap:2rem; margin:1.5rem 0;}
     .effect-card{background:#fff; border-radius:var(--radius); box-shadow:var(--shadow); overflow:hidden; transition:transform 0.3s ease;}
     .effect-card:hover{transform:translateY(-3px);}
     .effect-header{background:linear-gradient(135deg, #f8fafc, #e2e8f0); padding:1rem; border-bottom:1px solid #e2e8f0;}
     .effect-header h4{margin:0; color:var(--brand); font-size:1.1rem;}
-    .effect-image{width:100%; height:160px; object-fit:contain; background:#f8fafc; padding:0.5rem;}
+    .effect-image{width:100%; height:280px; object-fit:contain; background:#f8fafc; padding:0.5rem; cursor:pointer; transition:transform 0.2s ease;}
+    .effect-image:hover{transform:scale(1.05);}
     .effect-details{padding:1rem;}
     .effect-stats{display:grid; grid-template-columns:1fr 1fr; gap:0.5rem; margin-top:0.5rem;}
     .effect-stat{background:#f1f5f9; padding:0.5rem; border-radius:6px; text-align:center;}
     .effect-number{font-weight:700; color:var(--brand);}
     .effect-text{font-size:0.8rem; color:var(--muted);}
+    
+    /* 이미지 모달 스타일 */
+    .image-modal{display:none; position:fixed; z-index:1000; left:0; top:0; width:100%; height:100%; background-color:rgba(0,0,0,0.9);}
+    .modal-content{position:relative; margin:auto; display:block; width:95%; max-width:1000px; height:95%; max-height:800px; top:50%; transform:translateY(-50%);}
+    .modal-image{width:100%; height:100%; object-fit:contain; border-radius:8px;}
+    .close-modal{position:absolute; top:15px; right:35px; color:#f1f1f1; font-size:40px; font-weight:bold; cursor:pointer; z-index:1001;}
+    .close-modal:hover{color:#bbb;}
+    .modal-caption{position:absolute; bottom:20px; left:50%; transform:translateX(-50%); color:#f1f1f1; text-align:center; background:rgba(0,0,0,0.7); padding:10px 20px; border-radius:8px; font-size:14px;}
     
     /* 적용 분야 시각화 */
     .sectors-visualization{margin:2rem 0;}
@@ -111,6 +120,7 @@
       .showcase-grid{grid-template-columns:1fr;}
       .effect-grid{grid-template-columns:1fr;}
       .sectors-grid{grid-template-columns:repeat(2, 1fr);}
+      .effect-image{height:220px;}
     }
   </style>
 </head>
@@ -159,13 +169,15 @@
         <li>유지보수 비용 절감</li>
       </ul>
 
+
+
       <!-- 성능 비교 시각화 -->
       <div class="performance-showcase">
         <div class="showcase-header">
-          <h3>KESA 시리즈 성능 비교</h3>
+          <h3>설치 전후 성능 개선 효과</h3>
         </div>
         <div class="showcase-content">
-          <p style="text-align:center; margin-bottom:1rem;"><strong>설치 전후 성능 개선 효과</strong></p>
+          <p style="text-align:center; margin-bottom:1rem;"><strong>주요 성능 지표</strong></p>
           <div class="showcase-grid">
             <div class="showcase-item">
               <div class="showcase-title">역률 개선</div>
@@ -206,6 +218,9 @@
       <section class="effect-visualization" aria-labelledby="effect-title">
         <h2 id="effect-title">실제 측정 데이터로 보는 KESA 효과</h2>
         <p>KESA 전력절감기 설치 전후의 실제 측정 데이터를 통해 제품의 효과를 확인할 수 있습니다.</p>
+        <p style="text-align:center; background:#f0f9ff; padding:12px; border-radius:8px; border:1px solid #bae6fd; margin:1rem 0; font-size:0.9rem;">
+          💡 <strong>도표를 클릭하면 확대해서 볼 수 있습니다!</strong> 상세한 데이터와 그래프를 확인하려면 각 이미지를 클릭해보세요.
+        </p>
         
         <div class="effect-grid">
           <!-- 전압변동 개선 -->
@@ -213,7 +228,7 @@
             <div class="effect-header">
               <h4>전압 안정화</h4>
             </div>
-            <img src="../images/products/comparison/설치전 전압변동.png" alt="설치 전 전압변동" class="effect-image">
+            <img src="../images/products/comparison/설치전 전압변동.png" alt="설치 전 전압변동" class="effect-image" onclick="openImageModal(this.src, '설치 전 전압변동')">
             <div class="effect-details">
               <p><strong>설치 전:</strong> 전압 변동이 심하여 설비 안정성 저하</p>
               <div class="effect-stats">
@@ -233,7 +248,7 @@
             <div class="effect-header">
               <h4>전압 안정화 후</h4>
             </div>
-            <img src="../images/products/comparison/설치후 전압변동.png" alt="설치 후 전압변동" class="effect-image">
+            <img src="../images/products/comparison/설치후 전압변동.png" alt="설치 후 전압변동" class="effect-image" onclick="openImageModal(this.src, '설치 후 전압변동')">
             <div class="effect-details">
               <p><strong>설치 후:</strong> 전압이 안정화되어 설비 안정성 향상</p>
               <div class="effect-stats">
@@ -254,7 +269,7 @@
             <div class="effect-header">
               <h4>전력 효율 개선</h4>
             </div>
-            <img src="../images/products/comparison/설치전 유효전력.png" alt="설치 전 유효전력" class="effect-image">
+            <img src="../images/products/comparison/설치전 유효전력.png" alt="설치 전 유효전력" class="effect-image" onclick="openImageModal(this.src, '설치 전 유효전력')">
             <div class="effect-details">
               <p><strong>설치 전:</strong> 높은 무효전력으로 인한 전력 손실</p>
               <div class="effect-stats">
@@ -274,7 +289,7 @@
             <div class="effect-header">
               <h4>전력 효율 개선 후</h4>
             </div>
-            <img src="../images/products/comparison/KESA-200 설치후 유효전력.png" alt="설치 후 유효전력" class="effect-image">
+            <img src="../images/products/comparison/KESA-200 설치후 유효전력.png" alt="설치 후 유효전력" class="effect-image" onclick="openImageModal(this.src, '설치 후 유효전력')">
             <div class="effect-details">
               <p><strong>설치 후:</strong> 무효전력 감소로 실제 사용 전력 효율 향상</p>
               <div class="effect-stats">
@@ -285,6 +300,88 @@
                 <div class="effect-stat">
                   <div class="effect-number">효율</div>
                   <div class="effect-text">향상</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- 역률 개선 -->
+          <div class="effect-card">
+            <div class="effect-header">
+              <h4>역률 개선 전</h4>
+            </div>
+            <img src="../images/products/comparison/설치전 역률.png" alt="설치 전 역률" class="effect-image" onclick="openImageModal(this.src, '설치 전 역률')">
+            <div class="effect-details">
+              <p><strong>설치 전:</strong> 낮은 역률로 인한 전력 손실 및 과징금</p>
+              <div class="effect-stats">
+                <div class="effect-stat">
+                  <div class="effect-number">낮음</div>
+                  <div class="effect-text">역률</div>
+                </div>
+                <div class="effect-stat">
+                  <div class="effect-number">과징금</div>
+                  <div class="effect-text">발생</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="effect-card">
+            <div class="effect-header">
+              <h4>역률 개선 후</h4>
+            </div>
+            <img src="../images/products/comparison/설치후 역률.png" alt="설치 후 역률" class="effect-image" onclick="openImageModal(this.src, '설치 후 역률')">
+            <div class="effect-details">
+              <p><strong>설치 후:</strong> 역률 개선으로 전력 효율 향상 및 과징금 제거</p>
+              <div class="effect-stats">
+                <div class="effect-stat">
+                  <div class="effect-number">개선</div>
+                  <div class="effect-text">역률</div>
+                </div>
+                <div class="effect-stat">
+                  <div class="effect-number">제거</div>
+                  <div class="effect-text">과징금</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- THD 개선 -->
+          <div class="effect-card">
+            <div class="effect-header">
+              <h4>고조파(THD) 개선 전</h4>
+            </div>
+            <img src="../images/products/comparison/설치전 THD.png" alt="설치 전 THD" class="effect-image" onclick="openImageModal(this.src, '설치 전 THD')">
+            <div class="effect-details">
+              <p><strong>설치 전:</strong> 높은 고조파로 인한 전력 품질 저하</p>
+              <div class="effect-stats">
+                <div class="effect-stat">
+                  <div class="effect-number">높음</div>
+                  <div class="effect-text">THD</div>
+                </div>
+                <div class="effect-stat">
+                  <div class="effect-number">저하</div>
+                  <div class="effect-text">품질</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="effect-card">
+            <div class="effect-header">
+              <h4>고조파(THD) 개선 후</h4>
+            </div>
+            <img src="../images/products/comparison/설치후 THD.png" alt="설치 후 THD" class="effect-image" onclick="openImageModal(this.src, '설치 후 THD')">
+            <div class="effect-details">
+              <p><strong>설치 후:</strong> 고조파 감소로 전력 품질 향상 및 설비 보호</p>
+              <div class="effect-stats">
+                <div class="effect-stat">
+                  <div class="effect-number">감소</div>
+                  <div class="effect-text">THD</div>
+                </div>
+                <div class="effect-stat">
+                  <div class="effect-number">향상</div>
+                  <div class="effect-text">품질</div>
                 </div>
               </div>
             </div>
@@ -360,5 +457,34 @@
       </div>
     </aside>
   </main>
+
+  <!-- 이미지 모달 -->
+  <div id="imageModal" class="image-modal">
+    <div class="modal-content">
+      <span class="close-modal" onclick="closeImageModal()">&times;</span>
+      <img class="modal-image" id="modalImage" alt="모달 이미지">
+      <div class="modal-caption" id="modalCaption"></div>
+    </div>
+  </div>
+
+  <script>
+    function openImageModal(imageSrc, caption) {
+      document.getElementById('modalImage').src = imageSrc;
+      document.getElementById('modalCaption').textContent = caption;
+      document.getElementById('imageModal').style.display = 'block';
+    }
+
+    function closeImageModal() {
+      document.getElementById('imageModal').style.display = 'none';
+    }
+
+    // 모달 외부 클릭 시 닫기
+    window.onclick = function(event) {
+      const modal = document.getElementById('imageModal');
+      if (event.target == modal) {
+        modal.style.display = 'none';
+      }
+    }
+  </script>
 </body>
 </html>

@@ -102,6 +102,13 @@
     .stat-number{font-weight:700; color:var(--brand);}
     .stat-text{font-size:0.8rem; color:var(--muted);}
     
+    /* 효과 요약 그리드 */
+    .effect-summary-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(250px, 1fr)); gap:1.5rem; margin:1.5rem 0;}
+    .effect-summary-item{background:#fff; border-radius:var(--radius); box-shadow:var(--shadow); padding:1.5rem; text-align:center; border:1px solid #e2e8f0;}
+    .effect-summary-item .effect-icon{font-size:2.5rem; margin-bottom:1rem;}
+    .effect-summary-item h4{margin:0 0 0.5rem; color:var(--brand); font-size:1.1rem;}
+    .effect-summary-item p{margin:0; color:var(--muted); font-size:0.9rem; line-height:1.5;}
+    
     /* 효과 요약 박스 */
     .benefits-summary{background:linear-gradient(135deg, #f0fdf4, #dcfce7); border:1px solid #22c55e; border-radius:var(--radius); padding:1.5rem; margin:2rem 0;}
     .benefits-summary h3{color:#15803d; margin-top:0;}
@@ -191,92 +198,39 @@
         <p>지상 92% 미만(또는 진상 0.92 미만) 역률에 대해 할증, 92% 초과~97% 구간에 대해 할인 제도가 운영됩니다. 적용 시간대 및 기준은 개정될 수 있으므로, 최신 내용은 <a href="../knowledge/kepco-power-factor.html">지식센터 · 역률 요금제</a> 페이지에서 확인하세요.</p>
       </div>
 
-      <!-- 실제 측정 데이터 시각화 -->
+      <!-- 측정 데이터 시각화 -->
       <section class="measurement-section" aria-labelledby="measurement-title">
         <h2 id="measurement-title">실제 측정 데이터로 보는 역률 개선 효과</h2>
         <p>KESA 전력절감기 설치 전후의 실제 측정 데이터를 통해 역률 개선의 효과를 확인할 수 있습니다.</p>
         
-        <div class="measurement-grid">
-          <!-- 역률 측정 -->
-          <div class="measurement-card">
-            <div class="measurement-header">
-              <h4>역률 개선 효과</h4>
-            </div>
-            <img src="../images/products/comparison/설치전 역률.png" alt="설치 전 역률 측정" class="measurement-image">
-            <div class="measurement-details">
-              <p><strong>설치 전:</strong> 낮은 역률로 인한 전력 손실</p>
-              <div class="measurement-stats">
-                <div class="stat-box">
-                  <div class="stat-number">낮음</div>
-                  <div class="stat-text">역률</div>
-                </div>
-                <div class="stat-box">
-                  <div class="stat-number">높음</div>
-                  <div class="stat-text">손실</div>
-                </div>
-              </div>
-            </div>
+        <div class="note" style="background:#f0f9ff; border:1px solid #0ea5e9; margin:1.5rem 0;">
+          <p style="margin:0; text-align:center;">
+            📊 <strong>상세한 측정 데이터와 그래프를 확인하려면 <a href="./kesa-series.html">KESA 시리즈</a> 페이지를 방문하세요!</strong><br>
+            역률, THD, 전압변동, 유효전력 등 모든 측정 데이터를 한 곳에서 확인할 수 있습니다.
+          </p>
+        </div>
+        
+        <!-- 간단한 효과 요약 -->
+        <div class="effect-summary-grid">
+          <div class="effect-summary-item">
+            <div class="effect-icon">⚡</div>
+            <h4>역률 개선</h4>
+            <p>85% → 95% 이상으로 개선하여 무효전력 손실 최소화</p>
           </div>
-          
-          <div class="measurement-card">
-            <div class="measurement-header">
-              <h4>역률 개선 후</h4>
-            </div>
-            <img src="../images/products/comparison/설치후 역률.png" alt="설치 후 역률 측정" class="measurement-image">
-            <div class="measurement-details">
-              <p><strong>설치 후:</strong> 역률 개선으로 전력 손실 감소</p>
-              <div class="measurement-stats">
-                <div class="stat-box">
-                  <div class="stat-number">개선</div>
-                  <div class="stat-text">역률</div>
-                </div>
-                <div class="stat-box">
-                  <div class="stat-number">감소</div>
-                  <div class="stat-text">손실</div>
-                </div>
-              </div>
-            </div>
+          <div class="effect-summary-item">
+            <div class="effect-icon">📊</div>
+            <h4>고조파 감소</h4>
+            <p>THD 함유율 25% 감소로 전력 품질 향상</p>
           </div>
-          
-          <!-- THD 측정 -->
-          <div class="measurement-card">
-            <div class="measurement-header">
-              <h4>고조파(THD) 개선</h4>
-            </div>
-            <img src="../images/products/comparison/설치전 THD.png" alt="설치 전 THD 측정" class="measurement-image">
-            <div class="measurement-details">
-              <p><strong>설치 전:</strong> 높은 고조파 함유율</p>
-              <div class="measurement-stats">
-                <div class="stat-box">
-                  <div class="stat-number">높음</div>
-                  <div class="stat-text">THD</div>
-                </div>
-                <div class="stat-box">
-                  <div class="stat-number">저하</div>
-                  <div class="stat-text">품질</div>
-                </div>
-              </div>
-            </div>
+          <div class="effect-summary-item">
+            <div class="effect-icon">🔌</div>
+            <h4>전압 안정화</h4>
+            <p>전압 변동 최소화로 설비 안정성 향상</p>
           </div>
-          
-          <div class="measurement-card">
-            <div class="measurement-header">
-              <h4>고조파 개선 후</h4>
-            </div>
-            <img src="../images/products/comparison/설치후 THD.png" alt="설치 후 THD 측정" class="measurement-image">
-            <div class="measurement-details">
-              <p><strong>설치 후:</strong> 고조파 함유율 감소</p>
-              <div class="measurement-stats">
-                <div class="stat-box">
-                  <div class="stat-number">감소</div>
-                  <div class="stat-text">THD</div>
-                </div>
-                <div class="stat-box">
-                  <div class="stat-number">향상</div>
-                  <div class="stat-text">품질</div>
-                </div>
-              </div>
-            </div>
+          <div class="effect-summary-item">
+            <div class="effect-icon">💰</div>
+            <h4>요금 절약</h4>
+            <p>할증료 회피 및 할인 혜택으로 비용 절감</p>
           </div>
         </div>
       </section>

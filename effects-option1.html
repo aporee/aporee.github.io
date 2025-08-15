@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>설치효과·특성 | 한국전기절감원(주)</title>
+  <title>설치효과·특성 - 안1 | 한국전기절감원(주)</title>
   <meta name="description" content="역률이란 무엇인지, 역률 개선의 필요성과 한국전력공사 요금제도, KESA 전기절감기의 장점과 특징, 적용 분야와 사양을 소개합니다.">
   <style>
     :root{
@@ -87,18 +87,49 @@
       font-weight: 600;
     }
 
-    /* Hero */
-    .hero{min-height:42vh; position:relative; color:#fff; display:grid; place-items:center; text-align:center}
-    .hero::before{
-      content:""; position:absolute; inset:0; z-index:-2;
-      background:
-        radial-gradient(70% 70% at 50% 20%, rgba(26,93,102,.9), rgba(15,62,91,.95) 45%, #0a2230 100%),
-        url("./images/heroes/hero-effects.png");
-      background-size:cover; background-position:center;
+    /* Hero - 안1: hero-effects.png 배경을 완전히 보이게 */
+    .hero{
+      min-height: 42vh; 
+      position: relative; 
+      color: #fff; 
+      display: grid; 
+      place-items: center; 
+      text-align: center;
+      overflow: hidden;
     }
-    .hero::after{content:""; position:absolute; inset:0; z-index:-1; background:linear-gradient(180deg,rgba(0,0,0,.35),rgba(0,0,0,.25))}
-    .hero h1{margin:0 0 .4rem; font-weight:900; font-size:clamp(1.9rem,1.2rem + 2.4vw,2.8rem); letter-spacing:.01em}
-    .hero p{margin:0; color:rgba(255,255,255,.92); font-size:clamp(1rem,.95rem + .5vw,1.2rem)}
+    .hero::before{
+      content: ""; 
+      position: absolute; 
+      inset: 0; 
+      z-index: -2;
+      background: url("./images/heroes/hero-effects.png");
+      background-size: cover; 
+      background-position: center;
+    }
+    .hero::after{
+      content: ""; 
+      position: absolute; 
+      inset: 0; 
+      z-index: -1; 
+      background: linear-gradient(180deg, rgba(0,0,0,.2), rgba(0,0,0,.1));
+    }
+    .hero h1{
+      margin: 0 0 .4rem; 
+      font-weight: 900; 
+      font-size: clamp(1.9rem,1.2rem + 2.4vw,2.8rem); 
+      letter-spacing: .01em;
+      position: relative;
+      z-index: 1;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+    }
+    .hero p{
+      margin: 0; 
+      color: rgba(255,255,255,.95); 
+      font-size: clamp(1rem,.95rem + .5vw,1.2rem);
+      position: relative;
+      z-index: 1;
+      text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+    }
 
     /* breadcrumb */
     nav.breadcrumb{font-size:.95rem; color:var(--muted); padding:12px 0}
@@ -161,8 +192,8 @@
   <div class="option-bar">
     <div class="container">
       <span>디자인 옵션:</span>
-      <a href="./effects.html" class="active">원본</a>
-      <a href="./effects-option1.html">안1</a>
+      <a href="./effects.html">원본</a>
+      <a href="./effects-option1.html" class="active">안1</a>
       <a href="./effects-option2.html">안2</a>
       <a href="./effects-option3.html">안3</a>
     </div>
