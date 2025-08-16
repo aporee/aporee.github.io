@@ -238,3 +238,4 @@ def generate_ai_response(message: str, conversation_history: List[Dict[str, str]
     except Exception as e:
         print(f"Unexpected error in AI generation: {str(e)}")
         return "죄송합니다. 응답을 생성하는 중 오류가 발생했습니다."
+

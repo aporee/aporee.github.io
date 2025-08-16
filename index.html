@@ -90,8 +90,10 @@
     .cta{display:flex; gap:12px; justify-content:center; flex-wrap:wrap; margin-top:.5rem}
     .btn{display:inline-block; padding:.9rem 1.15rem; border-radius:14px; font-weight:800; box-shadow:0 8px 24px rgba(0,0,0,.18); background:#fff; color:var(--brand)}
     .btn.secondary{background:transparent; color:#fff; border:2px solid rgba(255,255,255,.75)}
-    .kesa{margin-top:1.2rem; font-weight:900; letter-spacing:.6em; opacity:.9}
-    .tag{display:block; margin-top:.35rem; font-size:.9rem; letter-spacing:.04em; color:rgba(255,255,255,.85)}
+    /* KESA 로고 섹션 */
+    .kesa-section{padding:25px 0 60px; background:linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%); text-align:center}
+    .kesa-logo img{max-width:800px; width:100%; height:auto; object-fit:contain; border-radius:12px; box-shadow:0 8px 32px rgba(0,0,0,0.12); transition:transform 0.3s ease, box-shadow 0.3s ease}
+    .kesa-logo img:hover{transform:translateY(-4px); box-shadow:0 12px 40px rgba(0,0,0,0.18)}
 
     /* 퀵 링크 카드 */
     .quick{padding:28px 0 36px; background:#fff}
@@ -137,9 +139,17 @@
         <a class="btn secondary" href="./effects.html">설치효과·특성 보기</a>
         <a class="btn secondary" href="./contact.html">지금 문의하기</a>
       </div>
+    </div>
+  </section>
 
-      <div class="kesa">K&nbsp;&nbsp;E&nbsp;&nbsp;S&nbsp;&nbsp;A</div>
-      <small class="tag">Korea <b>Elitech SAver</b> Institute · Frontier of Innovative Power Saver System<br>with <b>AI Based Remote Power Monitoring</b></small>
+  <!-- KESA 로고 섹션 -->
+  <section class="kesa-section">
+    <div class="container">
+      <div class="kesa-logo">
+        <img src="images/Korea-Elitech-SAver-Associate2.png" alt="KESA Korea Elitech SAver Associate">
+      </div>
+    </div>
+  </section>
     </div>
   </section>
 
