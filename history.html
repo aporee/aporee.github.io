@@ -1,0 +1,395 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>KESA 한국전기절감원(주) | 연혁</title>
+  <meta name="description" content="KESA 한국전기절감원(주)의 창립부터 현재까지의 연혁과 주요 성과" />
+  <style>
+    :root{
+      --brand:#0f3e5b; --brand-2:#195c64; --ink:#0b0b0b; --muted:#6b7280; --bg:#ffffff;
+      --container: 1120px; --radius: 16px; --gap: clamp(16px, 2vw, 28px);
+      --shadow: 0 10px 30px rgba(0,0,0,.08);
+    }
+    *{box-sizing:border-box}
+    body{margin:0; font:400 16px/1.7 system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans KR", sans-serif; color:var(--ink); background:var(--bg)}
+    a{color:var(--brand); text-decoration:none}
+    img{max-width:100%; display:block}
+    .container{max-width:var(--container); margin-inline:auto; padding-inline: clamp(16px, 4vw, 28px)}
+
+    /* 헤더(간단) */
+    header{
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(255,255,255,.92);
+      backdrop-filter: saturate(1.2) blur(6px);
+    }
+    .nav{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 10px 0;
+    }
+    .logo{
+      font-weight: 900;
+      letter-spacing: .02em;
+      color: var(--brand);
+    }
+    .menu{
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .menu a{
+      padding: .55rem .8rem;
+      border-radius: 10px;
+    }
+    .menu a:hover{
+      background: rgba(15,62,91,.08);
+      color: var(--brand);
+    }
+
+    /* Hero */
+    .hero{position:relative; min-height:56vh; display:grid; place-items:center; text-align:center; color:#fff; isolation:isolate}
+    .hero::before{content:""; position:absolute; inset:0; z-index:-2; background-image: var(--hero, linear-gradient(120deg,#0f3e5b,#195c64)); background-size:cover; background-position:center}
+    .hero::after{content:""; position:absolute; inset:0; z-index:-1; background: linear-gradient(180deg, rgba(0,0,0,.45), rgba(0,0,0,.35))}
+    .hero h1{margin:0 0 .5rem; font-size: clamp(1.8rem,1.3rem + 2.6vw,3rem); letter-spacing:.02em}
+    .hero p{margin:0; color:rgba(255,255,255,.9)}
+
+    /* Breadcrumb */
+    .breadcrumb{padding-block: 14px; color:var(--muted); font-size:.95rem}
+    .breadcrumb ol{list-style:none; display:flex; gap:.5rem; padding:0; margin:0}
+    .breadcrumb li+li::before{content:"›"; opacity:.6; padding-inline:.25rem}
+
+    /* Sections */
+    section{padding-block: clamp(28px, 6vw, 72px)}
+    h2{font-size: clamp(1.3rem,1.05rem + 1.1vw,2rem); margin:0 0 .75rem}
+    .lead{font-size:1.05rem; color:#111}
+    .note{background:#f7fafc; border:1px solid #eef2f7; padding:18px; border-radius:var(--radius)}
+
+    /* Enhanced Timeline */
+    .timeline-container{
+      position: relative;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 40px 0;
+    }
+    .timeline{
+      position: relative;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    .timeline::before{
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      width: 4px;
+      background: linear-gradient(180deg, var(--brand), var(--brand-2));
+      transform: translateX(-50%);
+      border-radius: 2px;
+    }
+    .timeline-item{
+      position: relative;
+      margin: 0 0 60px;
+      width: 100%;
+    }
+    .timeline-item:nth-child(odd) .timeline-content{
+      margin-left: 0;
+      margin-right: 55%;
+      text-align: right;
+    }
+    .timeline-item:nth-child(even) .timeline-content{
+      margin-left: 55%;
+      margin-right: 0;
+      text-align: left;
+    }
+    .timeline-content{
+      background: white;
+      border: 2px solid var(--brand);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: var(--shadow);
+      position: relative;
+    }
+    .timeline-content::before{
+      content: "";
+      position: absolute;
+      top: 50%;
+      width: 0;
+      height: 0;
+      border: 12px solid transparent;
+      transform: translateY(-50%);
+    }
+    .timeline-item:nth-child(odd) .timeline-content::before{
+      right: -24px;
+      border-left-color: var(--brand);
+    }
+    .timeline-item:nth-child(even) .timeline-content::before{
+      left: -24px;
+      border-right-color: var(--brand);
+    }
+    .timeline-date{
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--brand);
+      margin-bottom: 8px;
+      display: block;
+    }
+    .timeline-title{
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin: 0 0 12px;
+      color: var(--ink);
+    }
+    .timeline-description{
+      margin: 0;
+      line-height: 1.6;
+      color: var(--muted);
+    }
+    .timeline-badge{
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 24px;
+      height: 24px;
+      background: var(--brand);
+      border: 4px solid white;
+      border-radius: 50%;
+      box-shadow: 0 0 0 4px var(--brand-2);
+      z-index: 2;
+    }
+    .timeline-category{
+      display: inline-block;
+      padding: 4px 12px;
+      background: #eef6ff;
+      color: var(--brand);
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      margin-top: 12px;
+    }
+
+    /* Milestone highlights */
+    .milestones{
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 24px;
+      margin: 40px 0;
+    }
+    .milestone-card{
+      background: linear-gradient(135deg, var(--brand), var(--brand-2));
+      color: white;
+      padding: 24px;
+      border-radius: var(--radius);
+      text-align: center;
+      box-shadow: var(--shadow);
+    }
+    .milestone-number{
+      font-size: 2.5rem;
+      font-weight: 900;
+      margin: 0 0 8px;
+      opacity: 0.9;
+    }
+    .milestone-label{
+      font-size: 1rem;
+      margin: 0;
+      opacity: 0.95;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .timeline::before{
+        left: 20px;
+      }
+      .timeline-item .timeline-content{
+        margin-left: 60px !important;
+        margin-right: 0 !important;
+        text-align: left !important;
+      }
+      .timeline-item .timeline-content::before{
+        left: -24px !important;
+        right: auto !important;
+        border-right-color: var(--brand) !important;
+        border-left-color: transparent !important;
+      }
+      .timeline-badge{
+        left: 20px;
+        transform: translate(-50%, -50%);
+      }
+    }
+
+    /* Footer */
+    footer{margin-top: clamp(40px, 6vw, 80px); background:#0d1114; color:#cfd6dc; padding: 26px 0}
+    footer small, footer address{text-align:center; display:block; opacity:.85}
+    footer address{font-style:normal}
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container nav">
+      <a class="logo" href="./">KESA 한국전기절감원(주)</a>
+      <nav class="menu" aria-label="주요 메뉴">
+        <a href="./about.html">회사소개</a>
+        <a href="./products/index.html">제품소개</a>
+        <a href="./effects.html">설치효과·특성</a>
+        <a href="./cases/index.html">시공사례</a>
+        <a href="./contact.html">문의하기</a>
+      </nav>
+    </div>
+  </header>
+
+  <header class="hero" style="--hero:url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1680&auto=format&fit=crop');">
+    <div class="container">
+      <h1>KESA의 성장 역사</h1>
+      <p>창립부터 현재까지, 지속적인 혁신과 성장의 발자취</p>
+    </div>
+  </header>
+
+  <nav class="breadcrumb container" aria-label="breadcrumb">
+    <ol>
+      <li><a href="/index.html">홈</a></li>
+      <li aria-current="page">연혁</li>
+    </ol>
+  </nav>
+
+  <main class="container">
+    <section aria-labelledby="intro">
+      <h2 id="intro">KESA 연혁</h2>
+      <p class="lead">한국전기절감원(주)는 40여 년간의 교육연구와 산업 현장 경험을 바탕으로 창립되어, 지속적인 혁신과 성장을 통해 전기절감 기술의 선두주자로 자리매김하고 있습니다.</p>
+      
+      <div class="milestones">
+        <div class="milestone-card">
+          <div class="milestone-number">40+</div>
+          <div class="milestone-label">년간의 연구 경험</div>
+        </div>
+        <div class="milestone-card">
+          <div class="milestone-number">2023</div>
+          <div class="milestone-label">회사 창립</div>
+        </div>
+        <div class="milestone-card">
+          <div class="milestone-number">2025</div>
+          <div class="milestone-label">본사 이전</div>
+        </div>
+        <div class="milestone-card">
+          <div class="milestone-number">10+</div>
+          <div class="milestone-label">년 효율 유지</div>
+        </div>
+      </div>
+    </section>
+
+    <section aria-labelledby="timeline">
+      <h2 id="timeline">주요 연혁</h2>
+      <div class="timeline-container">
+        <ul class="timeline">
+          <li class="timeline-item">
+            <div class="timeline-badge"></div>
+            <div class="timeline-content">
+              <span class="timeline-date">2023년 11월 23일</span>
+              <h3 class="timeline-title">한국전기절감원(주) 창립</h3>
+              <p class="timeline-description">KESA Korea Electricity Saving Agency로 서울 구로구 디지털로에서 창립. 전 동아대학교 전기공학과 교수(명예교수)를 기술고문으로 추대하여 기술력 기반을 구축했습니다.</p>
+              <span class="timeline-category">창립</span>
+            </div>
+          </li>
+
+          <li class="timeline-item">
+            <div class="timeline-badge"></div>
+            <div class="timeline-content">
+              <span class="timeline-date">2024년 3월</span>
+              <h3 class="timeline-title">조달청 및 Q마크 등록</h3>
+              <p class="timeline-description">정부조달 시장 진입을 위한 조달청 등록과 품질 인증을 위한 Q마크 등록을 완료하여 공공기관 시장 진출의 기반을 마련했습니다.</p>
+              <span class="timeline-category">인증</span>
+            </div>
+          </li>
+
+          <li class="timeline-item">
+            <div class="timeline-badge"></div>
+            <div class="timeline-content">
+              <span class="timeline-date">2024년 3월</span>
+              <h3 class="timeline-title">SGI 서울보증보험 지급보증증권 계약</h3>
+              <p class="timeline-description">고객의 안전한 계약 이행을 보장하는 지급보증보험을 체결하여 신뢰성 있는 사업 파트너십을 구축했습니다.</p>
+              <span class="timeline-category">보험</span>
+            </div>
+          </li>
+
+          <li class="timeline-item">
+            <div class="timeline-badge"></div>
+            <div class="timeline-content">
+              <span class="timeline-date">2024년 3월</span>
+              <h3 class="timeline-title">㈜비즈렌탈코리아 계약</h3>
+              <p class="timeline-description">전기절감기 렌탈 사업을 위한 전략적 파트너십을 체결하여 새로운 사업 모델 확장의 기반을 마련했습니다.</p>
+              <span class="timeline-category">파트너십</span>
+            </div>
+          </li>
+
+          <li class="timeline-item">
+            <div class="timeline-badge"></div>
+            <div class="timeline-content">
+              <span class="timeline-date">2024년 5월</span>
+              <h3 class="timeline-title">ISO 9001(품질경영) · ISO 14001(환경경영) 인증</h3>
+              <p class="timeline-description">국제표준 품질경영시스템과 환경경영시스템 인증을 획득하여 제품 품질과 환경 친화적 경영을 인정받았습니다.</p>
+              <span class="timeline-category">인증</span>
+            </div>
+          </li>
+
+          <li class="timeline-item">
+            <div class="timeline-badge"></div>
+            <div class="timeline-content">
+              <span class="timeline-date">2025년 3월 24일</span>
+              <h3 class="timeline-title">한국전기절감원(주) 재창립 및 본사 이전</h3>
+              <p class="timeline-description">KESA Korea Elitech SAver Institute로 재창립하고 부산 사상구 사상로로 본사를 이전하여 지역 경제 발전에 기여할 수 있는 새로운 시작을 했습니다.</p>
+              <span class="timeline-category">재창립</span>
+            </div>
+          </li>
+
+          <li class="timeline-item">
+            <div class="timeline-badge"></div>
+            <div class="timeline-content">
+              <span class="timeline-date">2025년</span>
+              <h3 class="timeline-title">중소기업인증 (예정)</h3>
+              <p class="timeline-description">중소기업 인증을 통해 정부 지원 정책 활용과 중소기업 혜택을 받을 수 있게 되어 더욱 활발한 사업 확장이 기대됩니다.</p>
+              <span class="timeline-category">인증 예정</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section aria-labelledby="vision">
+      <h2 id="vision">미래 비전</h2>
+      <div class="note">
+        <p><strong>KESA 한국전기절감원(주)</strong>은 지속적인 기술 혁신과 품질 향상을 통해 전기절감 기술의 글로벌 리더로 성장하고, 고객과 함께 지속가능한 미래를 만들어 나가겠습니다.</p>
+        <ul style="margin: 16px 0 0; padding-left: 20px;">
+          <li>전기절감 기술의 지속적인 혁신과 발전</li>
+          <li>국내외 시장 진출을 통한 글로벌 경쟁력 확보</li>
+          <li>친환경 에너지 솔루션 제공을 통한 사회적 가치 창출</li>
+          <li>고객과의 장기적 파트너십을 통한 상생 발전</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer style="background:#0d1114; color:#cfd6dc; padding:26px 0; margin-top:28px">
+    <div class="fx">
+      <address style="display:block; text-align:center; opacity:.85; font-style:normal; margin-bottom:8px">
+        한국전기절감원 주식회사 · 부산광역시 사상구 사상로 453, 3층(모라동)
+      </address>
+      <div style="text-align:center; margin-bottom:8px">
+        <span style="opacity:.85">Tel. 051-363-0458, 070-7771-6086</span> ·
+        <span style="opacity:.85">Fax. 051-363-0457</span>
+      </div>
+      <small style="display:block; text-align:center; opacity:.85">
+        © <span id="year">2025</span> KESA. All rights reserved.
+      </small>
+    </div>
+  </footer>
+
+  <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+</body>
+</html>
