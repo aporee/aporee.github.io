@@ -1,0 +1,352 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Case Studies | KESA Korea Electric Saving Association</title>
+  <meta name="description" content="KESA Power Saving Device Installation Cases: Industry-specific field photos and performance indicators (power factor before/after, current reduction rate, savings estimates)." />
+  <link rel="preload" as="image" href="../../images/heroes/hero-cases.png">
+  <style>
+    :root{ --brand:#0f3e5b; --accent:#1a5d66; --ink:#0b0b0b; --muted:#6b7280; --container:1100px; --radius:16px; --shadow:0 10px 30px rgba(0,0,0,.06);} 
+    *{box-sizing:border-box}
+    body{margin:0; color:var(--ink); font:400 16px/1.75 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+    a{color:inherit; text-decoration:none}
+    .container{max-width:var(--container); margin-inline:auto; padding-inline:clamp(16px,4vw,24px)}
+
+    /* 헤더(간단) */
+    header{
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(255,255,255,.92);
+      backdrop-filter: saturate(1.2) blur(6px);
+    }
+    .nav{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 10px 0;
+    }
+    .logo{
+      font-weight: 900;
+      letter-spacing: .02em;
+      color: var(--brand);
+    }
+    .menu{
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .menu a{
+      padding: .55rem .8rem;
+      border-radius: 10px;
+    }
+    .menu a:hover{
+      background: rgba(15,62,91,.08);
+      color: var(--brand);
+    }
+
+    /* Hero */
+    .hero{min-height:40vh; position:relative; color:#fff; display:grid; place-items:center; text-align:center}
+    .hero::before{content:""; position:absolute; inset:0; z-index:-2; background:
+      radial-gradient(70% 70% at 50% 20%, rgba(26,93,102,.9), rgba(15,62,91,.95) 45%, #0a2230 100%),
+      url("../../images/heroes/hero-cases.png"); background-size:cover; background-position:center}
+    .hero::after{content:""; position:absolute; inset:0; z-index:-1; background:linear-gradient(180deg,rgba(0,0,0,.35),rgba(0,0,0,.25))}
+    .hero h1{margin:0 0 .4rem; font-weight:900; font-size:clamp(1.9rem,1.2rem + 2.4vw,2.8rem)}
+    .hero p{margin:0; color:rgba(255,255,255,.92); font-size:clamp(1rem,.95rem + .5vw,1.2rem)}
+
+    /* breadcrumb */
+    nav.breadcrumb{font-size:.95rem; color:var(--muted); padding:12px 0}
+    nav.breadcrumb ol{display:flex; gap:.5rem; list-style:none; padding:0; margin:0}
+    nav.breadcrumb li+li::before{content:"›"; opacity:.6; padding-inline:.25rem}
+
+    /* controls */
+    .controls{display:flex; flex-wrap:wrap; gap:10px; align-items:center; padding:12px 0}
+    .chip{display:inline-flex; align-items:center; padding:.45rem .7rem; border:1px solid #d6dde3; border-radius:999px; font-weight:700; cursor:pointer; user-select:none}
+    .chip.active{background:var(--brand); color:#fff; border-color:var(--brand)}
+    .search{flex:1 1 220px}
+    .search input{width:100%; padding:.6rem .8rem; border:1px solid #d6dde3; border-radius:12px; font:inherit}
+
+    /* grid */
+    .grid{display:grid; gap:18px; grid-template-columns:repeat(3,1fr)}
+    @media (max-width: 980px){ .grid{grid-template-columns:repeat(2,1fr)} }
+    @media (max-width: 640px){ .grid{grid-template-columns:1fr} }
+
+    .card{display:flex; flex-direction:column; background:#fff; border:1px solid #e9eef2; border-radius:var(--radius); box-shadow:var(--shadow); overflow:hidden}
+    .thumb{aspect-ratio:16/9; width:100%; background:#e5e7eb; object-fit:cover}
+    .card-body{padding:14px}
+    .tag{display:inline-block; font-size:.82rem; padding:.2rem .5rem; border-radius:999px; background:#0f3e5b10; border:1px solid #d6dde3; margin-right:6px}
+    .card h3{margin:.25rem 0 .35rem; font-size:1.05rem}
+    .meta{font-size:.92rem; color:#475569}
+    dl{display:grid; grid-template-columns:auto 1fr; gap:.25rem .6rem; margin:.4rem 0 0}
+    dt{color:#64748b}
+    dd{margin:0; font-weight:700}
+    .foot{display:flex; align-items:center; justify-content:space-between; padding:12px 14px; border-top:1px solid #eef2f6}
+    .btn{display:inline-block; padding:.55rem .8rem; border-radius:12px; border:1px solid #d6dde3; font-weight:800}
+    .btn.primary{background:var(--brand); color:#fff; border-color:var(--brand)}
+
+    .note{background:#f7fafc; border:1px solid #e9f0f5; border-radius:12px; padding:14px; margin-top:18px}
+    
+    /* 언어 선택 */
+    .lang-switch{
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 100;
+    }
+    .lang-switch a{
+      background: rgba(255,255,255,0.9);
+      padding: 8px 16px;
+      border-radius: 20px;
+      color: var(--brand);
+      font-weight: 600;
+      font-size: 14px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container nav">
+      <a class="logo" href="../">KESA Korea Electric Saving Association</a>
+      <nav class="menu" aria-label="Main Menu">
+        <a href="../about.html">About Us</a>
+        <a href="../products/index.html">Products</a>
+        <a href="../effects.html">Effects & Features</a>
+        <a href="./index.html">Case Studies</a>
+        <a href="../contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Language Switch -->
+  <div class="lang-switch">
+    <a href="../../cases/index.html">한국어</a>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <h1>Case Studies</h1>
+      <p>Real-world results from KESA power saving installations</p>
+    </div>
+  </section>
+
+  <!-- BREADCRUMB -->
+  <nav class="breadcrumb">
+    <div class="container">
+      <ol>
+        <li><a href="../">Home</a></li>
+        <li>Case Studies</li>
+      </ol>
+    </div>
+  </nav>
+
+  <!-- MAIN CONTENT -->
+  <main>
+    <section>
+      <div class="container">
+        
+        <div class="controls">
+          <div class="chip active" data-filter="all">All Industries</div>
+          <div class="chip" data-filter="manufacturing">Manufacturing</div>
+          <div class="chip" data-filter="commercial">Commercial</div>
+          <div class="chip" data-filter="industrial">Industrial</div>
+          <div class="search">
+            <input type="text" placeholder="Search case studies...">
+          </div>
+        </div>
+
+        <div class="grid">
+          
+          <!-- Case Study 1 -->
+          <article class="card" data-industry="manufacturing">
+            <img src="../../images/products/KESA-200.png" alt="KESA-200 Installation" class="thumb">
+            <div class="card-body">
+              <span class="tag">Manufacturing</span>
+              <h3>Automotive Parts Factory</h3>
+              <p class="meta">Location: Gyeonggi Province, South Korea</p>
+              <dl>
+                <dt>Power Factor</dt>
+                <dd>0.75 → 0.98</dd>
+                <dt>Current Reduction</dt>
+                <dd>18.5%</dd>
+                <dt>Monthly Savings</dt>
+                <dd>₩2,400,000</dd>
+              </dl>
+            </div>
+            <div class="foot">
+              <span>KESA-200 Model</span>
+              <a href="#" class="btn primary">View Details</a>
+            </div>
+          </article>
+
+          <!-- Case Study 2 -->
+          <article class="card" data-industry="commercial">
+            <img src="../../images/products/KESA-50 KESA-200 KESA-300.png" alt="KESA Series Installation" class="thumb">
+            <div class="card-body">
+              <span class="tag">Commercial</span>
+              <h3>Large Office Building</h3>
+              <p class="meta">Location: Seoul, South Korea</p>
+              <dl>
+                <dt>Power Factor</dt>
+                <dd>0.68 → 0.95</dd>
+                <dt>Current Reduction</dt>
+                <dd>22.3%</dd>
+                <dt>Monthly Savings</dt>
+                <dd>₩1,800,000</dd>
+              </dl>
+            </div>
+            <div class="foot">
+              <span>KESA-50 + KESA-200</span>
+              <a href="#" class="btn primary">View Details</a>
+            </div>
+          </article>
+
+          <!-- Case Study 3 -->
+          <article class="card" data-industry="industrial">
+            <img src="../../images/products/KESA-S10.png" alt="KESA-S10 Installation" class="thumb">
+            <div class="card-body">
+              <span class="tag">Industrial</span>
+              <h3>Steel Processing Plant</h3>
+              <p class="meta">Location: Pohang, South Korea</p>
+              <dl>
+                <dt>Power Factor</dt>
+                <dd>0.62 → 0.96</dd>
+                <dt>Current Reduction</dt>
+                <dd>25.7%</dd>
+                <dt>Monthly Savings</dt>
+                <dd>₩4,200,000</dd>
+              </dl>
+            </div>
+            <div class="foot">
+              <span>KESA-S10 Model</span>
+              <a href="#" class="btn primary">View Details</a>
+            </div>
+          </article>
+
+          <!-- Case Study 4 -->
+          <article class="card" data-industry="manufacturing">
+            <img src="../../images/products/KESA-200.png" alt="KESA-200 Installation" class="thumb">
+            <div class="card-body">
+              <span class="tag">Manufacturing</span>
+              <h3>Electronics Assembly</h3>
+              <p class="meta">Location: Incheon, South Korea</p>
+              <dl>
+                <dt>Power Factor</dt>
+                <dd>0.71 → 0.97</dd>
+                <dt>Current Reduction</dt>
+                <dd>19.8%</dd>
+                <dt>Monthly Savings</dt>
+                <dd>₩3,100,000</dd>
+              </dl>
+            </div>
+            <div class="foot">
+              <span>KESA-200 Model</span>
+              <a href="#" class="btn primary">View Details</a>
+            </div>
+          </article>
+
+          <!-- Case Study 5 -->
+          <article class="card" data-industry="commercial">
+            <img src="../../images/products/KESA-S03 KESA-S10.png" alt="KESA-S Series Installation" class="thumb">
+            <div class="card-body">
+              <span class="tag">Commercial</span>
+              <h3>Shopping Mall</h3>
+              <p class="meta">Location: Busan, South Korea</p>
+              <dl>
+                <dt>Power Factor</dt>
+                <dd>0.65 → 0.94</dd>
+                <dt>Current Reduction</dt>
+                <dd>21.2%</dd>
+                <dt>Monthly Savings</dt>
+                <dd>₩2,700,000</dd>
+              </dl>
+            </div>
+            <div class="foot">
+              <span>KESA-S03 + S10</span>
+              <a href="#" class="btn primary">View Details</a>
+            </div>
+          </article>
+
+          <!-- Case Study 6 -->
+          <article class="card" data-industry="industrial">
+            <img src="../../images/products/KESA-300.png" alt="KESA-300 Installation" class="thumb">
+            <div class="card-body">
+              <span class="tag">Industrial</span>
+              <h3>Chemical Processing</h3>
+              <p class="meta">Location: Ulsan, South Korea</p>
+              <dl>
+                <dt>Power Factor</dt>
+                <dd>0.58 → 0.95</dd>
+                <dt>Current Reduction</dt>
+                <dd>28.4%</dd>
+                <dt>Monthly Savings</dt>
+                <dd>₩5,600,000</dd>
+              </dl>
+            </div>
+            <div class="foot">
+              <span>KESA-300 Model</span>
+              <a href="#" class="btn primary">View Details</a>
+            </div>
+          </article>
+
+        </div>
+
+        <div class="note">
+          <strong>Note:</strong> All case studies show real installation results from actual customer facilities. 
+          Savings may vary depending on facility size, usage patterns, and local electricity rates. 
+          Contact us for a detailed analysis of your specific facility.
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer style="background:#0d1114; color:#cfd6dc; padding:26px 0; margin-top:28px">
+    <div class="container">
+      <address style="display:block; text-align:center; opacity:.85; font-style:normal; margin-bottom:8px">
+        KESA Korea Electric Saving Association · 3rd Floor, 453 Sasang-ro, Sasang-gu, Busan (Mora-dong)
+      </address>
+      <div style="text-align:center; margin-bottom:8px">
+        <span style="opacity:.85">Tel. 051-363-0458, 070-7771-6086</span> ·
+        <span style="opacity:.85">Fax. 051-363-0457</span>
+      </div>
+      <small style="display:block; text-align:center; opacity:.85">
+        © <span id="year">2025</span> KESA. All rights reserved.
+      </small>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent=new Date().getFullYear();
+    
+    // Filter functionality
+    const chips = document.querySelectorAll('.chip');
+    const cards = document.querySelectorAll('.card');
+    
+    chips.forEach(chip => {
+      chip.addEventListener('click', () => {
+        const filter = chip.dataset.filter;
+        
+        // Update active chip
+        chips.forEach(c => c.classList.remove('active'));
+        chip.classList.add('active');
+        
+        // Filter cards
+        cards.forEach(card => {
+          if (filter === 'all' || card.dataset.industry === filter) {
+            card.style.display = 'flex';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>

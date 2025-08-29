@@ -1,0 +1,391 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Specifications/Models · KESA Series | KESA Korea Electric Saving Association</title>
+  <meta name="description" content="Check the standard specifications and model-specific dimensions and weight information for KESA power saving series." />
+  <link rel="preload" as="image" href="../../images/heroes/hero-specs.png">
+  <style>
+    /* 공통 스타일 재활용 (hero, breadcrumb, container 등) */
+    :root{ --brand:#0f3e5b; --ink:#0b0b0b; --container:1100px; --radius:16px; --shadow:0 10px 30px rgba(0,0,0,.06);}
+    body{margin:0; color:var(--ink); font:400 16px/1.75 system-ui, "Segoe UI", sans-serif;}
+    .container{max-width:var(--container); margin:0 auto; padding:16px;}
+
+    /* 헤더(간단) */
+    header{
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(255,255,255,.92);
+      backdrop-filter: saturate(1.2) blur(6px);
+    }
+    .nav{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 10px 0;
+    }
+    .logo{
+      font-weight: 900;
+      letter-spacing: .02em;
+      color: var(--brand);
+    }
+    .menu{
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .menu a{
+      padding: .55rem .8rem;
+      border-radius: 10px;
+    }
+    .menu a:hover{
+      background: rgba(15,62,91,.08);
+      color: var(--brand);
+    }
+
+    .hero{min-height:42vh; position:relative; color:#fff; display:grid; place-items:center; text-align:center;}
+    .hero::before{content:""; position:absolute; inset:0; z-index:-2;
+      background: radial-gradient(70% 70% at 50% 20%, rgba(26,93,102,.9), rgba(15,62,91,.95) 45%, #0a2230 100%),
+                  url("../../images/heroes/hero-specs.png");
+      background-size:cover; background-position:center;}
+    .hero::after{content:""; position:absolute; inset:0; z-index:-1; background:linear-gradient(180deg,rgba(0,0,0,.35),rgba(0,0,0,.25));}
+    h1 {margin:0; font-weight:900; font-size:clamp(1.9rem,1.2rem+2.4vw,2.8rem);}
+    .breadcrumb{font-size:.95rem; color:#6b7280; padding:12px 0;}
+    .breadcrumb ol{display:flex; gap:.5rem; list-style:none; padding:0; margin:0;}
+    .breadcrumb li+li::before{content:"›"; opacity:.6; padding:0 .25rem;}
+    main{padding:32px 0;}
+    h2{margin:.5rem 0 1rem; font-size:clamp(1.25rem,1.05rem+0.9vw,1.8rem);}
+    table{width:100%; border-collapse:collapse; margin-bottom:2rem;}
+    th, td{border:1px solid #e2e8f0; padding:.5rem; text-align:center;}
+    th{background:#f1f5f9;}
+    .table-wrap{overflow-x:auto;}
+    .cta{margin-top:20px;}
+    .btn{padding:.65rem .9rem; border:1px solid #d6dde3; border-radius:12px; font-weight:800; text-decoration:none;}
+    .btn.primary{background:var(--brand); color:#fff; border-color:var(--brand);}
+    
+    /* 제품 이미지 갤러리 스타일 */
+    .product-gallery{margin:2rem 0; display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:2rem;}
+    .product-card{background:#fff; border-radius:var(--radius); box-shadow:var(--shadow); overflow:hidden; transition:transform 0.3s ease;}
+    .product-card:hover{transform:translateY(-5px);}
+    .product-image{width:100%; height:250px; object-fit:cover; background:#f8fafc;}
+    .product-info{padding:1.5rem;}
+    .product-title{font-size:1.25rem; font-weight:700; margin:0 0 0.5rem; color:var(--brand);}
+    .product-specs{list-style:none; padding:0; margin:0;}
+    .product-specs li{padding:0.25rem 0; border-bottom:1px solid #f1f5f9; display:flex; justify-content:space-between;}
+    .product-specs li:last-child{border-bottom:none;}
+    
+    /* 이미지 섹션 스타일 */
+    .image-section{margin:2rem 0; text-align:center;}
+    .image-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(250px, 1fr)); gap:1.5rem; margin:1.5rem 0;}
+    .image-item{background:#fff; border-radius:var(--radius); box-shadow:var(--shadow); overflow:hidden;}
+    .image-item img{width:100%; height:200px; object-fit:cover; transition:transform 0.3s ease;}
+    .image-item:hover img{transform:scale(1.05);}
+    .image-caption{padding:1rem; font-size:0.9rem; color:#64748b;}
+    
+    /* 강조 박스 */
+    .highlight-box{background:linear-gradient(135deg, #f8fafc, #e2e8f0); border-left:4px solid var(--brand); padding:1.5rem; border-radius:0 var(--radius) var(--radius) 0; margin:2rem 0;}
+    .highlight-box h3{margin:0 0 1rem; color:var(--brand);}
+    
+    /* 반응형 디자인 */
+    @media (max-width: 768px) {
+      .product-gallery{grid-template-columns:1fr;}
+      .image-grid{grid-template-columns:1fr;}
+    }
+    
+    /* 언어 선택 */
+    .lang-switch{
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 100;
+    }
+    .lang-switch a{
+      background: rgba(255,255,255,0.9);
+      padding: 8px 16px;
+      border-radius: 20px;
+      color: var(--brand);
+      font-weight: 600;
+      font-size: 14px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container nav">
+      <a class="logo" href="../">KESA Korea Electric Saving Association</a>
+      <nav class="menu" aria-label="Main Menu">
+        <a href="../about.html">About Us</a>
+        <a href="./index.html">Products</a>
+        <a href="../effects.html">Effects & Features</a>
+        <a href="../cases/index.html">Case Studies</a>
+        <a href="../contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Language Switch -->
+  <div class="lang-switch">
+    <a href="../../products/specs.html">한국어</a>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <h1>Product Specifications & Models</h1>
+    </div>
+  </section>
+
+  <!-- BREADCRUMB -->
+  <nav class="breadcrumb">
+    <div class="container">
+      <ol>
+        <li><a href="../">Home</a></li>
+        <li><a href="./index.html">Products</a></li>
+        <li>Specifications</li>
+      </ol>
+    </div>
+  </nav>
+
+  <!-- MAIN CONTENT -->
+  <main>
+    <div class="container">
+      
+      <h2>KESA Series Standard Specifications</h2>
+      <p>
+        All KESA power saving devices are designed and manufactured to meet international 
+        safety standards and provide consistent, reliable performance across various applications.
+      </p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Model</th>
+              <th>Power Rating</th>
+              <th>Voltage</th>
+              <th>Frequency</th>
+              <th>Power Factor</th>
+              <th>Dimensions (W×H×D)</th>
+              <th>Weight</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>KESA-50</td>
+              <td>Up to 50kW</td>
+              <td>220V/380V</td>
+              <td>50/60Hz</td>
+              <td>0.95+</td>
+              <td>400×300×200mm</td>
+              <td>15kg</td>
+            </tr>
+            <tr>
+              <td>KESA-200</td>
+              <td>50-200kW</td>
+              <td>220V/380V</td>
+              <td>50/60Hz</td>
+              <td>0.95+</td>
+              <td>500×400×250mm</td>
+              <td>25kg</td>
+            </tr>
+            <tr>
+              <td>KESA-300</td>
+              <td>200-500kW</td>
+              <td>220V/380V</td>
+              <td>50/60Hz</td>
+              <td>0.95+</td>
+              <td>600×500×300mm</td>
+              <td>40kg</td>
+            </tr>
+            <tr>
+              <td>KESA-S03</td>
+              <td>3-30kW</td>
+              <td>220V/380V</td>
+              <td>50/60Hz</td>
+              <td>0.95+</td>
+              <td>300×250×150mm</td>
+              <td>8kg</td>
+            </tr>
+            <tr>
+              <td>KESA-S10</td>
+              <td>30-100kW</td>
+              <td>220V/380V</td>
+              <td>50/60Hz</td>
+              <td>0.95+</td>
+              <td>350×300×200mm</td>
+              <td>18kg</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="highlight-box">
+        <h3>Key Features Across All Models</h3>
+        <ul>
+          <li><strong>Universal Compatibility:</strong> Works with both 50Hz and 60Hz power systems</li>
+          <li><strong>Wide Voltage Range:</strong> Compatible with 220V and 380V systems</li>
+          <li><strong>High Efficiency:</strong> All models achieve power factor of 0.95 or higher</li>
+          <li><strong>Compact Design:</strong> Space-efficient installation for various facility layouts</li>
+          <li><strong>Easy Installation:</strong> Plug-and-play setup with minimal downtime</li>
+        </ul>
+      </div>
+
+      <h2>Product Gallery</h2>
+      <div class="product-gallery">
+        
+        <div class="product-card">
+          <img src="../../images/products/KESA-50 KESA-200 KESA-300.png" alt="KESA-50, KESA-200, KESA-300 Models" class="product-image">
+          <div class="product-info">
+            <h3 class="product-title">KESA-50, KESA-200, KESA-300</h3>
+            <ul class="product-specs">
+              <li><span>Power Range:</span> <span>3kW - 500kW</span></li>
+              <li><span>Applications:</span> <span>Industrial & Commercial</span></li>
+              <li><span>Installation:</span> <span>Wall Mount</span></li>
+              <li><span>Protection:</span> <span>IP20</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <img src="../../images/products/KESA-S03 KESA-S10.png" alt="KESA-S03 and KESA-S10 Models" class="product-image">
+          <div class="product-info">
+            <h3 class="product-title">KESA-S03 & KESA-S10</h3>
+            <ul class="product-specs">
+              <li><span>Power Range:</span> <span>3kW - 100kW</span></li>
+              <li><span>Applications:</span> <span>Small Commercial</span></li>
+              <li><span>Installation:</span> <span>Wall Mount</span></li>
+              <li><span>Protection:</span> <span>IP20</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <img src="../../images/products/KESA-200.png" alt="KESA-200 Model" class="product-image">
+          <div class="product-info">
+            <h3 class="product-title">KESA-200</h3>
+            <ul class="product-specs">
+              <li><span>Power Range:</span> <span>50kW - 200kW</span></li>
+              <li><span>Applications:</span> <span>Medium Industrial</span></li>
+              <li><span>Installation:</span> <span>Floor Mount</span></li>
+              <li><span>Protection:</span> <span>IP30</span></li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+
+      <h2>Installation Requirements</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Requirement</th>
+              <th>Specification</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Ambient Temperature</td>
+              <td>-10°C to +50°C</td>
+              <td>Optimal performance at 20-30°C</td>
+            </tr>
+            <tr>
+              <td>Humidity</td>
+              <td>10% to 90% RH</td>
+              <td>Non-condensing</td>
+            </tr>
+            <tr>
+              <td>Altitude</td>
+              <td>Up to 2000m</td>
+              <td>Above 2000m requires derating</td>
+            </tr>
+            <tr>
+              <td>Cooling</td>
+              <td>Natural convection</td>
+              <td>Ensure adequate ventilation</td>
+            </tr>
+            <tr>
+              <td>Mounting</td>
+              <td>Vertical orientation</td>
+              <td>Wall or floor mounting</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>Performance Data</h2>
+      <p>
+        All KESA models are tested under standard conditions and deliver consistent performance 
+        across various load conditions and operating environments.
+      </p>
+
+      <div class="image-section">
+        <h3>Before/After Installation Comparison</h3>
+        <div class="image-grid">
+          <div class="image-item">
+            <img src="../../images/products/comparison/설치전 역률.png" alt="Power Factor Before Installation">
+            <div class="image-caption">Power Factor: 0.65 (Before)</div>
+          </div>
+          <div class="image-item">
+            <img src="../../images/products/comparison/설치후 역률.png" alt="Power Factor After Installation">
+            <div class="image-caption">Power Factor: 0.98 (After)</div>
+          </div>
+          <div class="image-item">
+            <img src="../../images/products/comparison/설치전 유효전력.png" alt="Effective Power Before Installation">
+            <div class="image-caption">Effective Power: High Loss</div>
+          </div>
+          <div class="image-item">
+            <img src="../../images/products/comparison/설치후 유효전력.png" alt="Effective Power After Installation">
+            <div class="image-caption">Effective Power: Optimized</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="highlight-box">
+        <h3>Certification & Compliance</h3>
+        <p>
+          All KESA products meet international safety and performance standards including:
+        </p>
+        <ul>
+          <li>CE Marking (European Conformity)</li>
+          <li>ISO 9001 Quality Management System</li>
+          <li>IEC 61000 Electromagnetic Compatibility</li>
+          <li>UL/CSA Safety Standards (North America)</li>
+          <li>Korean Industrial Standards (KS)</li>
+        </ul>
+      </div>
+
+      <div class="cta">
+        <a href="../contact.html" class="btn primary">Request Detailed Specifications</a>
+        <a href="./kesa-series.html" class="btn">View Product Details</a>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer style="background:#0d1114; color:#cfd6dc; padding:26px 0; margin-top:28px">
+    <div class="container">
+      <address style="display:block; text-align:center; opacity:.85; font-style:normal; margin-bottom:8px">
+        KESA Korea Electric Saving Association · 3rd Floor, 453 Sasang-ro, Sasang-gu, Busan (Mora-dong)
+      </address>
+      <div style="text-align:center; margin-bottom:8px">
+        <span style="opacity:.85">Tel. 051-363-0458, 070-7771-6086</span> ·
+        <span style="opacity:.85">Fax. 051-363-0457</span>
+      </div>
+      <small style="display:block; text-align:center; opacity:.85">
+        © <span id="year">2025</span> KESA. All rights reserved.
+      </small>
+    </div>
+  </footer>
+
+  <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+
+</body>
+</html>

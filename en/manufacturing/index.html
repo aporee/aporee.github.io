@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Manufacturing & Production | KESA Korea Electric Saving Association</title>
+  <meta name="description" content="KESA Power Saving Device manufacturing and production, differentiated technology, facilities and A/S system guide" />
+  <style>
+    :root{
+      --brand:#0f3e5b; --ink:#0b0b0b; --muted:#6b7280; --bg:#fff;
+      --container:1120px; --radius:16px; --gap:clamp(16px,2vw,28px);
+      --line:#e5e7eb; --shadow: 0 10px 30px rgba(0,0,0,.08);
+    }
+    *{box-sizing:border-box}
+    body{margin:0; font:400 16px/1.7 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; color:var(--ink)}
+    a{color:var(--brand); text-decoration:none}
+    .container{max-width:var(--container); margin-inline:auto; padding-inline:clamp(16px,4vw,28px)}
+
+    /* 헤더(간단) */
+    header{
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(255,255,255,.92);
+      backdrop-filter: saturate(1.2) blur(6px);
+    }
+    .nav{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 10px 0;
+    }
+    .logo{
+      font-weight: 900;
+      letter-spacing: .02em;
+      color: var(--brand);
+    }
+    .menu{
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .menu a{
+      padding: .55rem .8rem;
+      border-radius: 10px;
+    }
+    .menu a:hover{
+      background: rgba(15,62,91,.08);
+      color: var(--brand);
+    }
+
+    /* Hero */
+    .hero{position:relative; min-height:42vh; display:grid; place-items:center; text-align:center; color:#fff; isolation:isolate}
+    .hero::before{content:""; position:absolute; inset:0; z-index:-2; background-image:var(--hero,linear-gradient(120deg,#0f3e5b,#134154)); background-size:cover; background-position:center}
+    .hero::after{content:""; position:absolute; inset:0; z-index:-1; background:linear-gradient(180deg,rgba(0,0,0,.45),rgba(0,0,0,.35))}
+    .hero h1{margin:0 0 .35rem; font-size:clamp(1.8rem,1.2rem + 2.2vw,2.6rem)}
+    .hero p{margin:0; color:rgba(255,255,255,.92)}
+
+    /* Breadcrumb */
+    .breadcrumb{padding-block:14px; color:var(--muted); font-size:.95rem}
+    .breadcrumb ol{list-style:none; display:flex; gap:.5rem; padding:0; margin:0}
+    .breadcrumb li+li::before{content:"›"; opacity:.6; padding-inline:.25rem}
+
+    /* Sections */
+    section{padding-block:clamp(28px,5vw,64px)}
+    h2{font-size:clamp(1.25rem,1.05rem + 1vw,1.9rem); margin:0 0 .6rem}
+    .lead{font-size:1.05rem}
+
+    /* Gallery */
+    .gallery{display:grid; gap:var(--gap)}
+    .gallery img{width:100%; height:auto; border-radius:12px; box-shadow:var(--shadow)}
+
+    /* Highlights */
+    .grid-2{display:grid; gap:var(--gap); grid-template-columns:1fr 1fr}
+    @media (max-width:980px){.grid-2{grid-template-columns:1fr}}
+
+    .card{background:#fff; border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow); padding:clamp(16px,2.5vw,22px)}
+    .checklist{list-style:none; padding:0; margin:0; display:grid; gap:10px}
+    .checklist li{padding-left:28px; position:relative}
+    .checklist li::before{content:"✔"; position:absolute; left:0; top:0; color:var(--brand)}
+
+    /* Address box */
+    .addr{background:#f8fafc; border:1px solid #eef2f7; border-radius:var(--radius); padding:16px}
+
+    /* CTA */
+    .cta{background:linear-gradient(135deg,rgba(15,62,91,.08),rgba(22,63,70,.04)); border-radius:22px; padding:22px}
+    
+    /* 언어 선택 */
+    .lang-switch{
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 100;
+    }
+    .lang-switch a{
+      background: rgba(255,255,255,0.9);
+      padding: 8px 16px;
+      border-radius: 20px;
+      color: var(--brand);
+      font-weight: 600;
+      font-size: 14px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container nav">
+      <a class="logo" href="../">KESA Korea Electric Saving Association</a>
+      <nav class="menu" aria-label="Main Menu">
+        <a href="../about.html">About Us</a>
+        <a href="../products/index.html">Products</a>
+        <a href="../effects.html">Effects & Features</a>
+        <a href="../cases/index.html">Case Studies</a>
+        <a href="../contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Language Switch -->
+  <div class="lang-switch">
+    <a href="../../manufacturing.html">한국어</a>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <h1>Manufacturing & Production</h1>
+      <p>Advanced technology and quality manufacturing for reliable power saving solutions</p>
+    </div>
+  </section>
+
+  <!-- BREADCRUMB -->
+  <nav class="breadcrumb">
+    <div class="container">
+      <ol>
+        <li><a href="../">Home</a></li>
+        <li>Manufacturing</li>
+      </ol>
+    </div>
+  </nav>
+
+  <!-- MAIN CONTENT -->
+  <main>
+    <section>
+      <div class="container">
+        <div class="grid-2">
+          <div>
+            <h2>Manufacturing Excellence</h2>
+            <p class="lead">
+              KESA power saving devices are manufactured in our state-of-the-art facility in Busan, South Korea, 
+              using the latest technology and strict quality control processes.
+            </p>
+            <p>
+              Our manufacturing facility is equipped with advanced automation systems and precision testing equipment 
+              to ensure every product meets the highest international standards for safety and performance.
+            </p>
+          </div>
+          <div class="gallery">
+            <img src="../../images/manufacturing/assembly-line.png" alt="KESA Assembly Line">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <h2>Core Manufacturing Capabilities</h2>
+        <div class="grid-2">
+          <div class="card">
+            <h3>Advanced Electronics</h3>
+            <ul class="checklist">
+              <li>Surface mount technology (SMT) assembly</li>
+              <li>Automated component placement</li>
+              <li>Precision soldering and quality testing</li>
+              <li>Environmental stress testing</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Quality Assurance</h3>
+            <ul class="checklist">
+              <li>ISO 9001 certified quality management</li>
+              <li>100% functional testing</li>
+              <li>Environmental compliance testing</li>
+              <li>Long-term reliability validation</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="grid-2">
+          <div class="gallery">
+            <img src="../../images/manufacturing/buliding.png" alt="KESA Manufacturing Facility">
+          </div>
+          <div>
+            <h2>Facility & Infrastructure</h2>
+            <p>
+              Our manufacturing facility covers over 2,000 square meters and includes dedicated areas for:
+            </p>
+            <ul class="checklist">
+              <li>Component storage and management</li>
+              <li>Assembly and testing</li>
+              <li>Quality control and inspection</li>
+              <li>Research and development</li>
+              <li>Customer service and support</li>
+            </ul>
+            <p>
+              The facility operates under strict environmental controls to ensure consistent product quality 
+              and reliability across all production batches.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <h2>Technology & Innovation</h2>
+        <div class="grid-2">
+          <div>
+            <h3>R&D Investment</h3>
+            <p>
+              We invest heavily in research and development to continuously improve our power saving technology. 
+              Our engineering team works closely with leading universities and research institutions to develop 
+              next-generation solutions.
+            </p>
+            <p>
+              Recent innovations include advanced harmonic filtering algorithms, real-time power quality monitoring, 
+              and AI-powered optimization systems that automatically adjust device parameters for maximum efficiency.
+            </p>
+          </div>
+          <div>
+            <h3>Patent Portfolio</h3>
+            <p>
+              KESA holds multiple patents for our unique power saving technology, including:
+            </p>
+            <ul class="checklist">
+              <li>Adaptive power factor correction</li>
+              <li>Intelligent harmonic suppression</li>
+              <li>Dynamic load balancing</li>
+              <li>Predictive maintenance algorithms</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <h2>Service & Support</h2>
+        <div class="grid-2">
+          <div class="card">
+            <h3>Installation Support</h3>
+            <p>
+              Our technical team provides comprehensive installation support, including:
+            </p>
+            <ul class="checklist">
+              <li>Site survey and assessment</li>
+              <li>Custom installation planning</li>
+              <li>Professional installation services</li>
+              <li>Commissioning and testing</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>After-Sales Service</h3>
+            <p>
+              We provide ongoing support and maintenance services:
+            </p>
+            <ul class="checklist">
+              <li>24/7 technical support</li>
+              <li>Preventive maintenance</li>
+              <li>Performance optimization</li>
+              <li>Warranty and repair services</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="cta">
+          <h2>Ready to Experience KESA Quality?</h2>
+          <p>
+            Contact our manufacturing team to learn more about our production capabilities, 
+            request a facility tour, or discuss custom manufacturing requirements.
+          </p>
+          <div style="margin-top: 1rem;">
+            <a href="../contact.html" style="background: var(--brand); color: white; padding: 12px 24px; border-radius: 8px; font-weight: 600;">Contact Manufacturing Team</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer style="background:#0d1114; color:#cfd6dc; padding:26px 0; margin-top:28px">
+    <div class="container">
+      <address style="display:block; text-align:center; opacity:.85; font-style:normal; margin-bottom:8px">
+        KESA Korea Electric Saving Association · 3rd Floor, 453 Sasang-ro, Sasang-gu, Busan (Mora-dong)
+      </address>
+      <div style="text-align:center; margin-bottom:8px">
+        <span style="opacity:.85">Tel. 051-363-0458, 070-7771-6086</span> ·
+        <span style="opacity:.85">Fax. 051-363-0457</span>
+      </div>
+      <small style="display:block; text-align:center; opacity:.85">
+        © <span id="year">2025</span> KESA. All rights reserved.
+      </small>
+    </div>
+  </footer>
+
+  <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+
+</body>
+</html>

@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About Us · Greetings | KESA Korea Electric Saving Association</title>
+  <meta name="description" content="Greetings from KESA Korea Electric Saving Association. KESA Series power saving solutions and sustainable vision.">
+  <!-- GitHub Pages(프로젝트 페이지)라면 경로 보정을 위해 주석 해제 -->
+  <!-- <base href="/website/"> -->
+
+  <style>
+    :root{
+      --brand:#0f3e5b; --accent:#1a5d66; --ink:#0b0b0b; --muted:#6b7280;
+      --container:1100px; --radius:16px; --shadow:0 10px 30px rgba(0,0,0,.06);
+    }
+    *{box-sizing:border-box}
+    body{margin:0; color:var(--ink);
+      font:400 16px/1.75 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;}
+    a{color:inherit; text-decoration:none}
+    .container{max-width:var(--container); margin-inline:auto; padding-inline:clamp(16px,4vw,24px)}
+
+    /* 헤더(간단) */
+    header{
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(255,255,255,.92);
+      backdrop-filter: saturate(1.2) blur(6px);
+    }
+    .nav{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 10px 0;
+    }
+    .logo{
+      font-weight: 900;
+      letter-spacing: .02em;
+      color: var(--brand);
+    }
+    .menu{
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .menu a{
+      padding: .55rem .8rem;
+      border-radius: 10px;
+    }
+    .menu a:hover{
+      background: rgba(15,62,91,.08);
+      color: var(--brand);
+    }
+
+    /* Hero */
+    .hero{
+      min-height: 42vh; 
+      position: relative; 
+      color: #fff; 
+      display: grid; 
+      place-items: center; 
+      text-align: center;
+      overflow: hidden;
+    }
+    .hero::before{
+      content: ""; 
+      position: absolute; 
+      inset: 0; 
+      z-index: -2;
+      background:
+        radial-gradient(70% 70% at 50% 20%, rgba(26,93,102,.2), rgba(15,62,91,.3) 45%, rgba(10,34,48,.4) 100%),
+        url("../images/heroes/hero-about.png");
+      background-size: cover; 
+      background-position: center;
+    }
+    .hero::after{
+      content: ""; 
+      position: absolute; 
+      inset: 0; 
+      z-index: -1; 
+      background: linear-gradient(180deg,rgba(0,0,0,.35),rgba(0,0,0,.25));
+    }
+    .hero h1{
+      margin: 0 0 .4rem; 
+      font-weight: 900; 
+      font-size: clamp(1.9rem,1.2rem + 2.4vw,2.8rem); 
+      letter-spacing: .01em;
+      position: relative;
+      z-index: 1;
+    }
+    .hero p{
+      margin: 0; 
+      color: rgba(255,255,255,.92); 
+      font-size: clamp(1rem,.95rem + .5vw,1.2rem);
+      position: relative;
+      z-index: 1;
+    }
+
+    /* breadcrumb */
+    nav.breadcrumb{font-size:.95rem; color:var(--muted); padding:12px 0}
+    nav.breadcrumb ol{display:flex; gap:.5rem; list-style:none; padding:0; margin:0}
+    nav.breadcrumb li+li::before{content:"›"; opacity:.6; padding-inline:.25rem}
+
+    /* content */
+    .content{padding-block:clamp(28px,6vw,64px)}
+    .lead{font-weight:700; font-size:clamp(1.05rem,1rem + .35vw,1.2rem); margin-bottom:1.5rem}
+    .section{margin-bottom:2rem}
+    .section h2{color:var(--brand); margin-bottom:1rem; font-size:1.5rem}
+    .section p{margin-bottom:1rem; line-height:1.7}
+    
+    /* 언어 선택 */
+    .lang-switch{
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 100;
+    }
+    .lang-switch a{
+      background: rgba(255,255,255,0.9);
+      padding: 8px 16px;
+      border-radius: 20px;
+      color: var(--brand);
+      font-weight: 600;
+      font-size: 14px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container nav">
+      <a class="logo" href="./">KESA Korea Electric Saving Association</a>
+      <nav class="menu" aria-label="Main Menu">
+        <a href="./about.html">About Us</a>
+        <a href="./products/index.html">Products</a>
+        <a href="./effects.html">Effects & Features</a>
+        <a href="./cases/index.html">Case Studies</a>
+        <a href="./contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Language Switch -->
+  <div class="lang-switch">
+    <a href="../about.html">한국어</a>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <h1>About KESA</h1>
+      <p>Building a sustainable future through innovative power saving technology</p>
+    </div>
+  </section>
+
+  <!-- BREADCRUMB -->
+  <nav class="breadcrumb">
+    <div class="container">
+      <ol>
+        <li><a href="./">Home</a></li>
+        <li>About Us</li>
+      </ol>
+    </div>
+  </nav>
+
+  <!-- MAIN CONTENT -->
+  <main class="content">
+    <div class="container">
+      
+      <div class="lead">
+        Welcome to KESA Korea Electric Saving Association, your trusted partner in power saving solutions and sustainable energy management.
+      </div>
+
+      <div class="section">
+        <h2>Company Vision</h2>
+        <p>
+          At KESA, we envision a world where businesses can achieve both economic growth and environmental sustainability. 
+          Our mission is to provide cutting-edge power saving technology that helps companies reduce electricity costs 
+          while contributing to global carbon neutrality goals.
+        </p>
+        <p>
+          We believe that energy efficiency is not just about cost savings—it's about creating a better future 
+          for generations to come. Through our innovative KESA Series products, we're making this vision a reality.
+        </p>
+      </div>
+
+      <div class="section">
+        <h2>Core Values</h2>
+        <p>
+          <strong>Innovation:</strong> We continuously research and develop new technologies to provide the most 
+          effective power saving solutions in the market.
+        </p>
+        <p>
+          <strong>Quality:</strong> Every product we manufacture meets the highest international standards, 
+          ensuring reliability and performance for our customers.
+        </p>
+        <p>
+          <strong>Sustainability:</strong> We're committed to environmental responsibility, helping businesses 
+          reduce their carbon footprint while improving their bottom line.
+        </p>
+        <p>
+          <strong>Partnership:</strong> We work closely with our clients to understand their unique needs 
+          and provide customized solutions that deliver measurable results.
+        </p>
+      </div>
+
+      <div class="section">
+        <h2>Our Commitment</h2>
+        <p>
+          KESA is dedicated to helping businesses achieve 10%+ electricity cost savings through our advanced 
+          power saving technology. Our solutions not only reduce energy consumption but also improve power quality, 
+          leading to enhanced equipment performance and productivity.
+        </p>
+        <p>
+          As we move toward the 2050 carbon-neutral society, KESA stands ready to support your company's 
+          sustainability journey with proven, reliable technology and expert consultation services.
+        </p>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer style="background:#0d1114; color:#cfd6dc; padding:26px 0; margin-top:28px">
+    <div class="container">
+      <address style="display:block; text-align:center; opacity:.85; font-style:normal; margin-bottom:8px">
+        KESA Korea Electric Saving Association · 3rd Floor, 453 Sasang-ro, Sasang-gu, Busan (Mora-dong)
+      </address>
+      <div style="text-align:center; margin-bottom:8px">
+        <span style="opacity:.85">Tel. 051-363-0458, 070-7771-6086</span> ·
+        <span style="opacity:.85">Fax. 051-363-0457</span>
+      </div>
+      <small style="display:block; text-align:center; opacity:.85">
+        © <span id="year">2025</span> KESA. All rights reserved.
+      </small>
+    </div>
+  </footer>
+
+  <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+
+</body>
+</html>
