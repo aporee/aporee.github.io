@@ -129,8 +129,8 @@
     @media (max-width: 900px){ .steps-grid{grid-template-columns:repeat(2, 1fr)} }
     @media (max-width: 640px){ .steps-grid{grid-template-columns:1fr} }
     
-    .step-card{background:#fff; border:1px solid #e9eef2; border-radius:12px; padding:20px; text-align:center; box-shadow:var(--shadow); transition:transform .2s ease, box-shadow .2s ease; position:relative}
-    .step-card:hover{transform:translateY(-2px); box-shadow:0 14px 34px rgba(0,0,0,.08)}
+    .step-card{background:#fff; border:1px solid #e9eef2; border-radius:12px; padding:20px; text-align:center; box-shadow:var(--shadow); transition:transform .2s ease, box-shadow .2s ease; position:relative; display:block; color:inherit; text-decoration:none}
+    .step-card:hover{transform:translateY(-2px); box-shadow:0 14px 34px rgba(0,0,0,.08); color:inherit}
     .step-number{width:40px; height:40px; background:var(--brand); color:#fff; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:1rem; margin:0 auto 16px}
     .step-title{font-weight:700; color:var(--brand); margin-bottom:12px; font-size:1.1rem; line-height:1.3}
     .step-description{font-size:.95rem; color:var(--muted); line-height:1.5}
@@ -160,7 +160,8 @@
     .process-item:nth-child(even){flex-direction:row-reverse}
     @media (max-width: 900px){ .process-item, .process-item:nth-child(even){flex-direction:row} }
     
-    .process-content{flex:1; background:#fff; border:1px solid #e9eef2; border-radius:12px; padding:20px; box-shadow:var(--shadow); margin:0 20px}
+    .process-content{flex:1; background:#fff; border:1px solid #e9eef2; border-radius:12px; padding:20px; box-shadow:var(--shadow); margin:0 20px; display:block; color:inherit; text-decoration:none; transition:transform .2s ease, box-shadow .2s ease}
+    .process-content:hover{transform:translateY(-2px); box-shadow:0 14px 34px rgba(0,0,0,.08); color:inherit}
     @media (max-width: 900px){ .process-content{margin-left:60px; margin-right:0} }
     
     .process-number{width:40px; height:40px; background:var(--brand); color:#fff; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:800; position:relative; z-index:1; flex-shrink:0}
@@ -210,11 +211,11 @@
       <p>50여 년간 축적된 전력 절감 기술과 현장 경험을 바탕으로 전문적인 컨설팅을 제공합니다</p>
       
       <div class="steps-grid" role="list" aria-label="전력 컨설팅 절차">
-        <div class="step-card" role="listitem">
+        <a href="https://pp.kepco.co.kr/" target="_blank" rel="noopener noreferrer" class="step-card" role="listitem">
           <div class="step-number">01</div>
           <div class="step-title">한국전력 KEPCO<br>파워플래너 가입</div>
           <div class="step-description">비용없음</div>
-        </div>
+        </a>
         
         <div class="step-card" role="listitem">
           <div class="step-number">02</div>
@@ -285,7 +286,7 @@
       
       <div class="process-item">
         <div class="process-number">01</div>
-        <div class="process-content">
+        <a href="https://pp.kepco.co.kr/" target="_blank" rel="noopener noreferrer" class="process-content">
           <div class="process-title">한국전력 KEPCO 파워플래너 가입</div>
           <div class="process-description">
             <strong>무료 서비스</strong><br>
@@ -294,7 +295,7 @@
             • 기본적인 절감 잠재력 파악<br>
             • 컨설팅 대상 사업장 선정
           </div>
-        </div>
+        </a>
       </div>
       
       <div class="process-item">
