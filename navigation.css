@@ -1,0 +1,49 @@
+/* 표준화된 네비게이션 바 CSS 스타일 */
+/* 이 스타일을 각 페이지의 <style> 태그 안에 복사해서 사용하세요 */
+
+/* 헤더(간단) */
+header{
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: rgba(255,255,255,.92);
+  backdrop-filter: saturate(1.2) blur(6px);
+}
+.nav{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 10px 0;
+}
+.logo{
+  font-weight: 900;
+  letter-spacing: .02em;
+  color: var(--brand);
+}
+.menu{
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.menu a{
+  padding: .55rem .8rem;
+  border-radius: 10px;
+}
+.menu a:hover{
+  background: rgba(15,62,91,.08);
+  color: var(--brand);
+}
+
+/* 
+사용법:
+1. 이 CSS를 각 페이지의 <style> 태그 안에 복사
+2. :root 변수는 기존 페이지의 것을 사용 (--brand, --accent 등)
+3. 다른 스타일과 충돌하지 않는지 확인
+
+업데이트 시:
+1. 이 파일만 수정
+2. 모든 페이지의 <style> 태그에 복사-붙여넣기
+3. 스타일 충돌 확인
+*/
+

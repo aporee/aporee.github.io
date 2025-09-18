@@ -1,0 +1,407 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>전력 컨설팅 서비스 | 한국전기절감원(주)</title>
+  <meta name="description" content="KESA 전문 전력 컨설팅 서비스. KEPCO 파워플래너 가입, 현장 분석, 솔루션 도출, 상세 보고서 작성. 무료 컨설팅 제공." />
+  <!-- GitHub Pages(프로젝트 페이지)라면 경로 보정을 위해 주석 해제 -->
+  <!-- <base href="/website/"> -->
+
+  <style>
+    :root{
+      --brand:#0f3e5b; --accent:#1a5d66; --ink:#0b0b0b; --muted:#6b7280;
+      --container:1100px; --radius:16px; --shadow:0 10px 30px rgba(0,0,0,.06);
+    }
+    *{box-sizing:border-box}
+    body{margin:0; color:var(--ink);
+      font:400 16px/1.75 system-ui,-apple-system,"Noto Sans KR",Segoe UI,Roboto,sans-serif;}
+    a{color:inherit; text-decoration:none}
+    .container{max-width:var(--container); margin-inline:auto; padding-inline:clamp(16px,4vw,24px)}
+
+    /* 헤더(간단) */
+    header{
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(255,255,255,.92);
+      backdrop-filter: saturate(1.2) blur(6px);
+    }
+    .nav{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 10px 0;
+    }
+    .logo{
+      font-weight: 900;
+      letter-spacing: .02em;
+      color: var(--brand);
+    }
+    .menu{
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .menu a{
+      padding: .55rem .8rem;
+      border-radius: 10px;
+    }
+    .menu a:hover{
+      background: rgba(15,62,91,.08);
+      color: var(--brand);
+    }
+
+
+    /* Hero */
+    .hero{
+      min-height: 50vh; 
+      position: relative; 
+      color: #fff; 
+      display: grid; 
+      place-items: center; 
+      text-align: center;
+      overflow: hidden;
+    }
+    .hero::before{
+      content: ""; 
+      position: absolute; 
+      inset: 0; 
+      z-index: -2;
+      background:
+        radial-gradient(70% 70% at 50% 20%, rgba(26,93,102,.3), rgba(15,62,91,.4) 45%, rgba(10,34,48,.5) 100%),
+        url("./images/heroes/hero-about.png");
+      background-size: cover; 
+      background-position: center;
+    }
+    .hero::after{
+      content: ""; 
+      position: absolute; 
+      inset: 0; 
+      z-index: -1; 
+      background: linear-gradient(180deg,rgba(0,0,0,.35),rgba(0,0,0,.25));
+    }
+    .hero h1{
+      margin: 0 0 .4rem; 
+      font-weight: 900; 
+      font-size: clamp(1.9rem,1.2rem + 2.4vw,2.8rem); 
+      letter-spacing: .01em;
+      position: relative;
+      z-index: 1;
+    }
+    .hero p{
+      margin: 0; 
+      color: rgba(255,255,255,.92); 
+      font-size: clamp(1rem,.95rem + .5vw,1.2rem);
+      position: relative;
+      z-index: 1;
+    }
+
+    /* breadcrumb */
+    nav.breadcrumb{font-size:.95rem; color:var(--muted); padding:12px 0}
+    nav.breadcrumb ol{display:flex; gap:.5rem; list-style:none; padding:0; margin:0}
+    nav.breadcrumb li+li::before{content:"›"; opacity:.6; padding-inline:.25rem}
+
+    /* layout */
+    main section{padding-block:clamp(28px,6vw,64px)}
+    h2{margin:.2rem 0 .8rem; font-size:clamp(1.25rem,1.05rem + .9vw,1.8rem)}
+    .lead{font-weight:700; font-size:clamp(1.05rem,1rem + .4vw,1.2rem)}
+    .split{display:grid; gap:24px; grid-template-columns:1fr 320px}
+    @media (max-width: 900px){ .split{grid-template-columns:1fr} }
+
+    .panel{border:1px solid #e9eef2; border-radius:var(--radius); padding:18px; box-shadow:var(--shadow); background:#fff}
+    .note{background:#f7fafc; border:1px solid #e9f0f5; border-radius:var(--radius); padding:18px}
+
+    .quick h3{margin:.1rem 0 .6rem; font-size:1.05rem}
+    .quick ul{margin:.25rem 0 0; padding-left:1.1rem}
+    .quick li{margin:.15rem 0}
+    .cta{display:flex; gap:10px; flex-wrap:wrap; margin-top:12px}
+    .btn{display:inline-block; padding:.65rem .9rem; border-radius:12px; border:1px solid #d6dde3; font-weight:800}
+    .btn.primary{background:var(--brand); color:#fff; border-color:var(--brand)}
+
+    /* consulting specific styles */
+    .consulting-overview{background:linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%); border-radius:var(--radius); padding:28px; margin-bottom:32px}
+    .consulting-overview h2{text-align:center; margin-bottom:16px; color:var(--brand)}
+    .consulting-overview p{text-align:center; margin-bottom:24px; color:var(--muted)}
+    
+    .steps-grid{display:grid; gap:20px; grid-template-columns:repeat(4, 1fr)}
+    @media (max-width: 900px){ .steps-grid{grid-template-columns:repeat(2, 1fr)} }
+    @media (max-width: 640px){ .steps-grid{grid-template-columns:1fr} }
+    
+    .step-card{background:#fff; border:1px solid #e9eef2; border-radius:12px; padding:20px; text-align:center; box-shadow:var(--shadow); transition:transform .2s ease, box-shadow .2s ease; position:relative}
+    .step-card:hover{transform:translateY(-2px); box-shadow:0 14px 34px rgba(0,0,0,.08)}
+    .step-number{width:40px; height:40px; background:var(--brand); color:#fff; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:1rem; margin:0 auto 16px}
+    .step-title{font-weight:700; color:var(--brand); margin-bottom:12px; font-size:1.1rem; line-height:1.3}
+    .step-description{font-size:.95rem; color:var(--muted); line-height:1.5}
+    
+    .consulting-benefits{background:#fff; border-radius:var(--radius); padding:28px; margin:32px 0}
+    .benefits-grid{display:grid; gap:20px; grid-template-columns:repeat(3, 1fr)}
+    @media (max-width: 900px){ .benefits-grid{grid-template-columns:repeat(2, 1fr)} }
+    @media (max-width: 640px){ .benefits-grid{grid-template-columns:1fr} }
+    
+    .benefit-card{text-align:center; padding:20px}
+    .benefit-icon{font-size:2.5rem; margin-bottom:12px}
+    .benefit-title{font-weight:700; color:var(--brand); margin-bottom:8px; font-size:1.1rem}
+    .benefit-description{font-size:.95rem; color:var(--muted); line-height:1.5}
+    
+    .consulting-cta{text-align:center; margin:32px 0; padding:28px; background:linear-gradient(135deg, var(--brand), var(--accent)); border-radius:var(--radius); color:#fff}
+    .consulting-cta h3{margin:0 0 12px; font-size:1.5rem}
+    .consulting-cta p{margin:0 0 20px; opacity:.9}
+    .consulting-cta .btn{background:#fff; color:var(--brand); border:none; padding:.8rem 1.5rem; font-size:1rem}
+    .consulting-cta .btn:hover{transform:translateY(-1px)}
+    
+    .process-timeline{position:relative; margin:32px 0}
+    .process-timeline::before{content:""; position:absolute; left:50%; top:0; bottom:0; width:2px; background:#e5e7eb; transform:translateX(-50%)}
+    @media (max-width: 900px){ .process-timeline::before{left:20px} }
+    
+    .process-item{display:flex; align-items:center; margin-bottom:32px; position:relative}
+    .process-item:nth-child(odd){flex-direction:row}
+    .process-item:nth-child(even){flex-direction:row-reverse}
+    @media (max-width: 900px){ .process-item, .process-item:nth-child(even){flex-direction:row} }
+    
+    .process-content{flex:1; background:#fff; border:1px solid #e9eef2; border-radius:12px; padding:20px; box-shadow:var(--shadow); margin:0 20px}
+    @media (max-width: 900px){ .process-content{margin-left:60px; margin-right:0} }
+    
+    .process-number{width:40px; height:40px; background:var(--brand); color:#fff; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:800; position:relative; z-index:1; flex-shrink:0}
+    @media (max-width: 900px){ .process-number{position:absolute; left:0} }
+    
+    .process-title{font-weight:700; color:var(--brand); margin-bottom:8px; font-size:1.1rem}
+    .process-description{color:var(--muted); line-height:1.5}
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container nav">
+      <a class="logo" href="./">KESA 한국전기절감원(주)</a>
+      <nav class="menu" aria-label="주요 메뉴">
+        <a href="./about.html">회사소개</a>
+        <a href="./power-consulting.html">전력컨설팅</a>
+        <a href="./products/index.html">제품소개</a>
+        <a href="./effects.html">설치효과·특성</a>
+        <a href="./cases/index.html">시공사례</a>
+        <a href="./contact.html">문의하기</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <header class="hero">
+    <div class="container">
+      <h1>전력 컨설팅 서비스</h1>
+      <p>전문적인 전력 분석을 통한 맞춤형 솔루션 제공</p>
+    </div>
+  </header>
+
+  <!-- Breadcrumb -->
+  <nav class="breadcrumb container" aria-label="Breadcrumb">
+    <ol>
+      <li><a href="./index.html">홈</a></li>
+      <li><a href="./about.html">회사소개</a></li>
+      <li aria-current="page">전력 컨설팅</li>
+    </ol>
+  </nav>
+
+  <main class="container">
+    <!-- 컨설팅 개요 -->
+    <section class="consulting-overview">
+      <h2>🔍 KESA의 전력 Consulting 이행 절차와 주요 특장점</h2>
+      <p>50여 년간 축적된 전력 절감 기술과 현장 경험을 바탕으로 전문적인 컨설팅을 제공합니다</p>
+      
+      <div class="steps-grid" role="list" aria-label="전력 컨설팅 절차">
+        <div class="step-card" role="listitem">
+          <div class="step-number">01</div>
+          <div class="step-title">한국전력 KEPCO<br>파워플래너 가입</div>
+          <div class="step-description">비용없음</div>
+        </div>
+        
+        <div class="step-card" role="listitem">
+          <div class="step-number">02</div>
+          <div class="step-title">전력 사용 실태의<br>기초 분석 및 현장 Test 실행</div>
+          <div class="step-description">정확한 데이터 수집</div>
+        </div>
+        
+        <div class="step-card" role="listitem">
+          <div class="step-number">03</div>
+          <div class="step-title">전력품질 진단에 기반한<br>최적 솔루션 도출</div>
+          <div class="step-description">맞춤형 해결방안 제시</div>
+        </div>
+        
+        <div class="step-card" role="listitem">
+          <div class="step-number">04</div>
+          <div class="step-title">에너지 컨설팅이 포함된<br>전력분석 보고서 및 제안서 작성</div>
+          <div class="step-description">상세한 분석 결과 제공</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 컨설팅 혜택 -->
+    <section class="consulting-benefits">
+      <h2>🎯 전력 컨설팅의 주요 혜택</h2>
+      
+      <div class="benefits-grid">
+        <div class="benefit-card">
+          <div class="benefit-icon">💰</div>
+          <div class="benefit-title">비용 절감</div>
+          <div class="benefit-description">전기요금 할증료 회피 및 할인 혜택으로 월 수백만원 절약 가능</div>
+        </div>
+        
+        <div class="benefit-card">
+          <div class="benefit-icon">⚡</div>
+          <div class="benefit-title">전력 품질 개선</div>
+          <div class="benefit-description">역률 개선, 고조파 감소로 안정적인 전력 공급과 설비 보호</div>
+        </div>
+        
+        <div class="benefit-card">
+          <div class="benefit-icon">📊</div>
+          <div class="benefit-title">데이터 기반 의사결정</div>
+          <div class="benefit-description">정확한 측정 데이터를 바탕으로 한 과학적이고 객관적인 분석</div>
+        </div>
+        
+        <div class="benefit-card">
+          <div class="benefit-icon">🔧</div>
+          <div class="benefit-title">맞춤형 솔루션</div>
+          <div class="benefit-description">현장 특성에 맞는 최적의 전력 절감 솔루션 제안</div>
+        </div>
+        
+        <div class="benefit-card">
+          <div class="benefit-icon">🛡️</div>
+          <div class="benefit-title">설비 보호</div>
+          <div class="benefit-description">전력 품질 개선으로 설비 수명 연장 및 고장 위험 감소</div>
+        </div>
+        
+        <div class="benefit-card">
+          <div class="benefit-icon">🌱</div>
+          <div class="benefit-title">환경 친화적</div>
+          <div class="benefit-description">에너지 효율 향상으로 탄소 배출량 감소 및 ESG 경영 지원</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 상세 절차 -->
+    <section class="process-timeline">
+      <h2>📋 상세 컨설팅 절차</h2>
+      
+      <div class="process-item">
+        <div class="process-number">01</div>
+        <div class="process-content">
+          <div class="process-title">한국전력 KEPCO 파워플래너 가입</div>
+          <div class="process-description">
+            <strong>무료 서비스</strong><br>
+            • KEPCO 파워플래너 프로그램 참여<br>
+            • 전력 사용량 데이터 분석<br>
+            • 기본적인 절감 잠재력 파악<br>
+            • 컨설팅 대상 사업장 선정
+          </div>
+        </div>
+      </div>
+      
+      <div class="process-item">
+        <div class="process-number">02</div>
+        <div class="process-content">
+          <div class="process-title">전력 사용 실태의 기초 분석 및 현장 Test 실행</div>
+          <div class="process-description">
+            <strong>정확한 데이터 수집</strong><br>
+            • 현장 방문 및 전력 설비 점검<br>
+            • 전력 품질 측정기 설치 및 모니터링<br>
+            • 역률, 고조파, 전압 변동 등 상세 측정<br>
+            • 1-2주간 연속 데이터 수집
+          </div>
+        </div>
+      </div>
+      
+      <div class="process-item">
+        <div class="process-number">03</div>
+        <div class="process-content">
+          <div class="process-title">전력품질 진단에 기반한 최적 솔루션 도출</div>
+          <div class="process-description">
+            <strong>맞춤형 해결방안 제시</strong><br>
+            • 수집된 데이터의 전문적 분석<br>
+            • 전력 손실 원인 진단<br>
+            • KESA 시리즈 적정 용량 산정<br>
+            • 예상 절감 효과 및 투자 회수 기간 계산
+          </div>
+        </div>
+      </div>
+      
+      <div class="process-item">
+        <div class="process-number">04</div>
+        <div class="process-content">
+          <div class="process-title">에너지 컨설팅이 포함된 전력분석 보고서 및 제안서 작성</div>
+          <div class="process-description">
+            <strong>상세한 분석 결과 제공</strong><br>
+            • 종합적인 전력 분석 보고서 작성<br>
+            • KESA 시리즈 도입 제안서<br>
+            • 경제성 분석 및 ROI 계산<br>
+            • 설치 계획 및 일정 제시
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA 섹션 -->
+    <section class="consulting-cta">
+      <h3>🚀 지금 무료 전력 컨설팅을 신청하세요</h3>
+      <p>전문가가 직접 방문하여 상세한 전력 분석과 맞춤형 솔루션을 제공합니다</p>
+      <a href="./contact.html#form-title" class="btn">무료 컨설팅 신청하기</a>
+    </section>
+
+    <!-- 사이드바 -->
+    <section class="split">
+      <div>
+        <div class="note">
+          <h3>💡 컨설팅 대상</h3>
+          <ul style="margin:12px 0; padding-left:20px">
+            <li>월 전기요금 100만원 이상 사업장</li>
+            <li>역률 90% 미만 운영 사업장</li>
+            <li>고조파 발생 설비 다수 보유 사업장</li>
+            <li>전력 품질 개선이 필요한 사업장</li>
+            <li>에너지 절감 및 ESG 경영 관심 사업장</li>
+          </ul>
+        </div>
+        
+        <div class="note" style="margin-top:20px">
+          <h3>📞 컨설팅 문의</h3>
+          <p style="margin:8px 0"><strong>전화:</strong> <a href="tel:051-363-0458">051-363-0458</a>, <a href="tel:070-7771-6086">070-7771-6086</a></p>
+          <p style="margin:8px 0"><strong>팩스:</strong> 051-363-0457</p>
+          <p style="margin:8px 0"><strong>영업시간:</strong> 평일 09:00–18:00</p>
+        </div>
+      </div>
+      
+      <aside class="panel quick" aria-labelledby="quicklinks">
+        <h3 id="quicklinks">관련 서비스</h3>
+        <ul>
+          <li><a href="./products/index.html">KESA 시리즈 제품</a></li>
+          <li><a href="./effects.html">설치 효과·특성</a></li>
+          <li><a href="./cases/index.html">시공 사례</a></li>
+          <li><a href="./about-certifications.html">특허·인증</a></li>
+        </ul>
+        <div class="cta">
+          <a class="btn primary" href="./contact.html">문의하기</a>
+          <a class="btn" href="./products/index.html">제품소개</a>
+        </div>
+      </aside>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer style="background:#0d1114; color:#cfd6dc; padding:26px 0; margin-top:28px">
+    <div class="fx">
+      <address style="display:block; text-align:center; opacity:.85; font-style:normal; margin-bottom:8px">
+        한국전기절감원 주식회사 · 부산광역시 사상구 사상로 453, 3층(모라동)
+      </address>
+      <div style="text-align:center; margin-bottom:8px">
+        <span style="opacity:.85">Tel. 051-363-0458, 070-7771-6086</span> ·
+        <span style="opacity:.85">Fax. 051-363-0457</span>
+      </div>
+      <small style="display:block; text-align:center; opacity:.85">
+        © <span id="year">2025</span> KESA. All rights reserved.
+      </small>
+    </div>
+  </footer>
+
+  <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+
+</body>
+</html>
