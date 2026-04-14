@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="ko">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -9,7 +10,7 @@
   <!-- <base href="/website/"> -->
 
   <style>
-    :root{
+    :root {
       --brand: #0f3e5b;
       --brand-2: #1a5d66;
       --ink: #0b0b0b;
@@ -17,114 +18,242 @@
       --bg: #ffffff;
       --container: 1400px;
       --radius: 16px;
-      --shadow: 0 10px 30px rgba(0,0,0,.08);
+      --shadow: 0 10px 30px rgba(0, 0, 0, .08);
     }
-    *{
+
+    * {
       box-sizing: border-box;
     }
-    body{
+
+    body {
       margin: 0;
       color: var(--ink);
       background: var(--bg);
       font: 400 16px/1.65 system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans KR", sans-serif;
     }
-    a{
+
+    a {
       text-decoration: none;
       color: inherit;
     }
 
-    .container{
+    .container {
       max-width: var(--container);
       margin-inline: auto;
-      padding-inline: clamp(16px,4vw,24px);
+      padding-inline: clamp(16px, 4vw, 24px);
     }
 
     /* 헤더(간단) */
-    header{
+    header {
       position: sticky;
       top: 0;
       z-index: 20;
-      background: rgba(255,255,255,.92);
+      background: rgba(255, 255, 255, .92);
       backdrop-filter: saturate(1.2) blur(6px);
     }
-    .nav{
+
+    .nav {
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 16px;
       padding: 10px 0;
     }
-    .logo{
+
+    .logo {
       font-weight: 900;
       letter-spacing: .02em;
       color: var(--brand);
     }
-    .menu{
+
+    .menu {
       display: flex;
       gap: 12px;
       flex-wrap: wrap;
     }
-    .menu a{
+
+    .menu a {
       padding: .55rem .8rem;
       border-radius: 10px;
     }
-    .menu a:hover{
-      background: rgba(15,62,91,.08);
+
+    .menu a:hover {
+      background: rgba(15, 62, 91, .08);
       color: var(--brand);
     }
 
     /* 히어로 */
-    .hero{
-      min-height:78vh; position:relative; isolation:isolate; display:grid; place-items:center; text-align:center; color:#fff;
-      --hero:url('images/heroes/hero-power.png'); /* 필요 시 경로 교체 */
+    .hero {
+      min-height: 78vh;
+      position: relative;
+      isolation: isolate;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      color: #fff;
+      --hero: url('images/heroes/hero-power.png');
+      /* 필요 시 경로 교체 */
     }
-    .hero::before{content:""; position:absolute; inset:0; z-index:-2;
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -2;
       background-image: var(--hero), radial-gradient(70% 80% at 50% 20%, #1a5d66 0%, #0f3e5b 40%, #0a2230 100%);
-      background-size:cover; background-position:center;}
-    .hero::after{content:""; position:absolute; inset:0; z-index:-1;
-      background:linear-gradient(180deg, rgba(0,0,0,.45), rgba(0,0,0,.35))}
-    .hero h1{margin:0 0 .6rem; font-weight:900; font-size:clamp(2rem,1.2rem + 3.2vw,3.4rem); letter-spacing:.02em}
-    .hero p.lead{margin:.25rem 0 1.25rem; font-size:clamp(1rem,.95rem + .6vw,1.25rem); color:rgba(255,255,255,.92)}
-    .bullets{display:grid; gap:.5rem; margin:1rem 0 1.25rem}
-    .bullets li{list-style:none; color:#f2fbff}
-    .cta{display:flex; gap:12px; justify-content:center; flex-wrap:wrap; margin-top:.5rem}
-    .btn{display:inline-block; padding:.9rem 1.15rem; border-radius:14px; font-weight:800; box-shadow:0 8px 24px rgba(0,0,0,.18); background:#fff; color:var(--brand)}
-    .btn.secondary{background:transparent; color:#fff; border:2px solid rgba(255,255,255,.75)}
+      background-size: cover;
+      background-position: center;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background: linear-gradient(180deg, rgba(0, 0, 0, .45), rgba(0, 0, 0, .35))
+    }
+
+    .hero h1 {
+      margin: 0 0 .6rem;
+      font-weight: 900;
+      font-size: clamp(2rem, 1.2rem + 3.2vw, 3.4rem);
+      letter-spacing: .02em
+    }
+
+    .hero p.lead {
+      margin: .25rem 0 1.25rem;
+      font-size: clamp(1rem, .95rem + .6vw, 1.25rem);
+      color: rgba(255, 255, 255, .92)
+    }
+
+    .bullets {
+      display: grid;
+      gap: .5rem;
+      margin: 1rem 0 1.25rem
+    }
+
+    .bullets li {
+      list-style: none;
+      color: #f2fbff
+    }
+
+    .cta {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: .5rem
+    }
+
+    .btn {
+      display: inline-block;
+      padding: .9rem 1.15rem;
+      border-radius: 14px;
+      font-weight: 800;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, .18);
+      background: #fff;
+      color: var(--brand)
+    }
+
+    .btn.secondary {
+      background: transparent;
+      color: #fff;
+      border: 2px solid rgba(255, 255, 255, .75)
+    }
+
     /* KESA 로고 섹션 */
-    .kesa-section{padding:25px 0 60px; background:linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%); text-align:center}
-    .kesa-logo img{max-width:800px; width:100%; height:auto; object-fit:contain; border-radius:12px; box-shadow:0 8px 32px rgba(0,0,0,0.12); transition:transform 0.3s ease, box-shadow 0.3s ease}
-    .kesa-logo img:hover{transform:translateY(-4px); box-shadow:0 12px 40px rgba(0,0,0,0.18)}
+    .kesa-section {
+      padding: 25px 0 60px;
+      background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+      text-align: center
+    }
+
+    .kesa-logo img {
+      max-width: 800px;
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      border-radius: 12px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+      transition: transform 0.3s ease, box-shadow 0.3s ease
+    }
+
+    .kesa-logo img:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.18)
+    }
 
     /* 퀵 링크 카드 */
-    .quick{padding:28px 0 36px; background:#fff}
-    .cards{display:grid; gap:16px; grid-template-columns:repeat(3, minmax(0,1fr))}
-    .card{background:#fff; border:1px solid #e8ecef; border-radius:16px; padding:16px; box-shadow:var(--shadow); text-align:center}
-    .card a{color:var(--brand); font-weight:800}
-    @media (max-width:900px){ .cards{grid-template-columns:1fr} }
+    .quick {
+      padding: 28px 0 36px;
+      background: #fff
+    }
+
+    .cards {
+      display: grid;
+      gap: 16px;
+      grid-template-columns: repeat(3, minmax(0, 1fr))
+    }
+
+    .card {
+      background: #fff;
+      border: 1px solid #e8ecef;
+      border-radius: 16px;
+      padding: 16px;
+      box-shadow: var(--shadow);
+      text-align: center
+    }
+
+    .card a {
+      color: var(--brand);
+      font-weight: 800
+    }
+
+    @media (max-width:900px) {
+      .cards {
+        grid-template-columns: 1fr
+      }
+    }
 
     /* 푸터(간단) */
-    footer{background:#0d1114; color:#cfd6dc; padding:26px 0; margin-top:28px}
-    footer small, footer address{display:block; text-align:center; opacity:.85}
-    footer address{font-style:normal}
-    
+    footer {
+      background: #0d1114;
+      color: #cfd6dc;
+      padding: 26px 0;
+      margin-top: 28px
+    }
+
+    footer small,
+    footer address {
+      display: block;
+      text-align: center;
+      opacity: .85
+    }
+
+    footer address {
+      font-style: normal
+    }
+
     /* 언어 선택 */
-    .lang-switch{
+    .lang-switch {
       position: fixed;
       top: 20px;
       right: 20px;
       z-index: 100;
     }
-    .lang-switch a{
-      background: rgba(255,255,255,0.9);
+
+    .lang-switch a {
+      background: rgba(255, 255, 255, 0.9);
       padding: 8px 16px;
       border-radius: 20px;
       color: var(--brand);
       font-weight: 600;
       font-size: 14px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     }
   </style>
 </head>
+
 <body>
 
   <header>
@@ -173,16 +302,20 @@
       </div>
     </div>
   </section>
-    </div>
-  </section>
 
   <!-- 퀵 링크 -->
   <section class="quick">
     <div class="container">
       <div class="cards" role="navigation" aria-label="바로가기">
-        <div class="card"><div>산업/상업용 전력절감기</div><a href="./products/index.html">제품소개 →</a></div>
-        <div class="card"><div>설치효과 &amp; 기술특성</div><a href="./effects.html">효과 한눈에 보기 →</a></div>
-        <div class="card"><div>견적·도입 상담</div><a href="./contact.html">빠른 상담 요청 →</a></div>
+        <div class="card">
+          <div>산업/상업용 전력절감기</div><a href="./products/index.html">제품소개 →</a>
+        </div>
+        <div class="card">
+          <div>설치효과 &amp; 기술특성</div><a href="./effects.html">효과 한눈에 보기 →</a>
+        </div>
+        <div class="card">
+          <div>견적·도입 상담</div><a href="./contact.html">빠른 상담 요청 →</a>
+        </div>
       </div>
     </div>
   </section>
@@ -203,9 +336,8 @@
     </div>
   </footer>
 
-  <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 
 </body>
+
 </html>
-
-
